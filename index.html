@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartQue Global | Compliance Made Simple</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --primary: #007bff;
+      --accent: #00c6ff;
+      --yellow: #ffdd57;
+      --green: #22c55e;
+      --bg-light: #f8fbff;
+      --radius: 1.2rem;
+      --shadow: 0 8px 32px rgba(0,123,255,0.10);
+      --gradient: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
+    }
+    body {
+      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
+      min-height: 100vh;
+      animation: fadeInBody 1.2s;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
+    }
+    @keyframes fadeInBody {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    /* Header */
+    header {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 16px rgba(0,123,255,0.07);
+      padding: 1.2rem 0 1.2rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      animation: fadeInDown 1.2s;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-40px);}
+      to { opacity: 1; transform: none;}
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .logo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%);
+      border: 4px solid #fff;
+      box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44;
+      animation: logoOrbit 5s linear infinite, logoGlowPulse2 2.8s ease-in-out infinite alternate;
+    }
+    @keyframes logoOrbit {
+      0% { box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44; transform: rotate(0deg) scale(1);}
+      50% { box-shadow: 0 0 48px 18px #ffdd5744, 0 0 64px 24px #00c6ff66; transform: rotate(180deg) scale(1.07);}
+      100% { box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44; transform: rotate(360deg) scale(1);}
+    }
+    @keyframes logoGlowPulse2 {
+      0% { filter: drop-shadow(0 0 0 #ffdd5744);}
+      100% { filter: drop-shadow(0 0 16px #ffdd57cc);}
+    }
+    .logo-title-gradient {
+      font-size: 2rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      animation: textGlow 1.5s ease-in-out infinite alternate;
+    }
+    @keyframes textGlow {
+      0% { filter: brightness(1);}
+      100% { filter: brightness(1.15);}
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.2rem;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.08rem;
+      padding: 0.4rem 1.1rem;
+      border-radius: 2rem;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav a:hover, nav a:focus {
+      background: linear-gradient(90deg, #00c6ff 30%, #ffdd57 100%);
+      color: #fff;
+    }
+    /* Hero Section */
+    .hero-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4rem;
+      background: var(--gradient);
+      color: white;
+      padding: 6rem 2rem 5rem 2rem;
+      position: relative;
+      overflow: hidden;
+      animation: fadeInUp 1.2s;
+    }
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      right: -120px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, #fff3 40%, transparent 80%);
+      z-index: 0;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-content {
+      z-index: 2;
+      animation: fadeInLeft 1.2s;
+    }
+    .hero-content h2 {
+      font-size: 3.2rem;
+      margin-bottom: 1.2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      background: linear-gradient(90deg, #fff, var(--yellow) 80%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: fadeInLeft 1.2s;
+    }
+    .hero-content p {
+      font-size: 1.35rem;
+      margin-bottom: 2.2rem;
+      color: #e6e6e6;
+      font-weight: 500;
+      animation: fadeInLeft 1.5s;
+    }
+    .hero-highlight {
+      color: var(--yellow);
+      font-weight: 600;
+    }
+    .hero-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      font-size: 1.15rem;
+      color: white;
+      background: linear-gradient(90deg, var(--green), #00c6ff 80%);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+      text-decoration: none;
+      font-weight: 700;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+      letter-spacing: 0.5px;
+      margin-bottom: 1.2rem;
+      animation: fadeInLeft 1.8s;
+    }
+    .hero-btn:hover { background: linear-gradient(90deg, #218838, #007bff 80%); transform: scale(1.04);}
+    .hero-note {
+      margin-top: 2rem;
+      font-size: 1.08rem;
+      color: var(--yellow);
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      animation: fadeInLeft 2s;
+    }
+    .hero-img {
+      width: 400px;
+      max-width: 95vw;
+      border-radius: var(--radius);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      background: #fff;
+      padding: 1.2rem;
+      z-index: 1;
+      position: relative;
+      border: 4px solid #fff;
+      transition: transform 0.3s;
+      animation: fadeInRight 1.2s;
+    }
+    .hero-img:hover {
+      transform: scale(1.04) rotate(-2deg);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(40px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInLeft {
+      from { opacity: 0; transform: translateX(-40px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInRight {
+      from { opacity: 0; transform: translateX(40px);}
+      to { opacity: 1; transform: none;}
+    }
+    /* Features Section */
+    .features-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 3rem auto 2rem auto;
+      max-width: 1200px;
+      padding: 3rem 2rem;
+      animation: fadeInUp 1.2s;
+    }
+    .features-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 2.2rem;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .features-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2.2rem;
+      margin-top: 1.5rem;
+    }
+    .feature-card {
+      background: var(--bg-light);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: fadeInUp 1.2s;
+    }
+    .feature-card:hover {
+      transform: translateY(-7px) scale(1.04);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
+      background: linear-gradient(120deg, #f4f4f9 80%, #eaf6ff 100%);
+    }
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+    .feature-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.5rem;
+    }
+    .feature-desc {
+      color: #555;
+      font-size: 1.05rem;
+    }
+    /* About Section Animation */
+    .about-section {
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin-top: 2rem;
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2.5rem;
+      animation: fadeInUp 1.2s;
+    }
+    .about-img-home {
+      width: 260px;
+      border-radius: var(--radius);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      object-fit: cover;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      display: block;
+      animation: fadeInLeft 1.2s;
+    }
+    .about-section p {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: left;
+      font-size: 1.18rem;
+      color: #444;
+      animation: fadeInRight 1.2s;
+    }
+    .about-highlight {
+      color: var(--accent);
+      font-weight: 600;
+    }
+    /* Stats Bar */
+    .stats-bar {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      margin: 2.5rem auto 2.5rem auto;
+      max-width: 900px;
+      background: linear-gradient(90deg, #eaf6ff 60%, #f8fbff 100%);
+      border-radius: 2rem;
+      box-shadow: 0 2px 12px rgba(0,123,255,0.07);
+      padding: 1.5rem 2rem;
+      animation: fadeInUp 1.2s;
+    }
+    .stat {
+      text-align: center;
+      flex: 1 1 120px;
+    }
+    .stat-num {
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+    .stat-label {
+      color: #444;
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    /* Testimonials */
+    .testimonial-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 2rem;
+    }
+    .testimonial {
+      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      min-width: 260px;
+      max-width: 320px;
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .testimonial-photo {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px #00c6ff22;
+      border: 3px solid #fff;
+      background: #eaf6ff;
+    }
+    .testimonial-content {
+      font-size: 1.08rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+    .testimonial-footer {
+      font-size: 0.98rem;
+      color: #007bff;
+      font-weight: 600;
+      margin-top: 0.5rem;
+    }
+    /* Contact Card */
+    .contact-card {
+      width: 100%;
+      max-width: 420px;
+      margin: 0 auto;
+      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    .contact-card p {
+      font-size: 1.13rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .contact-card a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover {
+      color: #00c6ff;
+      text-decoration: underline;
+    }
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.13rem;
+      padding: 0.85rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: background 0.2s;
+    }
+    .whatsapp-btn:hover {
+      background: #1ebe5d;
+    }
+    /* Responsive */
+    @media (max-width: 1100px) {
+      .hero-section { flex-direction: column; text-align: center; gap: 2rem; }
+      .about-section { flex-direction: column; text-align: center; gap: 1.5rem; }
+      .about-img-home { margin: 0 auto 1.5rem auto; }
+      .about-section p { text-align: center; }
+      .stats-bar { flex-direction: column; gap: 1.2rem; }
+    }
+    @media (max-width: 900px) {
+      .features-section { padding: 1.2rem 0.5rem; }
+      .features-list { grid-template-columns: 1fr; }
+      .testimonial-cards { flex-direction: column; align-items: center; }
+      .stats-bar { padding: 1rem 0.5rem; }
+      .services-slider-container { max-width: 98vw; }
+      .service-img, .service-card { max-width: 98vw; }
+      .slider-btn-left { left: 0; }
+      .slider-btn-right { right: 0; }
+    }
+    @media (max-width: 600px) {
+      .hero-img { width: 98vw; padding: 0.5rem;}
+      .features-section { padding: 0.5rem 0.1rem; }
+      .about-img-home { width: 98vw; }
+      .contact-card { padding: 1.2rem 0.5rem; }
+    }
+    /* Footer */
+    footer {
+      background: #fff;
+      color: #007bff;
+      text-align: center;
+      padding: 1.5rem 0 1.2rem 0;
+      font-weight: 600;
+      font-size: 1.08rem;
+      border-top: 1px solid #eaf6ff;
+      margin-top: 2.5rem;
+      letter-spacing: 0.5px;
+      animation: fadeInUp 1.2s;
+    }
+    .services-slider-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .services-slider {
+      display: flex;
+      transition: transform 0.6s cubic-bezier(.77,0,.18,1);
+      width: 100%;
+      max-width: 900px;
+      overflow: hidden;
+    }
+    .service-slide {
+      min-width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeInUp 1s;
+    }
+    .service-img {
+      width: 100%;
+      max-width: 600px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 1.2rem 1.2rem 0 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    }
+    .service-card {
+      background: #fff;
+      border-radius: 0 0 1.2rem 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      margin-top: -8px;
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+    .service-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #22c55e;
+      margin-bottom: 0.7rem;
+    }
+    .service-desc {
+      font-size: 1.08rem;
+      color: #444;
+    }
+    .slider-btn {
+      background: #eaf6ff;
+      border: none;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      font-size: 1.5rem;
+      color: #00c6ff;
+      box-shadow: 0 2px 8px #00c6ff22;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+    }
+    .slider-btn-left { left: -24px; }
+    .slider-btn-right { right: -24px; }
+    .slider-btn:hover { background: #00c6ff; color: #fff; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container animated-logo">
+      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
+      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="clients.html">Our Clients</a>
+      <a href="team.html">Team</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <section id="hero" class="hero-section">
+    <div class="hero-content">
+      <h2>
+         Certifications,Compliances &<br>Trustable Solutions for Your Business.
+      </h2>
+      <p>
+        Trusted by 1000+ organizations for BIS, WPC, CDSCO, TEC, and ISO certifications.<br>
+        <span class="hero-highlight">We simplify regulatory approvals and empower your growth with expert guidance and end-to-end support.</span>
+      </p>
+      <a href="#contact" class="hero-btn">
+        <i class="fa-solid fa-paper-plane"></i> Get Free Consultation
+      </a>
+      <div class="hero-note">
+        <i class="fa-solid fa-award"></i> 12+ Years of Excellence in Compliance
+      </div>
+    </div>
+    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=500&q=80" alt="Compliance Illustration" class="hero-img" />
+  </section>
+
+  <section class="about-section animated-section">
+    <h2 class="animated-heading">About Us</h2>
+    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="About SmartQue" class="about-img-home" />
+    <p>
+      <strong>SmartQue Global</strong> is a leading compliances and certification consultancy, helping businesses across India and beyond to achieve regulatory approvals with ease.<br>
+      <span class="about-highlight">Our team of experts brings deep industry knowledge and a client-first approach, ensuring your certifications are delivered on time, every time.</span>
+      <br>Whether you are a startup or a multinational, we tailor our solutions to your needs—so you can focus on growth, not paperwork.
+    </p>
+  </section>
+
+  <div class="stats-bar">
+    <div class="stat">
+      <div class="stat-num"><i class="fa-solid fa-users"></i><br>1000+</div>
+      <div class="stat-label">Clients Served</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><i class="fa-solid fa-certificate"></i><br>2500+</div>
+      <div class="stat-label">Certifications Delivered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><i class="fa-solid fa-industry"></i><br>100+</div>
+      <div class="stat-label">Industries Covered</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num"><i class="fa-solid fa-headset"></i><br>24x7</div>
+      <div class="stat-label">Support</div>
+    </div>
+  </div>
+
+  <section class="features-section">
+    <h2>Why Choose SmartQue?</h2>
+    <div class="features-list">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+        <div class="feature-title">Fast Turnaround</div>
+        <div class="feature-desc">We deliver certifications and approvals quickly, without compromising on quality.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+        <div class="feature-title">Client-Centric</div>
+        <div class="feature-desc">We build lasting partnerships and tailor our services to each client’s unique needs.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <div class="feature-title">Expertise</div>
+        <div class="feature-desc">Our team brings years of regulatory and technical experience to every project.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="feature-title">Quality Work</div>
+        <div class="feature-desc">We strive to serve both domestic and international patrons with excellence..</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
+        <div class="feature-title">Global Reach</div>
+        <div class="feature-desc">From India to international markets, we help you achieve compliance everywhere.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="features-section" style="overflow:hidden;">
+    <h2 style="font-size:2.4rem;font-weight:900;letter-spacing:1px;background:linear-gradient(90deg,#00c6ff,#ffdd57 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:2.5rem;">
+      <i class="fa-solid fa-layer-group" style="color:#22c55e;margin-right:10px;"></i>
+      Our Services
+    </h2>
+    <div class="services-slider-outer" style="position:relative;max-width:980px;margin:0 auto;">
+      <button class="slider-btn slider-btn-left" id="servicesPrev" style="left:10px;"><i class="fa-solid fa-chevron-left"></i></button>
+      <div class="services-slider-multipage" id="servicesSlider" style="display:flex;transition:transform 0.7s cubic-bezier(.77,0,.18,1);will-change:transform;overflow:hidden;">
+        <!-- Slide 1 -->
+        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
+          <div class="service-card-fancy">
+            <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" class="service-img-fancy" alt="BIS Registration & ISI Mark">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#007bff;">BIS</div>
+              <div class="service-title-fancy">BIS Registration & ISI Mark</div>
+              <div class="service-desc-fancy">
+                Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.
+                <ul>
+                  <li>Documentation &amp; application filing</li>
+                  <li>Product testing coordination</li>
+                  <li>End-to-end project management</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="service-card-fancy">
+            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="WPC & ETA Approvals">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#00c6ff;">WPC</div>
+              <div class="service-title-fancy">WPC & ETA Approvals</div>
+              <div class="service-desc-fancy">
+                Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.
+                <ul>
+                  <li>ETA for importers &amp; manufacturers</li>
+                  <li>Import license assistance</li>
+                  <li>Technical documentation support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
+          <div class="service-card-fancy">
+            <img src="images/wpc.jpg" class="service-img-fancy" alt="CDSCO">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#22c55e;">CDSCO</div>
+              <div class="service-title-fancy">CDSCO & Medical Device Registration</div>
+              <div class="service-desc-fancy">
+                Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.
+                <ul>
+                  <li>Medical device import licensing</li>
+                  <li>Cosmetic registration</li>
+                  <li>Regulatory consulting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="service-card-fancy">
+            <img src="images/wpc.jpg" class="service-img-fancy" alt="ISO Certification">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#ffdd57;color:#333;">ISO</div>
+              <div class="service-title-fancy">ISO Certification & Audits</div>
+              <div class="service-desc-fancy">
+                ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.
+                <ul>
+                  <li>Internal auditor training</li>
+                  <li>Gap analysis &amp; documentation</li>
+                  <li>Process improvement consulting</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 3 -->
+        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
+          <div class="service-card-fancy">
+            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Global Certifications">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#ff7f50;">Global</div>
+              <div class="service-title-fancy">Global Certifications</div>
+              <div class="service-desc-fancy">
+                International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.
+                <ul>
+                  <li>CE &amp; FCC certification</li>
+                  <li>RoHS, EPR, BEE approvals</li>
+                  <li>Customs clearance support</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="service-card-fancy">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Factory & Import Licensing">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#8e44ad;">Factory</div>
+              <div class="service-title-fancy">Factory & Import Licensing</div>
+              <div class="service-desc-fancy">
+                Support for factory licensing, import/export code (IEC), and related government approvals.
+                <ul>
+                  <li>Factory setup compliance</li>
+                  <li>Import/export code registration</li>
+                  <li>DGFT &amp; customs assistance</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 4 -->
+        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
+          <div class="service-card-fancy">
+            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Compliance Consulting">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#00b894;">Consult</div>
+              <div class="service-title-fancy">Compliance Consulting & Training</div>
+              <div class="service-desc-fancy">
+                Expert consulting for regulatory strategy, compliance audits, and staff training programs.
+                <ul>
+                  <li>Compliance gap analysis</li>
+                  <li>On-site &amp; remote training</li>
+                  <li>Documentation &amp; process setup</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="service-card-fancy">
+            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="TEC Certification">
+            <div class="service-card-content">
+              <div class="service-badge-fancy" style="background:#e17055;">TEC</div>
+              <div class="service-title-fancy">TEC Certification</div>
+              <div class="service-desc-fancy">
+                Telecommunication Engineering Centre (TEC) certification for telecom and network products.
+                <ul>
+                  <li>MTCTE process guidance</li>
+                  <li>Test report management</li>
+                  <li>Regulatory liaison</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="slider-btn slider-btn-right" id="servicesNext" style="right:10px;"><i class="fa-solid fa-chevron-right"></i></button>
+      <div class="services-slider-dots" id="servicesSliderDots" style="display:flex;justify-content:center;gap:0.6rem;margin-top:1.2rem;"></div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="features-section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonial-cards">
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="R. Sharma" class="testimonial-photo" />
+        <div class="testimonial-content">
+          <p>
+            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
+            SmartQue handled our BIS and WPC approvals with total professionalism. Their team is responsive and always delivers on time.
+            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
+          </p>
+        </div>
+        <div class="testimonial-footer">— R. Sharma, Electronics Importer</div>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="S. Gupta" class="testimonial-photo" />
+        <div class="testimonial-content">
+          <p>
+            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
+            We got our ISO 9001 and 14001 certifications faster than expected. The process was smooth and transparent.
+            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
+          </p>
+        </div>
+        <div class="testimonial-footer">— S. Gupta, Manufacturing Head</div>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. A. Mehta" class="testimonial-photo" />
+        <div class="testimonial-content">
+          <p>
+            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
+            Excellent support for CDSCO licensing. Highly recommended for any medical device company.
+            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
+          </p>
+        </div>
+        <div class="testimonial-footer">— Dr. A. Mehta, MedTech Solutions</div>
+      </div>
+      <div class="testimonial">
+        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="P. Verma" class="testimonial-photo" />
+        <div class="testimonial-content">
+          <p>
+            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
+            Their compliance experts helped us expand globally with CE and FCC certifications. Great experience!
+            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
+          </p>
+        </div>
+        <div class="testimonial-footer">— P. Verma, Export Manager</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="features-section">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:info@smartqueglobal.com">info@smartqueglobal.com</a>
+      </p>
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+916387350899">+91 63873 50899</a>,
+        <a href="tel:+917607770991">+91 76077 70991</a>
+      </p>
+      <p>
+        <strong>Location:</strong> Head office: A-175, Gulab Bagh, Uttam Nagar, Delhi - 110059
+      </p>
+      <p>
+        <strong>Location:</strong> Branch office: 20/147, Sector 20, Indira Nagar, Lucknow - 226016
+      </p>
+      <a href="https://wa.me/916387350899" target="_blank" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2>Latest Blog Posts</h2>
+    <div class="features-list">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
+        <div class="feature-title">How to Get BIS Certification in India</div>
+        <div class="feature-desc">A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
+        <div class="feature-title">WPC ETA: What You Need to Know</div>
+        <div class="feature-desc">Understand the process and documentation required for WPC Equipment Type Approval.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
+        <div class="feature-title">ISO Certification Benefits</div>
+        <div class="feature-desc">Discover how ISO certification can boost your business credibility and efficiency.</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
+  </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const slider = document.getElementById('servicesSlider');
+  const slides = slider.querySelectorAll('.services-slide-page');
+  const dotsContainer = document.getElementById('servicesSliderDots');
+  let currentPage = 0;
+
+  function updateSlider() {
+    slider.style.transform = `translateX(-${currentPage * 100}%)`;
+    dotsContainer.querySelectorAll('.services-slider-dot').forEach((dot, idx) => {
+      dot.classList.toggle('active', idx === currentPage);
+    });
+  }
+
+  // Create dots
+  dotsContainer.innerHTML = '';
+  for (let i = 0; i < slides.length; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'services-slider-dot' + (i === 0 ? ' active' : '');
+    dot.style.width = '13px';
+    dot.style.height = '13px';
+    dot.style.borderRadius = '50%';
+    dot.style.background = '#eaf6ff';
+    dot.style.border = '2px solid #00c6ff';
+    dot.style.cursor = 'pointer';
+    dot.style.transition = 'background 0.2s, border 0.2s';
+    dot.addEventListener('click', () => {
+      currentPage = i;
+      updateSlider();
+    });
+    dotsContainer.appendChild(dot);
+  }
+
+  function goToPrev() {
+    currentPage = (currentPage - 1 + slides.length) % slides.length;
+    updateSlider();
+  }
+  function goToNext() {
+    currentPage = (currentPage + 1) % slides.length;
+    updateSlider();
+  }
+
+  document.getElementById('servicesPrev').onclick = goToPrev;
+  document.getElementById('servicesNext').onclick = goToNext;
+
+  // Touch/Swipe support
+  let startX = null;
+  slider.addEventListener('touchstart', e => {
+    startX = e.touches[0].clientX;
+  });
+  slider.addEventListener('touchend', e => {
+    if (startX === null) return;
+    let endX = e.changedTouches[0].clientX;
+    if (endX - startX > 50) goToPrev();
+    else if (startX - endX > 50) goToNext();
+    startX = null;
+  });
+
+  updateSlider();
+});
+  </script>
+
+  <style>
+/* Add/adjust these styles for the slider and cards */
+.services-slider-outer {
+  position: relative;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 0 2.5rem 0;
+  background: linear-gradient(120deg, #eaf6ff 80%, #f8fbff 100%);
+  border-radius: 2.2rem;
+  box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
+  overflow: hidden;
+}
+.services-slider-multipage {
+  display: flex;
+  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+  will-change: transform;
+}
+.services-slide-page {
+  min-width: 100%;
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: stretch;
+  padding: 2.5rem 0.5rem 1.5rem 0.5rem;
+}
+.service-card-fancy {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  max-width: 390px;
+  min-width: 270px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  margin: 0 0.5rem;
+  border-top: 5px solid #00c6ff33;
+  animation: fadein-up 1s;
+}
+.service-card-fancy:hover {
+  box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
+  transform: scale(1.03) translateY(-6px);
+  z-index: 2;
+}
+.service-img-fancy {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1.5rem 1.5rem 0 0;
+  border-bottom: 2px solid #eaf6ff;
+  background: #fff;
+  transition: box-shadow 0.3s;
+}
+.service-card-content {
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.service-badge-fancy {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px #00c6ff22;
+  letter-spacing: 1px;
+  z-index: 2;
+  opacity: 0.93;
+  background: #007bff;
+}
+.service-title-fancy {
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: #22c55e;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+  margin-top: 1.2rem;
+}
+.service-desc-fancy {
+  font-size: 1.05rem;
+  color: #444;
+}
+.service-desc-fancy ul {
+  margin: 1rem 0 0 1.2rem;
+  color: #007bff;
+  font-size: 1.01rem;
+  font-weight: 500;
+  list-style: disc inside;
+  padding-left: 0;
+}
+.services-slider-dot.active {
+  background: #00c6ff !important;
+  border: 2px solid #ffdd57 !important;
+}
+@media (max-width: 900px) {
+  .services-slide-page { flex-direction: column; gap: 2rem; align-items: center; }
+  .service-card-fancy { max-width: 98vw; }
+}
+@media (max-width: 600px) {
+  .service-img-fancy { height: 130px; }
+  .service-card-fancy { padding: 0.5rem; }
+  .services-slide-page { padding: 1.2rem 0.2rem 0.7rem 0.2rem; }
+}
+  </style>
+</body>
+</html>

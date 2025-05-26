@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ | SmartQue Global</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    body {
+      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
+      min-height: 100vh;
+    }
+    .features-section {
+      max-width: 950px;
+      margin: 3.5rem auto 2.5rem auto;
+      background: #fff;
+      border-radius: 2.2rem;
+      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
+      padding: 2.5rem 2rem 2rem 2rem;
+      animation: fadeInUp 1.2s;
+    }
+    .features-section h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 900;
+      margin-bottom: 2.2rem;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .features-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    .feature-card {
+      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      min-width: 260px;
+      max-width: 320px;
+      flex: 1 1 260px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s, transform 0.2s;
+      position: relative;
+    }
+    .feature-card:hover {
+      box-shadow: 0 8px 32px rgba(0,123,255,0.13);
+      transform: translateY(-6px) scale(1.03);
+    }
+    .feature-card::before {
+      content: "\f059";
+      font-family: "Font Awesome 6 Free";
+      font-weight: 900;
+      font-size: 2.1rem;
+      color: #00c6ff;
+      background: #eaf6ff;
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px #00c6ff22;
+      margin-bottom: 1.1rem;
+      position: absolute;
+      top: 1.1rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .feature-title {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: #007bff;
+      margin-bottom: 0.7rem;
+      margin-top: 2.8rem;
+      text-align: center;
+    }
+    .feature-desc {
+      font-size: 1.05rem;
+      color: #444;
+      text-align: center;
+    }
+    @media (max-width: 900px) {
+      .features-list { flex-direction: column; align-items: center; }
+      .features-section { padding: 1.2rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container animated-logo">
+      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
+      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="clients.html">Our Clients</a>
+      <a href="team.html">Team</a>
+      <a href="faq.html" style="color:#ffdd57;">FAQ</a>
+      <a href="blog.html">Blog</a>
+    </nav>
+  </header>
+  <section class="features-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="features-list">
+      <div class="feature-card">
+        <div class="feature-title">How long does BIS certification take?</div>
+        <div class="feature-desc">Typically 4-6 weeks, depending on product and documentation readiness.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Can you help with international certifications?</div>
+        <div class="feature-desc">Yes, we assist with CE, FCC, RoHS, and other global approvals.</div>
+      </div>
+      <div class="feature-card">
+        <div class="feature-title">Is your consultation free?</div>
+        <div class="feature-desc">Yes, our initial consultation is always free and without obligation.</div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
+  </footer>
+</body>
+</html>
