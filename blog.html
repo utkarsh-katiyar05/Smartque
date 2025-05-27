@@ -260,6 +260,53 @@
         padding-top: 0.8rem;
       }
     }
+    /* Custom bottom slider with glowing arrows */
+    #bottom-slider-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    .glow-arrow {
+      border: none;
+      outline: none;
+      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%);
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      box-shadow: 0 0 0 8px #eaf6ff, 0 8px 32px #00c6ff22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      position: relative;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .glow-arrow.left {
+      border: 3px solid #ffdd57;
+    }
+    .glow-arrow.right {
+      border: 3px solid #00c6ff;
+      background: #fff;
+    }
+    .glow-arrow:hover {
+      transform: scale(1.10) rotate(-8deg);
+      box-shadow: 0 0 0 16px #eaf6ff, 0 12px 36px #00c6ff33;
+    }
+    .glow-arrow svg {
+      display: block;
+    }
+    .glow-arrow.left svg polyline {
+      stroke: #fff;
+    }
+    .glow-arrow.right svg polyline {
+      stroke: #00c6ff;
+    }
+    @media (max-width:600px) {
+      .glow-arrow { width: 44px; height: 44px; }
+      #slider-content { font-size: 1rem; min-width: 90px; }
+    }
   </style>
 </head>
 <body>
@@ -317,6 +364,18 @@
       <div id="blog-carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
     </div>
   </section>
+  <!-- Custom bottom slider with glowing arrows -->
+  <div id="bottom-slider-container" style="width:100%;display:flex;justify-content:center;align-items:center;margin:3rem 0;">
+    <button id="slider-prev" class="glow-arrow left">
+      <svg width="38" height="38" viewBox="0 0 38 38"><polyline points="24,10 14,19 24,28" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <div id="slider-content" style="margin:0 2.5rem;font-size:1.3rem;font-weight:600;min-width:180px;text-align:center;">
+      Slide 1 Content
+    </div>
+    <button id="slider-next" class="glow-arrow right">
+      <svg width="38" height="38" viewBox="0 0 38 38"><polyline points="14,10 24,19 14,28" fill="none" stroke="#00c6ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
@@ -351,6 +410,24 @@
         $('#blog-carousel-progress-bar').css('width', percent + '%');
       });
     });
+  </script>
+  <script>
+    // Simple slider logic
+    const slides = [
+      "Slide 1 Content",
+      "Slide 2 Content",
+      "Slide 3 Content"
+    ];
+    let currentSlide = 0;
+    const contentDiv = document.getElementById('slider-content');
+    document.getElementById('slider-prev').onclick = function() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      contentDiv.textContent = slides[currentSlide];
+    };
+    document.getElementById('slider-next').onclick = function() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      contentDiv.textContent = slides[currentSlide];
+    };
   </script>
 </body>
 </html>
