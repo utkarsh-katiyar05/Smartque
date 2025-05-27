@@ -507,3 +507,270 @@ footer {
 }
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+.services-heading {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg,#00c6ff,#ffdd57 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.services-heading i {
+  color: #22c55e;
+  margin-right: 10px;
+}
+#servicesOwl .service-card-fancy {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  max-width: 370px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  border-top: 5px solid #00c6ff33;
+}
+#servicesOwl .service-card-fancy:hover {
+  box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
+  transform: scale(1.03) translateY(-6px);
+  z-index: 2;
+}
+#servicesOwl .service-img-fancy {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  background: #fff;
+  border-bottom: 2px solid #eaf6ff;
+}
+#servicesOwl .service-card-content {
+  padding: 1.3rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+#servicesOwl .service-badge-fancy {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.4rem 1.1rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 8px #00c6ff22;
+  letter-spacing: 1px;
+  z-index: 2;
+  opacity: 0.93;
+}
+#servicesOwl .service-title-fancy {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #22c55e;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+  margin-top: 1.2rem;
+}
+#servicesOwl .service-desc-fancy {
+  font-size: 1.01rem;
+  color: #444;
+}
+#servicesOwl .service-desc-fancy ul {
+  margin: 1rem 0 0 1.2rem;
+  color: #007bff;
+  font-size: 1.01rem;
+  font-weight: 500;
+  list-style: disc inside;
+  padding-left: 0;
+}
+.owl-nav button {
+  background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
+  border: none !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 1.5rem !important;
+  color: #fff !important;
+  margin: 0 8px !important;
+  box-shadow: 0 2px 8px #00c6ff22;
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.owl-nav button:hover { background: #22c55e !important; color: #fff !important; }
+.owl-dots .owl-dot span {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #eaf6ff;
+  border: 2px solid #00c6ff;
+  margin: 0 4px;
+  transition: background 0.2s, border 0.2s;
+}
+.owl-dots .owl-dot.active span {
+  background: #00c6ff;
+  border: 2px solid #ffdd57;
+}
+@media (max-width: 900px) {
+  #servicesOwl .service-card-fancy { max-width: 98vw; }
+}
+@media (max-width: 600px) {
+  header {
+    padding: 0.7rem 0 0.7rem 0;
+  }
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+  .logo-title-gradient {
+    font-size: 1.2rem;
+  }
+  nav {
+    gap: 0.5rem;
+    font-size: 0.97rem;
+    flex-wrap: wrap;
+    padding: 0 0.2rem;
+  }
+  nav a {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.97rem;
+  }
+  .hero-section {
+    flex-direction: column;
+    padding: 2.2rem 0.2rem 1.5rem 0.2rem;
+    min-height: unset;
+    gap: 1.2rem;
+  }
+  .hero-content h2 {
+    font-size: 1.5rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+  .hero-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+  .hero-img {
+    width: 98vw;
+    min-width: 0;
+    padding: 0.2rem;
+    margin: 0 auto;
+  }
+  .about-section {
+    flex-direction: column;
+    padding: 1.2rem 0.3rem;
+    gap: 1rem;
+  }
+  .about-img-home {
+    width: 95vw;
+    min-width: 0;
+    margin: 0 auto 1rem auto;
+  }
+  .about-section p {
+    font-size: 1rem;
+    padding: 0 0.2rem;
+  }
+  .stats-bar {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 0.7rem 0.2rem;
+    border-radius: 1rem;
+  }
+  .stat-num {
+    font-size: 1.2rem;
+  }
+  .stat-label {
+    font-size: 0.97rem;
+  }
+  .features-section {
+    padding: 0.7rem 0.1rem;
+    border-radius: 1rem;
+    margin: 1.2rem 0.1rem;
+  }
+  .features-section h2 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .features-list {
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+  .feature-card {
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .testimonial-cards {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  .testimonial {
+    min-width: 0;
+    max-width: 98vw;
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+  }
+  .testimonial-photo {
+    width: 48px;
+    height: 48px;
+  }
+  .contact-card {
+    padding: 1rem 0.3rem;
+    border-radius: 1rem;
+  }
+  .whatsapp-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 1rem;
+  }
+  footer {
+    font-size: 0.97rem;
+    padding: 1rem 0 0.7rem 0;
+    border-radius: 1rem;
+  }
+  /* Carousel arrows and dots */
+  .owl-nav button {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+    top: 44%;
+  }
+  .owl-nav .owl-prev { left: -4px; }
+  .owl-nav .owl-next { right: -4px; }
+  .owl-dots .owl-dot span {
+    width: 9px;
+    height: 9px;
+    margin: 0 1px;
+  }
+  #servicesOwl {
+    padding-bottom: 1.2rem;
+  }
+  .service-card-modern {
+    max-width: 99vw;
+    margin: 0.5rem auto;
+    padding: 0.3rem 0.1rem;
+    border-radius: 1rem;
+  }
+  .service-img-modern {
+    height: 70px;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .service-card-body {
+    padding: 0.5rem 0.2rem 0.5rem 0.2rem;
+  }
+  .service-title-modern {
+    font-size: 0.97rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+  }
+  .service-desc-modern {
+    font-size: 0.93rem;
+  }
+}

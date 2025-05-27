@@ -6,6 +6,8 @@
   <title>SmartQue Global | Compliance Made Simple</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
   <style>
     :root {
       --primary: #007bff;
@@ -23,6 +25,8 @@
       animation: fadeInBody 1.2s;
       font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
       overflow-x: hidden;
+      margin: 0;
+      padding: 0;
     }
     @keyframes fadeInBody {
       from { opacity: 0; }
@@ -37,6 +41,7 @@
       top: 0;
       z-index: 100;
       animation: fadeInDown 1.2s;
+      margin-bottom: 0 !important;
     }
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-40px);}
@@ -114,6 +119,10 @@
       position: relative;
       overflow: hidden;
       animation: fadeInUp 1.2s;
+      margin-top: 0;
+      padding-top: 1.2rem !important;
+      padding-bottom: 2rem !important;
+      min-height: 60vh !important;
     }
     .hero-section::before {
       content: "";
@@ -221,6 +230,10 @@
       max-width: 1200px;
       padding: 3rem 2rem;
       animation: fadeInUp 1.2s;
+      margin-top: 1.2rem !important;
+      margin-bottom: 1.2rem !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
     }
     .features-section h2 {
       text-align: center;
@@ -280,6 +293,9 @@
       align-items: center;
       gap: 2.5rem;
       animation: fadeInUp 1.2s;
+      margin-top: 1.2rem !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
     }
     .about-img-home {
       width: 260px;
@@ -315,6 +331,10 @@
       box-shadow: 0 2px 12px rgba(0,123,255,0.07);
       padding: 1.5rem 2rem;
       animation: fadeInUp 1.2s;
+      margin-top: 1.2rem !important;
+      margin-bottom: 1.2rem !important;
+      padding-top: 1.5rem !important;
+      padding-bottom: 1.5rem !important;
     }
     .stat {
       text-align: center;
@@ -425,6 +445,24 @@
     .whatsapp-btn:hover {
       background: #1ebe5d;
     }
+    /* Reduce gap between header/hero and hero/stats/about/sections */
+header {
+  margin-bottom: 0 !important;
+}
+.hero-section {
+  margin-top: 0 !important;
+  padding-top: 1.2rem !important;
+  padding-bottom: 2rem !important;
+  min-height: 60vh !important;
+}
+.about-section,
+.stats-bar,
+.features-section {
+  margin-top: 1.2rem !important;
+  margin-bottom: 1.2rem !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+}
     /* Responsive */
     @media (max-width: 1100px) {
       .hero-section { flex-direction: column; text-align: center; gap: 2rem; }
@@ -444,10 +482,159 @@
       .slider-btn-right { right: 0; }
     }
     @media (max-width: 600px) {
-      .hero-img { width: 98vw; padding: 0.5rem;}
-      .features-section { padding: 0.5rem 0.1rem; }
-      .about-img-home { width: 98vw; }
-      .contact-card { padding: 1.2rem 0.5rem; }
+      header {
+        padding: 0.5rem 0 0.5rem 0;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+      .logo-title-gradient {
+        font-size: 1.1rem;
+      }
+      nav {
+        gap: 0.3rem;
+        font-size: 0.93rem;
+        flex-wrap: wrap;
+        padding: 0 0.1rem;
+      }
+      nav a {
+        padding: 0.2rem 0.5rem;
+        font-size: 0.93rem;
+      }
+      .hero-section {
+        flex-direction: column;
+        padding: 1.2rem 0.2rem 1rem 0.2rem;
+        min-height: unset;
+        gap: 0.7rem;
+      }
+      .hero-content h2 {
+        font-size: 1.2rem;
+      }
+      .hero-content p {
+        font-size: 0.97rem;
+      }
+      .hero-btn {
+        font-size: 0.97rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+      }
+      .hero-img {
+        width: 98vw;
+        min-width: 0;
+        padding: 0.2rem;
+        margin: 0 auto;
+      }
+      .about-section {
+        flex-direction: column;
+        padding: 0.7rem 0.1rem;
+        gap: 0.7rem;
+      }
+      .about-img-home {
+        width: 95vw;
+        min-width: 0;
+        margin: 0 auto 0.7rem auto;
+      }
+      .about-section p {
+        font-size: 0.97rem;
+        padding: 0 0.1rem;
+      }
+      .stats-bar {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.5rem 0.1rem;
+        border-radius: 1rem;
+      }
+      .stat-num {
+        font-size: 1rem;
+      }
+      .stat-label {
+        font-size: 0.93rem;
+      }
+      .features-section {
+        padding: 0.5rem 0.05rem;
+        border-radius: 1rem;
+        margin: 0.7rem 0.05rem;
+      }
+      .features-section h2 {
+        font-size: 1rem;
+        margin-bottom: 0.7rem;
+      }
+      .features-list {
+        gap: 0.7rem;
+        grid-template-columns: 1fr;
+      }
+      .feature-card {
+        padding: 0.7rem 0.3rem;
+        border-radius: 1rem;
+      }
+      .testimonial-cards {
+        flex-direction: column;
+        gap: 0.7rem;
+        align-items: center;
+      }
+      .testimonial {
+        min-width: 0;
+        max-width: 98vw;
+        padding: 0.7rem 0.3rem;
+        border-radius: 1rem;
+      }
+      .testimonial-photo {
+        width: 38px;
+        height: 38px;
+      }
+      .contact-card {
+        padding: 0.7rem 0.2rem;
+        border-radius: 1rem;
+      }
+      .whatsapp-btn {
+        font-size: 0.97rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+      }
+      footer {
+        font-size: 0.93rem;
+        padding: 0.7rem 0 0.5rem 0;
+        border-radius: 1rem;
+      }
+      /* Carousel arrows and dots */
+      .owl-nav button {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 0.9rem !important;
+        top: 44%;
+      }
+      .owl-nav .owl-prev { left: -4px; }
+      .owl-nav .owl-next { right: -4px; }
+      .owl-dots .owl-dot span {
+        width: 8px;
+        height: 8px;
+        margin: 0 1px;
+      }
+      #servicesOwl {
+        padding-bottom: 1rem;
+      }
+      .service-card-modern {
+        max-width: 99vw;
+        margin: 0.3rem auto;
+        padding: 0.2rem 0.05rem;
+        border-radius: 1rem;
+      }
+      .service-img-modern {
+        height: 60px;
+        border-radius: 1rem 1rem 0 0;
+      }
+      .service-card-body {
+        padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+      }
+      .service-title-modern {
+        font-size: 0.93rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+      .service-desc-modern {
+        font-size: 0.91rem;
+      }
     }
     /* Footer */
     footer {
@@ -535,6 +722,87 @@
     .slider-btn-left { left: -24px; }
     .slider-btn-right { right: -24px; }
     .slider-btn:hover { background: #00c6ff; color: #fff; }
+    /* Carousel theme background */
+#services {
+  background: linear-gradient(120deg, #fff 70%, #eaf6ff 100%);
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
+  padding-bottom: 2.5rem;
+}
+
+/* Card style */
+.service-card-modern {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  overflow: hidden;
+  max-width: 340px;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+  border-top: 5px solid #00c6ff33;
+}
+.service-card-modern:hover {
+  box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
+  transform: scale(1.04) translateY(-6px);
+  z-index: 2;
+}
+.service-img-modern {
+  width: 100%;
+  height: 170px;
+  object-fit: contain;
+  background: #fff;
+  border-bottom: 2px solid #eaf6ff;
+  margin-bottom: 0.5rem;
+}
+.service-card-body {
+  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+.service-title-modern {
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: #22c55e;
+  margin-bottom: 0.7rem;
+  letter-spacing: 0.5px;
+  margin-top: 0.7rem;
+  text-align: center;
+}
+.service-desc-modern {
+  font-size: 1.01rem;
+  color: #444;
+  text-align: center;
+}
+.service-desc-modern ul {
+  margin: 1rem 0 0 1.2rem;
+  color: #007bff;
+  font-size: 1.01rem;
+  font-weight: 500;
+  list-style: disc inside;
+  padding-left: 0;
+  text-align: left;
+}
+
+/* Ensure the carousel content never overflows its container */
+.services-owl-overflow,
+.blog-owl-overflow {
+  overflow: hidden !important;
+  border-radius: 1.5rem;
+  position: relative;
+}
+
+/* Hide overflow for the carousel stage as well */
+#servicesOwl .owl-stage-outer,
+#blogOwl .owl-stage-outer {
+  overflow: hidden !important;
+  border-radius: 1.5rem;
+}
   </style>
 </head>
 <body>
@@ -634,197 +902,117 @@
   </section>
 
   <section id="services" class="features-section" style="overflow:hidden;">
-    <h2 style="font-size:2.4rem;font-weight:900;letter-spacing:1px;background:linear-gradient(90deg,#00c6ff,#ffdd57 80%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;text-align:center;margin-bottom:2.5rem;">
-      <i class="fa-solid fa-layer-group" style="color:#22c55e;margin-right:10px;"></i>
-      Our Services
+    <h2 class="services-heading">
+      <i class="fa-solid fa-layer-group"></i> Our Services
     </h2>
-    <div class="services-slider-outer" style="position:relative;max-width:980px;margin:0 auto;">
-      <button class="slider-btn slider-btn-left" id="servicesPrev" style="left:10px;"><i class="fa-solid fa-chevron-left"></i></button>
-      <div class="services-slider-multipage" id="servicesSlider" style="display:flex;transition:transform 0.7s cubic-bezier(.77,0,.18,1);will-change:transform;overflow:hidden;">
-        <!-- Slide 1 -->
-        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
-          <div class="service-card-fancy">
-            <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" class="service-img-fancy" alt="BIS Registration & ISI Mark">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#007bff;">BIS</div>
-              <div class="service-title-fancy">BIS Registration & ISI Mark</div>
-              <div class="service-desc-fancy">
-                Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.
-                <ul>
-                  <li>Documentation &amp; application filing</li>
-                  <li>Product testing coordination</li>
-                  <li>End-to-end project management</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="service-card-fancy">
-            <img src="https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="WPC & ETA Approvals">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#00c6ff;">WPC</div>
-              <div class="service-title-fancy">WPC & ETA Approvals</div>
-              <div class="service-desc-fancy">
-                Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.
-                <ul>
-                  <li>ETA for importers &amp; manufacturers</li>
-                  <li>Import license assistance</li>
-                  <li>Technical documentation support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide 2 -->
-        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
-          <div class="service-card-fancy">
-            <img src="images/wpc.jpg" class="service-img-fancy" alt="CDSCO">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#22c55e;">CDSCO</div>
-              <div class="service-title-fancy">CDSCO & Medical Device Registration</div>
-              <div class="service-desc-fancy">
-                Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.
-                <ul>
-                  <li>Medical device import licensing</li>
-                  <li>Cosmetic registration</li>
-                  <li>Regulatory consulting</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="service-card-fancy">
-            <img src="images/wpc.jpg" class="service-img-fancy" alt="ISO Certification">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#ffdd57;color:#333;">ISO</div>
-              <div class="service-title-fancy">ISO Certification & Audits</div>
-              <div class="service-desc-fancy">
-                ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.
-                <ul>
-                  <li>Internal auditor training</li>
-                  <li>Gap analysis &amp; documentation</li>
-                  <li>Process improvement consulting</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide 3 -->
-        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
-          <div class="service-card-fancy">
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Global Certifications">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#ff7f50;">Global</div>
-              <div class="service-title-fancy">Global Certifications</div>
-              <div class="service-desc-fancy">
-                International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.
-                <ul>
-                  <li>CE &amp; FCC certification</li>
-                  <li>RoHS, EPR, BEE approvals</li>
-                  <li>Customs clearance support</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="service-card-fancy">
-            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Factory & Import Licensing">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#8e44ad;">Factory</div>
-              <div class="service-title-fancy">Factory & Import Licensing</div>
-              <div class="service-desc-fancy">
-                Support for factory licensing, import/export code (IEC), and related government approvals.
-                <ul>
-                  <li>Factory setup compliance</li>
-                  <li>Import/export code registration</li>
-                  <li>DGFT &amp; customs assistance</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- Slide 4 -->
-        <div class="services-slide-page" style="min-width:100%;display:flex;gap:2.5rem;justify-content:center;align-items:stretch;padding:2.5rem 0.5rem 1.5rem 0.5rem;">
-          <div class="service-card-fancy">
-            <img src="https://images.unsplash.com/photo-1465101178521-c1a9136a3fd9?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="Compliance Consulting">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#00b894;">Consult</div>
-              <div class="service-title-fancy">Compliance Consulting & Training</div>
-              <div class="service-desc-fancy">
-                Expert consulting for regulatory strategy, compliance audits, and staff training programs.
-                <ul>
-                  <li>Compliance gap analysis</li>
-                  <li>On-site &amp; remote training</li>
-                  <li>Documentation &amp; process setup</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="service-card-fancy">
-            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=400&q=80" class="service-img-fancy" alt="TEC Certification">
-            <div class="service-card-content">
-              <div class="service-badge-fancy" style="background:#e17055;">TEC</div>
-              <div class="service-title-fancy">TEC Certification</div>
-              <div class="service-desc-fancy">
-                Telecommunication Engineering Centre (TEC) certification for telecom and network products.
-                <ul>
-                  <li>MTCTE process guidance</li>
-                  <li>Test report management</li>
-                  <li>Regulatory liaison</li>
-                </ul>
-              </div>
-            </div>
+    <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
+      <!-- Card 1 -->
+      <div class="service-card-modern">
+        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">BIS Registration & ISI Mark</div>
+          <div class="service-desc-modern">
+            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
+            <ul>
+              <li>Documentation &amp; application filing</li>
+              <li>Product testing coordination</li>
+              <li>End-to-end project management</li>
+            </ul>
           </div>
         </div>
       </div>
-      <button class="slider-btn slider-btn-right" id="servicesNext" style="right:10px;"><i class="fa-solid fa-chevron-right"></i></button>
-      <div class="services-slider-dots" id="servicesSliderDots" style="display:flex;justify-content:center;gap:0.6rem;margin-top:1.2rem;"></div>
+      <!-- Card 2 -->
+      <div class="service-card-modern">
+        <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">WPC & ETA Approvals</div>
+          <div class="service-desc-modern">
+            <p>Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.</p>
+            <ul>
+              <li>ETA for importers &amp; manufacturers</li>
+              <li>Import license assistance</li>
+              <li>Technical documentation support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card-modern">
+        <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">CDSCO & Medical Device Registration</div>
+          <div class="service-desc-modern">
+            <p>Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.</p>
+            <ul>
+              <li>Medical device import licensing</li>
+              <li>Cosmetic registration</li>
+              <li>Regulatory consulting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="service-card-modern">
+        <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">ISO Certification & Audits</div>
+          <div class="service-desc-modern">
+            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
+            <ul>
+              <li>Internal auditor training</li>
+              <li>Gap analysis &amp; documentation</li>
+              <li>Process improvement consulting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="service-card-modern">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">Global Certifications</div>
+          <div class="service-desc-modern">
+            <p>International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.</p>
+            <ul>
+              <li>CE &amp; FCC certification</li>
+              <li>RoHS, EPR, BEE approvals</li>
+              <li>Customs clearance support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section id="testimonials" class="features-section">
-    <h2>What Our Clients Say</h2>
-    <div class="testimonial-cards">
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="R. Sharma" class="testimonial-photo" />
-        <div class="testimonial-content">
-          <p>
-            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
-            SmartQue handled our BIS and WPC approvals with total professionalism. Their team is responsive and always delivers on time.
-            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
-          </p>
+  <section class="features-section" style="overflow:hidden;">
+    <h2>Latest Blog Posts</h2>
+    <div class="owl-carousel custom-owl-theme blog-owl-overflow" id="blogOwl">
+      <!-- Blog Card 1 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">How to Get BIS Certification in India</div>
+          <div class="service-desc-modern">
+            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</p>
+          </div>
         </div>
-        <div class="testimonial-footer">— R. Sharma, Electronics Importer</div>
       </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="S. Gupta" class="testimonial-photo" />
-        <div class="testimonial-content">
-          <p>
-            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
-            We got our ISO 9001 and 14001 certifications faster than expected. The process was smooth and transparent.
-            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
-          </p>
+      <!-- Blog Card 2 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">WPC ETA: What You Need to Know</div>
+          <div class="service-desc-modern">
+            <p>Understand the process and documentation required for WPC Equipment Type Approval.</p>
+          </div>
         </div>
-        <div class="testimonial-footer">— S. Gupta, Manufacturing Head</div>
       </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Dr. A. Mehta" class="testimonial-photo" />
-        <div class="testimonial-content">
-          <p>
-            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
-            Excellent support for CDSCO licensing. Highly recommended for any medical device company.
-            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
-          </p>
+      <!-- Blog Card 3 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">ISO Certification Benefits</div>
+          <div class="service-desc-modern">
+            <p>Discover how ISO certification can boost your business credibility and efficiency.</p>
+          </div>
         </div>
-        <div class="testimonial-footer">— Dr. A. Mehta, MedTech Solutions</div>
-      </div>
-      <div class="testimonial">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="P. Verma" class="testimonial-photo" />
-        <div class="testimonial-content">
-          <p>
-            <i class="fa-solid fa-quote-left" style="color:var(--accent);margin-right:6px;"></i>
-            Their compliance experts helped us expand globally with CE and FCC certifications. Great experience!
-            <i class="fa-solid fa-quote-right" style="color:var(--accent);margin-left:6px;"></i>
-          </p>
-        </div>
-        <div class="testimonial-footer">— P. Verma, Export Manager</div>
       </div>
     </div>
   </section>
@@ -853,27 +1041,6 @@
     </div>
   </section>
 
-  <section class="features-section">
-    <h2>Latest Blog Posts</h2>
-    <div class="features-list">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
-        <div class="feature-title">How to Get BIS Certification in India</div>
-        <div class="feature-desc">A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
-        <div class="feature-title">WPC ETA: What You Need to Know</div>
-        <div class="feature-desc">Understand the process and documentation required for WPC Equipment Type Approval.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
-        <div class="feature-title">ISO Certification Benefits</div>
-        <div class="feature-desc">Discover how ISO certification can boost your business credibility and efficiency.</div>
-      </div>
-    </div>
-  </section>
-
   <footer>
     <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
   </footer>
@@ -881,7 +1048,7 @@
   <script>
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById('servicesSlider');
-  const slides = slider.querySelectorAll('.services-slide-page');
+  const slides = slider.querySelectorAll('.services-slide');
   const dotsContainer = document.getElementById('servicesSliderDots');
   let currentPage = 0;
 
@@ -940,116 +1107,56 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   </script>
 
-  <style>
-/* Add/adjust these styles for the slider and cards */
-.services-slider-outer {
-  position: relative;
-  max-width: 980px;
-  margin: 0 auto;
-  padding: 0 0 2.5rem 0;
-  background: linear-gradient(120deg, #eaf6ff 80%, #f8fbff 100%);
-  border-radius: 2.2rem;
-  box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
-  overflow: hidden;
-}
-.services-slider-multipage {
-  display: flex;
-  transition: transform 0.7s cubic-bezier(.77,0,.18,1);
-  will-change: transform;
-}
-.services-slide-page {
-  min-width: 100%;
-  display: flex;
-  gap: 2.5rem;
-  justify-content: center;
-  align-items: stretch;
-  padding: 2.5rem 0.5rem 1.5rem 0.5rem;
-}
-.service-card-fancy {
-  background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  overflow: hidden;
-  max-width: 390px;
-  min-width: 270px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  transition: box-shadow 0.3s, transform 0.3s;
-  position: relative;
-  margin: 0 0.5rem;
-  border-top: 5px solid #00c6ff33;
-  animation: fadein-up 1s;
-}
-.service-card-fancy:hover {
-  box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
-  transform: scale(1.03) translateY(-6px);
-  z-index: 2;
-}
-.service-img-fancy {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 1.5rem 1.5rem 0 0;
-  border-bottom: 2px solid #eaf6ff;
-  background: #fff;
-  transition: box-shadow 0.3s;
-}
-.service-card-content {
-  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-.service-badge-fancy {
-  display: inline-block;
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1.05rem;
-  padding: 0.4rem 1.1rem;
-  border-radius: 1.2rem;
-  box-shadow: 0 2px 8px #00c6ff22;
-  letter-spacing: 1px;
-  z-index: 2;
-  opacity: 0.93;
-  background: #007bff;
-}
-.service-title-fancy {
-  font-size: 1.22rem;
-  font-weight: 800;
-  color: #22c55e;
-  margin-bottom: 0.7rem;
-  letter-spacing: 0.5px;
-  margin-top: 1.2rem;
-}
-.service-desc-fancy {
-  font-size: 1.05rem;
-  color: #444;
-}
-.service-desc-fancy ul {
-  margin: 1rem 0 0 1.2rem;
-  color: #007bff;
-  font-size: 1.01rem;
-  font-weight: 500;
-  list-style: disc inside;
-  padding-left: 0;
-}
-.services-slider-dot.active {
-  background: #00c6ff !important;
-  border: 2px solid #ffdd57 !important;
-}
-@media (max-width: 900px) {
-  .services-slide-page { flex-direction: column; gap: 2rem; align-items: center; }
-  .service-card-fancy { max-width: 98vw; }
-}
-@media (max-width: 600px) {
-  .service-img-fancy { height: 130px; }
-  .service-card-fancy { padding: 0.5rem; }
-  .services-slide-page { padding: 1.2rem 0.2rem 0.7rem 0.2rem; }
-}
-  </style>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    // Services carousel (already present)
+    $("#servicesOwl").owlCarousel({
+      loop:true,
+      margin:32,
+      nav:true,
+      dots:true,
+      center:true,
+      stagePadding: 80,
+      autoplay:true,
+      autoplayTimeout:3500,
+      autoplayHoverPause:true,
+      navText: [
+        '<i class="fa fa-chevron-left"></i>',
+        '<i class="fa fa-chevron-right"></i>'
+      ],
+      responsive:{
+        0:{ items:1, stagePadding: 20 },
+        600:{ items:1, stagePadding: 40 },
+        900:{ items:2, stagePadding: 60 },
+        1200:{ items:3, stagePadding: 80 }
+      }
+    });
+
+    // Blog carousel (same style as services)
+    $("#blogOwl").owlCarousel({
+      loop:true,
+      margin:32,
+      nav:true,
+      dots:true,
+      center:true,
+      stagePadding: 80,
+      autoplay:true,
+      autoplayTimeout:3500,
+      autoplayHoverPause:true,
+      navText: [
+        '<i class="fa fa-chevron-left"></i>',
+        '<i class="fa fa-chevron-right"></i>'
+      ],
+      responsive:{
+        0:{ items:1, stagePadding: 20 },
+        600:{ items:1, stagePadding: 40 },
+        900:{ items:2, stagePadding: 60 },
+        1200:{ items:3, stagePadding: 80 }
+      }
+    });
+  });
+  </script>
 </body>
 </html>

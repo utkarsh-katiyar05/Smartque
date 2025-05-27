@@ -67,3 +67,25 @@ document.querySelectorAll('.animated-heading').forEach(heading => {
   animateHeading();
 });
 </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#servicesOwl").owlCarousel({
+    loop:true,
+    margin:30,
+    nav:true,
+    dots:true,
+    responsive:{
+      0:{ items:1 },
+      900:{ items:2 }
+    },
+    navText: [
+      '<i class="fa fa-chevron-left"></i>',
+      '<i class="fa fa-chevron-right"></i>'
+    ]
+  });
+});
+</script>

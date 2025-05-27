@@ -4,128 +4,223 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | SmartQue Global</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
   <style>
     body {
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      margin: 0;
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
     }
-    .features-section {
-      max-width: 950px;
-      margin: 3.5rem auto 2.5rem auto;
-      background: #fff;
-      border-radius: 2.2rem;
-      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
-      padding: 2.5rem 2rem 2rem 2rem;
-      animation: fadeInUp 1.2s;
-    }
-    .features-section h2 {
+    .page-header {
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 2px 16px rgba(0,123,255,0.07);
+      padding: 2.5rem 0 2rem 0;
       text-align: center;
-      font-size: 2.2rem;
+      margin-bottom: 0;
+    }
+    .page-header h1 {
+      font-size: 2.7rem;
       font-weight: 900;
-      margin-bottom: 2.2rem;
       background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
+    .features-section {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
+      margin: 3rem auto 2rem auto;
+      padding: 3rem 2rem 3rem 2rem;
+      max-width: 1350px;
+      overflow: hidden;
+    }
+    .features-section h2 {
+      text-align: center;
+      font-size: 2.3rem;
+      font-weight: 900;
+      color: #007bff;
+      margin-bottom: 2.2rem;
       letter-spacing: 1px;
     }
-    .features-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
+    .owl-carousel {
+      margin-bottom: 1.5rem;
     }
-    .feature-card {
-      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      min-width: 260px;
-      max-width: 320px;
-      flex: 1 1 260px;
+    .service-card-modern {
+      background: #fff;
+      border-radius: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      overflow: hidden;
+      max-width: 400px;
+      margin: 2rem auto;
       display: flex;
       flex-direction: column;
       align-items: center;
-      transition: box-shadow 0.2s, transform 0.2s;
+      transition: box-shadow 0.3s, transform 0.3s;
+      position: relative;
+      border-top: 5px solid #00c6ff33;
     }
-    .feature-card:hover {
-      box-shadow: 0 8px 32px rgba(0,123,255,0.13);
-      transform: translateY(-6px) scale(1.03);
-    }
-    .feature-icon {
-      font-size: 2.3rem;
-      color: #00c6ff;
-      margin-bottom: 1.1rem;
-      background: #eaf6ff;
-      border-radius: 50%;
-      width: 56px;
-      height: 56px;
+    .service-card-body {
+      padding: 1.5rem 1.3rem 1.3rem 1.3rem;
       display: flex;
+      flex-direction: column;
+      flex: 1;
       align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 8px #00c6ff22;
     }
-    .feature-title {
-      font-size: 1.18rem;
-      font-weight: 700;
-      color: #007bff;
+    .service-title-modern {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #22c55e;
       margin-bottom: 0.7rem;
+      letter-spacing: 0.5px;
+      margin-top: 0.7rem;
       text-align: center;
     }
-    .feature-desc {
-      font-size: 1.05rem;
+    .service-desc-modern {
+      font-size: 1.08rem;
       color: #444;
       text-align: center;
     }
+    .owl-dots .owl-dot span {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #eaf6ff;
+      border: 2px solid #00c6ff;
+      margin: 0 5px;
+      transition: background 0.2s, border 0.2s;
+    }
+    .owl-dots .owl-dot.active span {
+      background: #00c6ff;
+      border: 2px solid #ffdd57;
+    }
+    .owl-stage-outer {
+      overflow: hidden !important;
+      border-radius: 1.5rem;
+    }
+    .owl-item {
+      opacity: 0.6;
+      transition: opacity 0.3s, transform 0.3s;
+      filter: blur(1px);
+    }
+    .owl-item.center {
+      opacity: 1;
+      filter: none;
+      z-index: 2;
+      transform: scale(1.08);
+    }
+    .owl-nav button {
+      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
+      border: none !important;
+      border-radius: 50% !important;
+      width: 54px !important;
+      height: 54px !important;
+      font-size: 2rem !important;
+      color: #fff !important;
+      margin: 0 10px !important;
+      box-shadow: 0 2px 8px #00c6ff22;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      position: absolute;
+      top: 38%;
+      pointer-events: all;
+    }
+    .owl-nav .owl-prev { left: -38px; }
+    .owl-nav .owl-next { right: -38px; }
+    .owl-nav button:hover { background: #22c55e !important; color: #fff !important; }
+    .owl-nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+      top: 38%;
+      left: 0;
+      pointer-events: none;
+    }
     @media (max-width: 900px) {
-      .features-list { flex-direction: column; align-items: center; }
       .features-section { padding: 1.2rem 0.5rem; }
+      .service-card-modern { max-width: 98vw; }
+      .owl-nav .owl-prev { left: 0; }
+      .owl-nav .owl-next { right: 0; }
+    }
+    @media (max-width: 600px) {
+      .features-section { padding: 0.5rem 0.05rem; border-radius: 1rem; margin: 0.7rem 0.05rem; }
+      .service-card-modern { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; }
+      .service-title-modern { font-size: 1.05rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+      .service-desc-modern { font-size: 0.97rem; }
+      .owl-nav button { width: 36px !important; height: 36px !important; font-size: 1.1rem !important; top: 44%; }
+      .owl-nav .owl-prev { left: -8px; }
+      .owl-nav .owl-next { right: -8px; }
+      .owl-dots .owl-dot span { width: 10px; height: 10px; margin: 0 2px; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="clients.html">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="faq.html">FAQ</a>
-      <a href="blog.html" style="color:#ffdd57;">Blog</a>
-    </nav>
-  </header>
-
-  <section class="features-section">
+  <div class="page-header">
+    <h1>Blog</h1>
+  </div>
+  <section class="features-section" style="overflow:hidden;">
     <h2>Latest Blog Posts</h2>
-    <div class="features-list">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-newspaper"></i></div>
-        <div class="feature-title">How to Get BIS Certification in India</div>
-        <div class="feature-desc">A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</div>
+    <div class="owl-carousel custom-owl-theme blog-owl-overflow" id="blogOwl">
+      <!-- Blog Card 1 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">How to Get BIS Certification in India</div>
+          <div class="service-desc-modern">
+            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</p>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-shield"></i></div>
-        <div class="feature-title">WPC ETA: What You Need to Know</div>
-        <div class="feature-desc">Understand the process and documentation required for WPC Equipment Type Approval.</div>
+      <!-- Blog Card 2 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">WPC ETA: What You Need to Know</div>
+          <div class="service-desc-modern">
+            <p>Understand the process and documentation required for WPC Equipment Type Approval.</p>
+          </div>
+        </div>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-user-shield"></i></div>
-        <div class="feature-title">ISO Certification Benefits</div>
-        <div class="feature-desc">Discover how ISO certification can boost your business credibility and efficiency.</div>
+      <!-- Blog Card 3 -->
+      <div class="service-card-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">ISO Certification Benefits</div>
+          <div class="service-desc-modern">
+            <p>Discover how ISO certification can boost your business credibility and efficiency.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-
-  <footer>
-    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
-  </footer>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#blogOwl").owlCarousel({
+        loop:true,
+        margin:40,
+        nav:true,
+        dots:true,
+        center:true,
+        stagePadding: 120,
+        autoplay:true,
+        autoplayTimeout:3500,
+        autoplayHoverPause:true,
+        navText: [
+          '<i class="fa fa-chevron-left"></i>',
+          '<i class="fa fa-chevron-right"></i>'
+        ],
+        responsive:{
+          0:{ items:1, stagePadding: 20 },
+          600:{ items:1, stagePadding: 40 },
+          900:{ items:2, stagePadding: 60 },
+          1200:{ items:3, stagePadding: 120 }
+        }
+      });
+    });
+  </script>
 </body>
 </html>
