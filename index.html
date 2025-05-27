@@ -376,7 +376,7 @@
       position: relative;
     }
     .testimonial-photo {
-      width: 70px;
+      width: 70
       height: 70px;
       border-radius: 50%;
       object-fit: cover;
@@ -462,6 +462,51 @@ header {
   margin-bottom: 1.2rem !important;
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
+}
+    /* Add to your <style> block for compact services carousel */
+.compact-services {
+  padding: 1.2rem 0.5rem 1.2rem 0.5rem !important;
+  max-width: 900px !important;
+  margin: 1.2rem auto !important;
+}
+.compact-card {
+  max-width: 210px !important;
+  min-width: 180px !important;
+  margin: 0.7rem auto !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 2px 8px #00c6ff11;
+}
+.compact-img {
+  height: 60px !important;
+  border-radius: 1rem 1rem 0 0 !important;
+  margin-bottom: 0.2rem !important;
+}
+.compact-body {
+  padding: 0.5rem 0.3rem 0.5rem 0.3rem !important;
+}
+.compact-title {
+  font-size: 0.97rem !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.2rem !important;
+}
+.compact-desc {
+  font-size: 0.91rem !important;
+}
+.compact-desc ul {
+  margin: 0.3rem 0 0 1rem !important;
+  font-size: 0.91rem !important;
+}
+#servicesOwl .owl-nav button {
+  width: 28px !important;
+  height: 28px !important;
+  font-size: 1rem !important;
+  top: 44%;
+}
+#servicesOwl .owl-nav .owl-prev { left: -4px; }
+#servicesOwl .owl-nav .owl-next { right: -4px; }
+#carousel-progress {
+  height: 4px !important;
+  max-width: 400px !important;
 }
     /* Responsive */
     @media (max-width: 1100px) {
@@ -722,15 +767,13 @@ header {
     .slider-btn-left { left: -24px; }
     .slider-btn-right { right: -24px; }
     .slider-btn:hover { background: #00c6ff; color: #fff; }
-    /* Carousel theme background */
+    /* --- Services Card & Carousel Styles (match services page) --- */
 #services {
   background: linear-gradient(120deg, #fff 70%, #eaf6ff 100%);
   border-radius: 2rem;
   box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
   padding-bottom: 2.5rem;
 }
-
-/* Card style */
 .service-card-modern {
   background: #fff;
   border-radius: 1.5rem;
@@ -744,6 +787,23 @@ header {
   transition: box-shadow 0.3s, transform 0.3s;
   position: relative;
   border-top: 5px solid #00c6ff33;
+}
+.service-card-modern[data-badge]:before {
+  content: attr(data-badge);
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: linear-gradient(90deg,#00c6ff,#ffdd57);
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 0.3em 1em;
+  border-radius: 1em;
+  box-shadow: 0 2px 8px #00c6ff22;
+  z-index: 2;
+  letter-spacing: 1px;
+  opacity: 0.92;
+  pointer-events: none;
 }
 .service-card-modern:hover {
   box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
@@ -788,20 +848,87 @@ header {
   padding-left: 0;
   text-align: left;
 }
-
-/* Ensure the carousel content never overflows its container */
-.services-owl-overflow,
-.blog-owl-overflow {
-  overflow: hidden !important;
-  border-radius: 1.5rem;
-  position: relative;
+/* Carousel arrows on sides, no blur */
+#servicesOwl .owl-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute !important;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  margin: 0;
+  pointer-events: none;
+  z-index: 10;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+  background: none !important;
+  backdrop-filter: none !important;
+  border-radius: 0;
 }
-
-/* Hide overflow for the carousel stage as well */
-#servicesOwl .owl-stage-outer,
-#blogOwl .owl-stage-outer {
-  overflow: hidden !important;
-  border-radius: 1.5rem;
+#servicesOwl .owl-nav button {
+  pointer-events: all;
+  background: #fff !important;
+  border: 2.5px solid #00c6ff !important;
+  border-radius: 50% !important;
+  width: 44px !important;
+  height: 44px !important;
+  font-size: 1.3rem !important;
+  color: #00c6ff !important;
+  margin: 0 !important;
+  box-shadow: 0 4px 16px #00c6ff22, 0 1.5px 8px #ffdd5733;
+  transition: background 0.25s, color 0.25s, border 0.25s, transform 0.25s, box-shadow 0.25s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative !important;
+  top: 0 !important;
+}
+#servicesOwl .owl-nav button:hover {
+  background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
+  color: #fff !important;
+  border: 2.5px solid #ffdd57 !important;
+  transform: scale(1.13) rotate(-8deg);
+  box-shadow: 0 8px 32px #00c6ff44;
+}
+#servicesOwl .owl-dots {
+  display: none !important;
+}
+@media (max-width: 900px) {
+  #servicesOwl .owl-nav button {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 1rem !important;
+  }
+}
+@media (max-width: 600px) {
+  .service-card-modern {
+    max-width: 99vw;
+    margin: 0.3rem auto;
+    padding: 0.2rem 0.05rem;
+    border-radius: 1rem;
+  }
+  .service-img-modern {
+    height: 60px;
+    border-radius: 1rem 1rem 0 0;
+  }
+  .service-card-body {
+    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
+  }
+  .service-title-modern {
+    font-size: 0.93rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+  .service-desc-modern {
+    font-size: 0.91rem;
+  }
+  #servicesOwl .owl-nav button {
+    width: 24px !important;
+    height: 24px !important;
+    font-size: 0.8rem !important;
+  }
 }
   </style>
 </head>
@@ -820,6 +947,12 @@ header {
       <a href="team.html">Team</a>
       <a href="blog.html">Blog</a>
     </nav>
+    <!-- Hamburger Icon -->
+<button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
   </header>
 
   <section id="hero" class="hero-section">
@@ -901,88 +1034,90 @@ header {
     </div>
   </section>
 
-  <section id="services" class="features-section" style="overflow:hidden;">
-    <h2 class="services-heading">
-      <i class="fa-solid fa-layer-group"></i> Our Services
-    </h2>
-    <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
-      <!-- Card 1 -->
-      <div class="service-card-modern">
-        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">BIS Registration & ISI Mark</div>
-          <div class="service-desc-modern">
-            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
-            <ul>
-              <li>Documentation &amp; application filing</li>
-              <li>Product testing coordination</li>
-              <li>End-to-end project management</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 2 -->
-      <div class="service-card-modern">
-        <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">WPC & ETA Approvals</div>
-          <div class="service-desc-modern">
-            <p>Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.</p>
-            <ul>
-              <li>ETA for importers &amp; manufacturers</li>
-              <li>Import license assistance</li>
-              <li>Technical documentation support</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="service-card-modern">
-        <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">CDSCO & Medical Device Registration</div>
-          <div class="service-desc-modern">
-            <p>Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.</p>
-            <ul>
-              <li>Medical device import licensing</li>
-              <li>Cosmetic registration</li>
-              <li>Regulatory consulting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="service-card-modern">
-        <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">ISO Certification & Audits</div>
-          <div class="service-desc-modern">
-            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
-            <ul>
-              <li>Internal auditor training</li>
-              <li>Gap analysis &amp; documentation</li>
-              <li>Process improvement consulting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="service-card-modern">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">Global Certifications</div>
-          <div class="service-desc-modern">
-            <p>International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.</p>
-            <ul>
-              <li>CE &amp; FCC certification</li>
-              <li>RoHS, EPR, BEE approvals</li>
-              <li>Customs clearance support</li>
-            </ul>
-          </div>
+  <div class="page-header" style="margin-bottom:0.5rem;">
+  <h1 style="font-size:2rem;letter-spacing:1px;">Our Services</h1>
+</div>
+<section id="services" class="features-section compact-services" style="padding:1.2rem 0.5rem 1.2rem 0.5rem;max-width:900px;">
+  <h2 class="services-heading" style="font-size:1.25rem;margin-bottom:1.2rem;">
+    <i class="fa-solid fa-layer-group"></i> What We Offer
+  </h2>
+  <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
+    <!-- Card 1 -->
+    <div class="service-card-modern compact-card" data-badge="Popular">
+      <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
+      <div class="service-card-body">
+        <div class="service-title-modern">BIS Registration & ISI Mark</div>
+        <div class="service-desc-modern">
+          <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
+          <ul>
+            <li>Documentation &amp; application filing</li>
+            <li>Product testing coordination</li>
+            <li>End-to-end project management</li>
+          </ul>
         </div>
       </div>
     </div>
-  </section>
+    <!-- Card 2 -->
+    <div class="service-card-modern compact-card">
+      <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern compact-img">
+      <div class="service-card-body compact-body">
+        <div class="service-title-modern compact-title">WPC & ETA Approvals</div>
+        <div class="service-desc-modern compact-desc">
+          <ul>
+            <li>ETA for RF Devices</li>
+            <li>Import License</li>
+            <li>Documentation</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="service-card-modern compact-card">
+      <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern compact-img">
+      <div class="service-card-body compact-body">
+        <div class="service-title-modern compact-title">CDSCO & Medical Device</div>
+        <div class="service-desc-modern compact-desc">
+          <ul>
+            <li>Device Import Licensing</li>
+            <li>Cosmetic Registration</li>
+            <li>Consulting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 4 -->
+    <div class="service-card-modern compact-card">
+      <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern compact-img">
+      <div class="service-card-body compact-body">
+        <div class="service-title-modern compact-title">ISO Certification</div>
+        <div class="service-desc-modern compact-desc">
+          <ul>
+            <li>ISO 9001/14001/27001</li>
+            <li>Audits & Training</li>
+            <li>Process Consulting</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Card 5 -->
+    <div class="service-card-modern compact-card">
+      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern compact-img">
+      <div class="service-card-body compact-body">
+        <div class="service-title-modern compact-title">Global Certifications</div>
+        <div class="service-desc-modern compact-desc">
+          <ul>
+            <li>CE/FCC/RoHS/EPR/BEE</li>
+            <li>Global Compliance</li>
+            <li>Customs Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="carousel-progress" style="width:100%;height:4px;background:#eaf6ff;border-radius:2px;overflow:hidden;margin:0.5rem auto 0.5rem auto;max-width:400px;">
+    <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
+  </div>
+</section>
 
   <section class="features-section" style="overflow:hidden;">
     <h2>Latest Blog Posts</h2>
@@ -1045,6 +1180,25 @@ header {
     <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
   </footer>
 
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const nav = document.querySelector('nav');
+  hamburger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+  // Close menu when clicking a link (optional)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+});
+</script>
   <script>
 document.addEventListener("DOMContentLoaded", function () {
   const slider = document.getElementById('servicesSlider');
@@ -1157,6 +1311,39 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+  </script>
+  <script>
+$(document).ready(function(){
+  var owl = $("#servicesOwl").owlCarousel({
+    loop:true,
+    margin:40,
+    nav:true,
+    dots:false,
+    center:true,
+    stagePadding: 120,
+    autoplay:true,
+    autoplayTimeout:3500,
+    autoplayHoverPause:true,
+    navText: [
+      '<i class="fa fa-chevron-left"></i>',
+      '<i class="fa fa-chevron-right"></i>'
+    ],
+    responsive:{
+      0:{ items:1, stagePadding: 20 },
+      600:{ items:1, stagePadding: 40 },
+      900:{ items:2, stagePadding: 60 },
+      1200:{ items:3, stagePadding: 120 }
+    }
+  });
+
+  // Progress bar
+  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+    if (!event.namespace) return;
+    var carousel = event.relatedTarget;
+    var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
+    $('#carousel-progress-bar').css('width', percent + '%');
+  });
+});
   </script>
 </body>
 </html>

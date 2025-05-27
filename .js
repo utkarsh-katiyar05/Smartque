@@ -89,3 +89,22 @@ $(document).ready(function(){
   });
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburgerBtn');
+  const nav = document.querySelector('nav');
+  hamburger.addEventListener('click', function() {
+    nav.classList.toggle('open');
+    hamburger.classList.toggle('open');
+    document.body.classList.toggle('menu-open');
+  });
+  // Close menu when clicking a link (optional)
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    });
+  });
+});
+</script>

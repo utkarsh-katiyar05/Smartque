@@ -15,171 +15,334 @@
       min-height: 100vh;
     }
     .page-header {
-      background: rgba(255,255,255,0.95);
-      box-shadow: 0 2px 16px rgba(0,123,255,0.07);
-      padding: 2.5rem 0 2rem 0;
+      background: rgba(255,255,255,0.97);
+      box-shadow: 0 2px 24px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
+      padding: 3.2rem 0 2.2rem 0;
       text-align: center;
       margin-bottom: 0;
+      border-radius: 0 0 2.5rem 2.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-header:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 80vw;
+      height: 18px;
+      background: linear-gradient(90deg, #00c6ff33 0%, #ffdd5733 100%);
+      border-radius: 0 0 2rem 2rem;
+      opacity: 0.5;
+      z-index: 0;
     }
     .page-header h1 {
-      font-size: 2.7rem;
+      font-size: 3.2rem;
       font-weight: 900;
       background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       margin: 0;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 4px 24px #00c6ff22;
     }
     .features-section {
       background: #fff;
-      border-radius: 2rem;
-      box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
-      margin: 3rem auto 2rem auto;
-      padding: 3rem 2rem 3rem 2rem;
-      max-width: 1350px;
+      border-radius: 2.5rem;
+      box-shadow: 0 12px 40px 0 #00c6ff22, 0 2px 12px #ffdd5733;
+      margin: 3.5rem auto 2.5rem auto;
+      padding: 3.5rem 3rem 3.5rem 3rem;
+      max-width: 1400px;
       overflow: hidden;
+      position: relative;
+    }
+    .features-section:before {
+      content: "";
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #00c6ff22 60%, transparent 100%);
+      z-index: 0;
+    }
+    .features-section:after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 180px;
+      height: 180px;
+      background: radial-gradient(circle, #ffdd5733 60%, transparent 100%);
+      z-index: 0;
     }
     .services-heading {
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       color: #007bff;
-      margin-bottom: 2.2rem;
+      margin-bottom: 2.7rem;
       text-align: center;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.5px;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 2px 12px #00c6ff22;
+    }
+    .services-heading i {
+      color: #22c55e;
+      margin-right: 0.7rem;
     }
     .owl-carousel {
-      margin-bottom: 1.5rem;
+      margin-bottom: 2.5rem;
+      position: relative;
+      z-index: 1;
     }
     .service-card-modern {
       background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+      border-radius: 2rem;
+      box-shadow: 0 4px 24px rgba(0,198,255,0.10), 0 1.5px 8px #ffdd5733;
       overflow: hidden;
-      max-width: 400px;
-      margin: 2rem auto;
+      max-width: 440px;
+      margin: 2.2rem auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       transition: box-shadow 0.3s, transform 0.3s;
       position: relative;
-      border-top: 5px solid #00c6ff33;
+      border-top: 6px solid #00c6ff33;
+      border-bottom: 3px solid #ffdd5733;
+      min-height: 540px;
     }
     .service-card-modern:hover {
-      box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
-      transform: scale(1.04) translateY(-6px);
-      z-index: 2;
+      box-shadow: 0 0 0 4px #00c6ff33, 0 12px 40px #00c6ff33, 0 2px 12px #ffdd5733;
+      filter: brightness(1.04) drop-shadow(0 0 8px #00c6ff44);
     }
     .service-img-modern {
       width: 100%;
-      height: 210px;
+      height: 230px;
       object-fit: contain;
-      background: #fff;
+      background: #f8fbff;
       border-bottom: 2px solid #eaf6ff;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.7rem;
+      transition: transform 0.3s;
+      border-radius: 2rem 2rem 0 0;
+    }
+    .service-card-modern:hover .service-img-modern {
+      transform: scale(1.08) rotate(-2deg);
     }
     .service-card-body {
-      padding: 1.5rem 1.3rem 1.3rem 1.3rem;
+      padding: 2.1rem 1.6rem 1.6rem 1.6rem;
       display: flex;
       flex-direction: column;
       flex: 1;
       align-items: center;
+      justify-content: flex-start;
     }
     .service-title-modern {
-      font-size: 1.25rem;
+      font-size: 1.38rem;
       font-weight: 800;
       color: #22c55e;
-      margin-bottom: 0.7rem;
-      letter-spacing: 0.5px;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.7px;
       margin-top: 0.7rem;
       text-align: center;
+      text-shadow: 0 2px 8px #00c6ff22;
     }
     .service-desc-modern {
-      font-size: 1.08rem;
+      font-size: 1.15rem;
       color: #444;
       text-align: center;
     }
     .service-desc-modern ul {
-      margin: 1rem 0 0 1.2rem;
+      margin: 1.1rem 0 0 1.2rem;
       color: #007bff;
-      font-size: 1.08rem;
+      font-size: 1.09rem;
       font-weight: 500;
       list-style: disc inside;
       padding-left: 0;
       text-align: left;
     }
-    .owl-dots .owl-dot span {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: #eaf6ff;
-      border: 2px solid #00c6ff;
-      margin: 0 5px;
-      transition: background 0.2s, border 0.2s;
+    /* Hide the default Owl Carousel dots */
+    .owl-dots {
+      display: none !important;
     }
-    .owl-dots .owl-dot.active span {
-      background: #00c6ff;
-      border: 2px solid #ffdd57;
-    }
-    .owl-stage-outer {
-      overflow: hidden !important;
-      border-radius: 1.5rem;
-    }
-    .owl-item {
-      opacity: 0.6;
-      transition: opacity 0.3s, transform 0.3s;
-      filter: blur(1px);
-    }
-    .owl-item.center {
-      opacity: 1;
-      filter: none;
-      z-index: 2;
-      transform: scale(1.08);
-    }
-    .owl-nav button {
-      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
-      border: none !important;
-      border-radius: 50% !important;
-      width: 54px !important;
-      height: 54px !important;
-      font-size: 2rem !important;
-      color: #fff !important;
-      margin: 0 10px !important;
-      box-shadow: 0 2px 8px #00c6ff22;
-      transition: background 0.2s, color 0.2s, transform 0.2s;
-      position: absolute;
-      top: 38%;
-      pointer-events: all;
-    }
-    .owl-nav .owl-prev { left: -38px; }
-    .owl-nav .owl-next { right: -38px; }
-    .owl-nav button:hover { background: #22c55e !important; color: #fff !important; }
+    /* --- ADVANCED ARROW STYLES --- */
     .owl-nav {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      position: absolute;
-      top: 38%;
+      align-items: center;
+      position: absolute !important;
+      top: 50%;
       left: 0;
+      transform: translateY(-50%);
+      margin: 0;
       pointer-events: none;
+      z-index: 10;
+      padding: 0 1.5rem;
+      box-sizing: border-box;
+      /* Remove background and blur for clarity */
+      background: none !important;
+      backdrop-filter: none !important;
+      border-radius: 0;
+    }
+    .owl-nav button {
+      pointer-events: all;
+      background: rgba(255,255,255,0.7) !important;
+      border: 2.5px solid #00c6ff !important;
+      border-radius: 50% !important;
+      width: 62px !important;
+      height: 62px !important;
+      font-size: 2.3rem !important;
+      color: #00c6ff !important;
+      margin: 0 !important;
+      box-shadow: 0 4px 32px #00c6ff22, 0 1.5px 8px #ffdd5733, 0 0 0 0 #00c6ff;
+      transition:
+        background 0.25s,
+        color 0.25s,
+        border 0.25s,
+        transform 0.25s,
+        box-shadow 0.25s,
+        filter 0.25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative !important;
+      overflow: hidden;
+      top: 0 !important;
+      animation: bounceIn 0.7s;
+      /* Glow pulse animation */
+      animation: bounceIn 0.7s, arrowPulse 2.2s infinite alternate;
+    }
+    @keyframes arrowPulse {
+      0% { box-shadow: 0 0 0 0 #00c6ff33; }
+      100% { box-shadow: 0 0 24px 8px #00c6ff33; }
+    }
+    .owl-nav button:before {
+      content: '';
+      display: block;
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      box-shadow: 0 0 32px #00c6ff33;
+      z-index: -1;
+      opacity: 0.6;
+      transition: box-shadow 0.25s;
+    }
+    .owl-nav button:hover {
+      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
+      color: #fff !important;
+      border: 2.5px solid #ffdd57 !important;
+      transform: scale(1.18) rotate(-8deg);
+      box-shadow: 0 16px 48px #00c6ff55, 0 2px 12px #ffdd5733, 0 0 0 8px #ffdd5733;
+      filter: brightness(1.08) saturate(1.2);
+    }
+    .owl-nav button:active::after {
+      content: '';
+      position: absolute;
+      left: 50%; top: 50%;
+      width: 0; height: 0;
+      background: rgba(0,198,255,0.25);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: ripple 0.5s linear;
+      z-index: 2;
+    }
+    @keyframes ripple {
+      0% { width: 0; height: 0; opacity: 0.7; }
+      100% { width: 120px; height: 120px; opacity: 0; }
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0.7) translateY(40px); opacity: 0; }
+      60% { transform: scale(1.15) translateY(-10px); opacity: 1; }
+      80% { transform: scale(0.95) translateY(3px);}
+      100% { transform: scale(1) translateY(0);}
+    }
+    /* --- ADVANCED CARD ANIMATION --- */
+    .owl-item.active .service-card-modern {
+      animation: cardIn 0.7s cubic-bezier(.77,0,.18,1) both;
+    }
+    @keyframes cardIn {
+      0% { opacity: 0; transform: scale(0.92) translateY(40px);}
+      80% { opacity: 1; transform: scale(1.04) translateY(-6px);}
+      100% { opacity: 1; transform: scale(1) translateY(0);}
+    }
+    /* --- CARD BADGE FEATURE --- */
+    .service-card-modern[data-badge]:before {
+      content: attr(data-badge);
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      background: linear-gradient(90deg,#00c6ff,#ffdd57);
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      padding: 0.3em 1em;
+      border-radius: 1em;
+      box-shadow: 0 2px 8px #00c6ff22;
+      z-index: 2;
+      letter-spacing: 1px;
+      opacity: 0.92;
+      pointer-events: none;
+      animation: badgePulse 1.6s infinite alternate;
+    }
+    @keyframes badgePulse {
+      0% { box-shadow: 0 0 0 0 #00c6ff44; }
+      100% { box-shadow: 0 0 16px 4px #ffdd5744; }
+    }
+    /* --- RESPONSIVE --- */
+    @media (max-width: 1200px) {
+      .features-section { max-width: 98vw; padding: 2.2rem 0.7rem; }
+      .service-card-modern { max-width: 95vw; min-height: 480px; }
     }
     @media (max-width: 900px) {
       .features-section { padding: 1.2rem 0.5rem; }
-      .service-card-modern { max-width: 98vw; }
-      .owl-nav .owl-prev { left: 0; }
-      .owl-nav .owl-next { right: 0; }
+      .service-card-modern { max-width: 98vw; min-height: 420px; }
+      .owl-nav {
+        width: 100%;
+        top: 45%;
+      }
+      .owl-nav button {
+        width: 42px !important;
+        height: 42px !important;
+        font-size: 1.3rem !important;
+      }
+      .page-header h1 { font-size: 2.1rem; }
+      .services-heading { font-size: 1.5rem; }
     }
     @media (max-width: 600px) {
       .features-section { padding: 0.5rem 0.05rem; border-radius: 1rem; margin: 0.7rem 0.05rem; }
-      .service-card-modern { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; }
+      .service-card-modern { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; min-height: 340px; }
       .service-img-modern { height: 90px; border-radius: 1rem 1rem 0 0; }
       .service-card-body { padding: 0.7rem 0.3rem 0.7rem 0.3rem; }
       .service-title-modern { font-size: 1.05rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
       .service-desc-modern { font-size: 0.97rem; }
-      .owl-nav button { width: 36px !important; height: 36px !important; font-size: 1.1rem !important; top: 44%; }
+      .owl-nav {
+        width: 100%;
+        top: 40%;
+      }
+      .owl-nav button {
+        width: 30px !important;
+        height: 30px !important;
+        font-size: 1rem !important;
+      }
       .owl-nav .owl-prev { left: -8px; }
       .owl-nav .owl-next { right: -8px; }
-      .owl-dots .owl-dot span { width: 10px; height: 10px; margin: 0 2px; }
+    }
+    .owl-nav .fa-chevron-right {
+      position: relative;
+      z-index: 2;
+    }
+    .owl-nav .progress-circle {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 38px; height: 38px;
+      pointer-events: none;
+      z-index: 1;
     }
   </style>
 </head>
@@ -193,7 +356,7 @@
     </h2>
     <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
       <!-- Card 1 -->
-      <div class="service-card-modern">
+      <div class="service-card-modern" data-badge="Popular">
         <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
         <div class="service-card-body">
           <div class="service-title-modern">BIS Registration & ISI Mark</div>
@@ -268,16 +431,19 @@
         </div>
       </div>
     </div>
+    <div id="carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
+      <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
+    </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
     $(document).ready(function(){
-      $("#servicesOwl").owlCarousel({
+      var owl = $("#servicesOwl").owlCarousel({
         loop:true,
         margin:40,
         nav:true,
-        dots:true,
+        dots:false,
         center:true,
         stagePadding: 120,
         autoplay:true,
@@ -293,6 +459,51 @@
           900:{ items:2, stagePadding: 60 },
           1200:{ items:3, stagePadding: 120 }
         }
+      });
+      // Keyboard navigation
+      $(document).on('keydown', function(e) {
+        if(e.key === "ArrowLeft") {
+          owl.trigger('prev.owl.carousel');
+        }
+        if(e.key === "ArrowRight") {
+          owl.trigger('next.owl.carousel');
+        }
+      });
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.service-card-modern').forEach(card => {
+      card.addEventListener('mousemove', function(e) {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        const xc = rect.width/2;
+        const yc = rect.height/2;
+        const dx = (x - xc) / xc;
+        const dy = (y - yc) / yc;
+        card.style.transform = `rotateY(${dx*8}deg) rotateX(${-dy*8}deg) scale(1.04)`;
+      });
+      card.addEventListener('mouseleave', function() {
+        card.style.transform = '';
+      });
+    });
+  </script>
+  <script>
+    // Optional: Auto-pause carousel on hover for better UX
+    $('#servicesOwl').on('mouseenter', function() {
+      $(this).trigger('stop.owl.autoplay');
+    }).on('mouseleave', function() {
+      $(this).trigger('play.owl.autoplay');
+    });
+  </script>
+  <script>
+    $(document).ready(function(){
+      var owl = $("#servicesOwl");
+      owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+        if (!event.namespace) return;
+        var carousel = event.relatedTarget;
+        var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
+        $('#carousel-progress-bar').css('width', percent + '%');
       });
     });
   </script>
