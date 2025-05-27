@@ -51,19 +51,32 @@
     .owl-carousel {
       margin-bottom: 1.5rem;
     }
-    .service-card-modern {
-      background: #fff;
-      border-radius: 1.5rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      overflow: hidden;
-      max-width: 400px;
+    .blog-card {
+      max-width: 370px;
       margin: 2rem auto;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 24px #00c6ff11;
+      overflow: hidden;
+      background: #fff;
       display: flex;
       flex-direction: column;
-      align-items: center;
       transition: box-shadow 0.3s, transform 0.3s;
       position: relative;
-      border-top: 5px solid #00c6ff33;
+      padding-top: 1.5rem;
+    }
+    .blog-card:hover {
+      box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
+      transform: scale(1.04) translateY(-6px);
+      z-index: 2;
+    }
+    .blog-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #f4f4f9;
+      border-bottom: 2px solid #eaf6ff;
+      margin-bottom: 0.5rem;
+      display: block;
     }
     .service-card-body {
       padding: 1.5rem 1.3rem 1.3rem 1.3rem;
@@ -85,122 +98,6 @@
       font-size: 1.08rem;
       color: #444;
       text-align: center;
-    }
-    .owl-dots .owl-dot span {
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      background: #eaf6ff;
-      border: 2px solid #00c6ff;
-      margin: 0 5px;
-      transition: background 0.2s, border 0.2s;
-    }
-    .owl-dots .owl-dot.active span {
-      background: #00c6ff;
-      border: 2px solid #ffdd57;
-    }
-    .owl-stage-outer {
-      overflow: hidden !important;
-      border-radius: 1.5rem;
-    }
-    .owl-item {
-      opacity: 0.6;
-      transition: opacity 0.3s, transform 0.3s;
-      filter: blur(1px);
-    }
-    .owl-item.center {
-      opacity: 1;
-      filter: none;
-      z-index: 2;
-      transform: scale(1.08);
-    }
-    /* Carousel navigation (arrow) button styles for blog post */
-    .owl-nav button {
-      background: linear-gradient(135deg, #00c6ff 60%, #fff 100%) !important;
-      border: 3px solid #00c6ff !important;
-      border-radius: 50% !important;
-      width: 64px !important;
-      height: 64px !important;
-      font-size: 2.2rem !important;
-      color: #00c6ff !important;
-      margin: 0 10px !important;
-      box-shadow: 0 0 0 4px #eaf6ff, 0 8px 32px #00c6ff22, 0 0 0 0 #00c6ff;
-      transition: background 0.2s, color 0.2s, border 0.2s, box-shadow 0.2s, transform 0.2s;
-      position: absolute;
-      top: 38%;
-      pointer-events: all;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-    }
-    .owl-nav .owl-prev {
-      left: -48px;
-      border-color: #ffdd57 !important;
-      box-shadow: 0 0 0 8px #eaf6ff, 0 8px 32px #00c6ff22;
-      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
-      color: #fff !important;
-    }
-    .owl-nav .owl-next {
-      right: -48px;
-      border-color: #00c6ff !important;
-      background: #fff !important;
-      color: #00c6ff !important;
-    }
-    .owl-nav .owl-prev:hover,
-    .owl-nav .owl-next:hover {
-      transform: scale(1.13) rotate(-8deg);
-      box-shadow: 0 0 0 12px #eaf6ff, 0 12px 36px #00c6ff33;
-      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
-      color: #fff !important;
-      border-color: #ffdd57 !important;
-    }
-    @media (max-width: 900px) {
-      .owl-nav .owl-prev, .owl-nav .owl-next {
-        width: 40px !important;
-        height: 40px !important;
-        font-size: 1.2rem !important;
-        left: -12px;
-        right: -12px;
-      }
-    }
-    @media (max-width: 600px) {
-      .owl-nav .owl-prev, .owl-nav .owl-next {
-        width: 32px !important;
-        height: 32px !important;
-        font-size: 1rem !important;
-        left: -6px;
-        right: -6px;
-      }
-      .owl-dots .owl-dot span { width: 10px; height: 10px; margin: 0 2px; }
-    }
-    /* Blog slider card styles */
-    .blog-card {
-      max-width: 370px;
-      margin: 2rem auto;
-      border-radius: 1.5rem;
-      box-shadow: 0 4px 24px #00c6ff11;
-      overflow: hidden;
-      background: #fff;
-      display: flex;
-      flex-direction: column;
-      transition: box-shadow 0.3s, transform 0.3s;
-      position: relative;
-      padding-top: 1.5rem;
-    }
-    .blog-card:hover {
-      box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
-      transform: scale(1.04) translateY(-6px);
-      z-index: 2;
-    }
-    .blog-img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-      background: #f4f4f9;
-      border-bottom: 2px solid #eaf6ff;
-      margin-bottom: 0.5rem;
-      display: block;
     }
     .blog-readmore {
       display: inline-block;
@@ -231,24 +128,74 @@
       z-index: 2;
       box-shadow: 0 2px 8px #00c6ff22;
     }
+    .owl-dots {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .owl-dots .owl-dot {
+      display: inline-block;
+      margin: 0 5px;
+    }
+    .owl-dots .owl-dot span {
+      width: 12px;
+      height: 12px;
+      background: #eaf6ff;
+      border: 2px solid #00c6ff;
+      display: block;
+      border-radius: 50%;
+      transition: background 0.3s;
+    }
+    .owl-dots .owl-dot.active span {
+      background: #00c6ff;
+      border-color: #ffdd57;
+    }
+    .owl-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+    }
+    .owl-nav button {
+      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
+      border: 3px solid #ffdd57 !important;
+      width: 50px !important;
+      height: 50px !important;
+      border-radius: 50% !important;
+      color: white !important;
+      font-size: 1.5rem !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
+      transition: all 0.3s !important;
+    }
+    .owl-nav button:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 6px 16px rgba(0, 198, 255, 0.4);
+    }
+    .owl-nav button.owl-next {
+      background: white !important;
+      border-color: #00c6ff !important;
+      color: #00c6ff !important;
+    }
     @media (max-width: 900px) {
       .features-section { padding: 1.2rem 0.5rem; }
-      .service-card-modern { max-width: 98vw; }
-      .owl-nav .owl-prev { left: 0; }
-      .owl-nav .owl-next { right: 0; }
       .blog-card { max-width: 98vw; }
-      .blog-img { height: 110px; }
+      .blog-img { height: 150px; }
+      .owl-nav button {
+        width: 40px !important;
+        height: 40px !important;
+        font-size: 1.2rem !important;
+      }
     }
     @media (max-width: 600px) {
       .features-section { padding: 0.5rem 0.05rem; border-radius: 1rem; margin: 0.7rem 0.05rem; }
-      .service-card-modern { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; }
       .blog-card { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; }
-      .blog-img { height: 70px; border-radius: 1rem 1rem 0 0; }
+      .blog-img { height: 120px; border-radius: 1rem 1rem 0 0; }
       .service-title-modern { font-size: 1.05rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
       .service-desc-modern { font-size: 0.97rem; }
-      .owl-nav button { width: 36px !important; height: 36px !important; font-size: 1.1rem !important; top: 44%; }
-      .owl-nav .owl-prev { left: -8px; }
-      .owl-nav .owl-next { right: -8px; }
       .blog-feature-icon {
         width: 36px;
         height: 36px;
@@ -259,53 +206,11 @@
       .blog-card {
         padding-top: 0.8rem;
       }
-    }
-    /* Custom bottom slider with glowing arrows */
-    #bottom-slider-container {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 3rem 0;
-    }
-    .glow-arrow {
-      border: none;
-      outline: none;
-      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%);
-      border-radius: 50%;
-      width: 70px;
-      height: 70px;
-      box-shadow: 0 0 0 8px #eaf6ff, 0 8px 32px #00c6ff22;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      position: relative;
-      transition: box-shadow 0.2s, transform 0.2s;
-    }
-    .glow-arrow.left {
-      border: 3px solid #ffdd57;
-    }
-    .glow-arrow.right {
-      border: 3px solid #00c6ff;
-      background: #fff;
-    }
-    .glow-arrow:hover {
-      transform: scale(1.10) rotate(-8deg);
-      box-shadow: 0 0 0 16px #eaf6ff, 0 12px 36px #00c6ff33;
-    }
-    .glow-arrow svg {
-      display: block;
-    }
-    .glow-arrow.left svg polyline {
-      stroke: #fff;
-    }
-    .glow-arrow.right svg polyline {
-      stroke: #00c6ff;
-    }
-    @media (max-width:600px) {
-      .glow-arrow { width: 44px; height: 44px; }
-      #slider-content { font-size: 1rem; min-width: 90px; }
+      .owl-nav button {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 1rem !important;
+      }
     }
   </style>
 </head>
@@ -315,9 +220,9 @@
   </div>
   <section class="features-section" style="overflow:hidden;">
     <h2>Latest Blog Posts</h2>
-    <div class="owl-carousel custom-owl-theme blog-owl-overflow" id="blogOwl">
+    <div class="owl-carousel" id="blogOwl">
       <!-- Blog Card 1 -->
-      <div class="service-card-modern blog-card">
+      <div class="blog-card">
         <div class="blog-feature-icon">
           <i class="fa-solid fa-certificate"></i>
         </div>
@@ -331,7 +236,7 @@
         </div>
       </div>
       <!-- Blog Card 2 -->
-      <div class="service-card-modern blog-card">
+      <div class="blog-card">
         <div class="blog-feature-icon">
           <i class="fa-solid fa-broadcast-tower"></i>
         </div>
@@ -345,7 +250,7 @@
         </div>
       </div>
       <!-- Blog Card 3 -->
-      <div class="service-card-modern blog-card">
+      <div class="blog-card">
         <div class="blog-feature-icon">
           <i class="fa-solid fa-shield-halved"></i>
         </div>
@@ -358,76 +263,57 @@
           <a href="#" class="blog-readmore">Read More <i class="fa fa-arrow-right"></i></a>
         </div>
       </div>
-    </div>
-    <!-- Slider for sliding the blog carousel -->
-    <div id="blog-carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0.5rem auto 1.5rem auto;max-width:700px;">
-      <div id="blog-carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
+      <!-- Blog Card 4 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80" alt="Testing Requirements" class="blog-img">
+        <div class="service-card-body">
+          <div class="service-title-modern">Product Testing Requirements</div>
+          <div class="service-desc-modern">
+            <p>Learn about the essential testing procedures for various product categories in India.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
+      <!-- Blog Card 5 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Global Compliance" class="blog-img">
+        <div class="service-card-body">
+          <div class="service-title-modern">Global Compliance Standards</div>
+          <div class="service-desc-modern">
+            <p>Navigating international certification requirements for expanding your business globally.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read More <i class="fa fa-arrow-right"></i></a>
+        </div>
+      </div>
     </div>
   </section>
-  <!-- Custom bottom slider with glowing arrows -->
-  <div id="bottom-slider-container" style="width:100%;display:flex;justify-content:center;align-items:center;margin:3rem 0;">
-    <button id="slider-prev" class="glow-arrow left">
-      <svg width="38" height="38" viewBox="0 0 38 38"><polyline points="24,10 14,19 24,28" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-    <div id="slider-content" style="margin:0 2.5rem;font-size:1.3rem;font-weight:600;min-width:180px;text-align:center;">
-      Slide 1 Content
-    </div>
-    <button id="slider-next" class="glow-arrow right">
-      <svg width="38" height="38" viewBox="0 0 38 38"><polyline points="14,10 24,19 14,28" fill="none" stroke="#00c6ff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    </button>
-  </div>
+
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
     $(document).ready(function(){
-      var blogOwl = $("#blogOwl").owlCarousel({
-        loop:true,
-        margin:40,
-        nav:true,
-        dots:true,
-        center:true,
-        stagePadding: 120,
-        autoplay:true,
-        autoplayTimeout:3500,
-        autoplayHoverPause:true,
-        navText: [
-          '<i class="fa fa-chevron-left"></i>',
-          '<i class="fa fa-chevron-right"></i>'
-        ],
-        responsive:{
-          0:{ items:1, stagePadding: 20 },
-          600:{ items:1, stagePadding: 40 },
-          900:{ items:2, stagePadding: 60 },
-          1200:{ items:3, stagePadding: 120 }
+      $("#blogOwl").owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: true,
+        center: true,
+        autoplay: true,
+        autoplayTimeout: 4000,
+        autoplayHoverPause: true,
+        responsive: {
+          0: { items: 1 },
+          600: { items: 2 },
+          1000: { items: 3 }
         }
       });
-
-      // Progress bar for blog slider
-      blogOwl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-        if (!event.namespace) return;
-        var carousel = event.relatedTarget;
-        var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
-        $('#blog-carousel-progress-bar').css('width', percent + '%');
-      });
     });
-  </script>
-  <script>
-    // Simple slider logic
-    const slides = [
-      "Slide 1 Content",
-      "Slide 2 Content",
-      "Slide 3 Content"
-    ];
-    let currentSlide = 0;
-    const contentDiv = document.getElementById('slider-content');
-    document.getElementById('slider-prev').onclick = function() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      contentDiv.textContent = slides[currentSlide];
-    };
-    document.getElementById('slider-next').onclick = function() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      contentDiv.textContent = slides[currentSlide];
-    };
   </script>
 </body>
 </html>
