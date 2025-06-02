@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartQue Global | Compliance Made Simple</title>
+  <title>Smartque Global | Compliances Made Simple</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
   <style>
     :root {
       --primary: #007bff;
@@ -35,6 +37,7 @@
     /* Header */
     header {
       background: rgba(255,255,255,0.95);
+      /* color: var(--accent); */
       box-shadow: 0 2px 16px rgba(0,123,255,0.07);
       padding: 1.2rem 0 1.2rem 0;
       position: sticky;
@@ -73,7 +76,7 @@
       100% { filter: drop-shadow(0 0 16px #ffdd57cc);}
     }
     .logo-title-gradient {
-      font-size: 2rem;
+      font-size: 1.5rem;
       font-weight: 800;
       background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
       -webkit-background-clip: text;
@@ -100,7 +103,7 @@
       font-size: 1.08rem;
       padding: 0.4rem 1.1rem;
       border-radius: 2rem;
-      transition: background 0.2s, color 0.2s;
+      transition: background-image 0.2s, color 0.2s;
     }
     nav a:hover, nav a:focus {
       background: linear-gradient(90deg, #00c6ff 30%, #ffdd57 100%);
@@ -172,7 +175,7 @@
       border: none;
       border-radius: 50px;
       cursor: pointer;
-      transition: background 0.3s, transform 0.2s;
+      transition: background-image 0.3s, transform 0.2s;
       text-decoration: none;
       font-weight: 700;
       box-shadow: 0 2px 12px rgba(0,0,0,0.13);
@@ -192,8 +195,15 @@
       gap: 0.5rem;
       animation: fadeInLeft 2s;
     }
+    .hero-carousel {
+      max-width: 400px;
+      width: 100%;
+       max-width: 1000px;
+       margin: 0 auto;
+    }
     .hero-img {
       width: 400px;
+      height: 400px;
       max-width: 95vw;
       border-radius: var(--radius);
       box-shadow: 0 8px 32px rgba(0,0,0,0.13);
@@ -221,6 +231,8 @@
       from { opacity: 0; transform: translateX(40px);}
       to { opacity: 1; transform: none;}
     }
+    
+  
     /* Features Section */
     .features-section {
       background: #fff;
@@ -289,7 +301,7 @@
       margin-top: 2rem;
       padding: 3rem 2rem;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       align-items: center;
       gap: 2.5rem;
       animation: fadeInUp 1.2s;
@@ -297,8 +309,13 @@
       padding-top: 1.5rem !important;
       padding-bottom: 1.5rem !important;
     }
+
+    .about-section > h2 {
+      font-size: xx-large;
+    }
+
     .about-img-home {
-      width: 260px;
+      width: 20em;
       border-radius: var(--radius);
       box-shadow: 0 2px 12px rgba(0,0,0,0.10);
       object-fit: cover;
@@ -376,7 +393,7 @@
       position: relative;
     }
     .testimonial-photo {
-      width: 70
+      width: 70px;
       height: 70px;
       border-radius: 50%;
       object-fit: cover;
@@ -534,9 +551,6 @@ header {
         width: 44px;
         height: 44px;
       }
-      .logo-title-gradient {
-        font-size: 1.1rem;
-      }
       nav {
         gap: 0.3rem;
         font-size: 0.93rem;
@@ -643,19 +657,23 @@ header {
         border-radius: 1rem;
       }
       /* Carousel arrows and dots */
-      .owl-nav button {
+      /* .owl-nav button {
         width: 28px !important;
         height: 28px !important;
         font-size: 0.9rem !important;
         top: 44%;
-      }
-      .owl-nav .owl-prev { left: -4px; }
+      } */
+      /* .owl-nav .owl-prev { left: -4px; }
       .owl-nav .owl-next { right: -4px; }
+      .owl-dots {
+        display: flex;
+        gap: 1rem;
+      }
       .owl-dots .owl-dot span {
+        display: block;
         width: 8px;
         height: 8px;
-        margin: 0 1px;
-      }
+      } */
       #servicesOwl {
         padding-bottom: 1rem;
       }
@@ -848,8 +866,8 @@ header {
   padding-left: 0;
   text-align: left;
 }
-/* Carousel arrows on sides, no blur */
-#servicesOwl .owl-nav {
+#servicesOwl .owl-nav,
+#blogOwlHome .owl-nav {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -860,77 +878,56 @@ header {
   transform: translateY(-50%);
   margin: 0;
   pointer-events: none;
-  z-index: 10;
+  z-index: 100;
   padding: 0 1.5rem;
   box-sizing: border-box;
   background: none !important;
-  backdrop-filter: none !important;
   border-radius: 0;
 }
-#servicesOwl .owl-nav button {
-  pointer-events: all;
-  background: #fff !important;
-  border: 2.5px solid #00c6ff !important;
+
+#servicesOwl .owl-nav button,
+#blogOwlHome .owl-nav button {
+  background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
   border-radius: 50% !important;
-  width: 44px !important;
-  height: 44px !important;
-  font-size: 1.3rem !important;
-  color: #00c6ff !important;
-  margin: 0 !important;
-  box-shadow: 0 4px 16px #00c6ff22, 0 1.5px 8px #ffdd5733;
-  transition: background 0.25s, color 0.25s, border 0.25s, transform 0.25s, box-shadow 0.25s;
+  width: 32px !important;
+  height: 32px !important;
+  font-size: 1rem !important;
+  border: 3px solid #00c6ff !important;
+  /* box-shadow: 0 0 0 8px #eaf6ff, 0 8px 32px #00c6ff22; */
+  transition: box-shadow 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative !important;
-  top: 0 !important;
+  cursor: pointer;
+  position: relative;
+  pointer-events: all;
 }
-#servicesOwl .owl-nav button:hover {
+
+#servicesOwl .owl-nav button:hover,
+#blogOwlHome .owl-nav button:hover {
   background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
   color: #fff !important;
-  border: 2.5px solid #ffdd57 !important;
-  transform: scale(1.13) rotate(-8deg);
-  box-shadow: 0 8px 32px #00c6ff44;
+  border: 3px solid #ffdd57 !important;
+  transform: scale(1.10) rotate(-8deg);
+  box-shadow: 0 0 0 16px #eaf6ff, 0 12px 36px #00c6ff33;
 }
-#servicesOwl .owl-dots {
-  display: none !important;
-}
-@media (max-width: 900px) {
-  #servicesOwl .owl-nav button {
-    width: 32px !important;
-    height: 32px !important;
-    font-size: 1rem !important;
+/* @media (max-width: 900px) {
+  #blogOwlHome .owl-nav button {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 1.3rem !important;
   }
 }
 @media (max-width: 600px) {
-  .service-card-modern {
-    max-width: 99vw;
-    margin: 0.3rem auto;
-    padding: 0.2rem 0.05rem;
-    border-radius: 1rem;
+  #blogOwlHome .owl-nav button {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 1rem !important;
   }
-  .service-img-modern {
-    height: 60px;
-    border-radius: 1rem 1rem 0 0;
-  }
-  .service-card-body {
-    padding: 0.3rem 0.1rem 0.3rem 0.1rem;
-  }
-  .service-title-modern {
-    font-size: 0.93rem;
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
-  }
-  .service-desc-modern {
-    font-size: 0.91rem;
-  }
-  #servicesOwl .owl-nav button {
-    width: 24px !important;
-    height: 24px !important;
-    font-size: 0.8rem !important;
-  }
-}
+} */
   </style>
+
+  <script src="navbar.js" defer></script>
 </head>
 <body>
   <header>
@@ -938,27 +935,28 @@ header {
       <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
       <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
     </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="clients.html">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="blog.html">Blog</a>
+    <nav class="navbar">
+      <ul role="list" class="navbar--list">
+        <li class="navbar--list-item"><a class="navbar--link" href="index.html">Home</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="services.html">Services</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="about.html">About</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="contact.html">Contact</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="clients.html">Our Clients</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="team.html">Team</a></li>
+        <li class="navbar--list-item"><a class="navbar--link" href="blog.html">Blog</a></li>
+      </ul>
+      <button type="button"  id="closeBtn" class="close-menu button-reset" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
     </nav>
     <!-- Hamburger Icon -->
-<button class="hamburger" id="hamburgerBtn" aria-label="Open menu">
-  <span></span>
-  <span></span>
-  <span></span>
+<button type="button" class="hamburger-menu button-reset" id="hamburgerBtn" aria-label="Open menu">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
 </button>
   </header>
 
   <section id="hero" class="hero-section">
     <div class="hero-content">
       <h2>
-         Certifications,Compliances &<br>Trustable Solutions for Your Business.
+      Certifications, Compliances &<br>Trustable Solutions for Your Business.
       </h2>
       <p>
         Trusted by 1000+ organizations for BIS, WPC, CDSCO, TEC, and ISO certifications.<br>
@@ -971,37 +969,86 @@ header {
         <i class="fa-solid fa-award"></i> 12+ Years of Excellence in Compliance
       </div>
     </div>
-    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=facearea&w=500&q=80" alt="Compliance Illustration" class="hero-img" />
+    <!-- Slick Carousel wrapper -->
+    <div class="hero-carousel" style="max-width:400px;width:100%;margin-left:2rem;">
+      <div><img src="images/Bureau_of_Indian_Standards_Logo.svg (1).png" alt="Image 1" class="hero-img" /></div>
+      <div><img src="images/fssai8862.jpg" alt="Image 2" class="hero-img" /></div>
+      <div><img src="images/nabl.png" alt="Image 3" class="hero-img" /></div>
+      <div><img src="images/crs.png" alt="Image 3" class="hero-img" /></div>
+    </div>
   </section>
 
-  <section class="about-section animated-section">
-    <h2 class="animated-heading">About Us</h2>
-    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="About SmartQue" class="about-img-home" />
-    <p>
-      <strong>SmartQue Global</strong> is a leading compliances and certification consultancy, helping businesses across India and beyond to achieve regulatory approvals with ease.<br>
-      <span class="about-highlight">Our team of experts brings deep industry knowledge and a client-first approach, ensuring your certifications are delivered on time, every time.</span>
-      <br>Whether you are a startup or a multinational, we tailor our solutions to your needs—so you can focus on growth, not paperwork.
-    </p>
-  </section>
+  <section id="about" class="features-section" style="margin:2.5rem auto;max-width:1200px;border-radius:2rem;box-shadow:0 8px 32px rgba(0,123,255,0.10);background:#fff;position:relative;overflow:hidden;">
+  <!-- Decorative Elements -->
+  <div style="position:absolute;top:-120px;right:-120px;width:240px;height:240px;border-radius:50%;background:#00c6ff;opacity:0.06;z-index:0;"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:160px;height:160px;border-radius:50%;background:#0072ff;opacity:0.06;z-index:0;"></div>
+  <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;opacity:0.08;z-index:0;background:url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 1200 120\' xmlns=\'http://www.w3.org/2000/svg\' fill=\'%2300c6ff\'><path d=\'M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z\' /></svg>');background-size:1200px 60px;"></div>
+  <div class="content-wrapper" style="position:relative;z-index:10;padding:3.5rem 2rem;">
+    <!-- Header Section -->
+    <div style="text-align:center;margin-bottom:2.5rem;position:relative;padding-bottom:1.5rem;">
+      <h1 style="font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:900;background:linear-gradient(90deg,#00c6ff,#0072ff 60%,#00ffd5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.7rem;letter-spacing:-0.5px;">About SmartQue Global</h1>
+      <p class="subheading" style="font-size:1.2rem;color:#0072ff;font-weight:600;max-width:600px;margin:0 auto;">Empowering Businesses. Simplifying Compliance.</p>
+      <div style="content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,#00c6ff,#0072ff);border-radius:2px;"></div>
+    </div>
+    <!-- Introduction -->
+    <div style="margin-bottom:2.5rem;text-align:center;max-width:900px;margin-left:auto;margin-right:auto;position:relative;padding:30px;border-radius:16px;background:rgba(0,198,255,0.03);border:1px solid rgba(0,198,255,0.1);">
+      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">SmartQue Global was founded in 2012 with a bold vision: to transform the way businesses approach compliance and certification. Over the years, we've grown from a small consultancy into an emerging industry leader, trusted by businesses across India and around the globe.</p>
+      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">What sets us apart? Our passion for simplifying the complex. Whether you're a startup navigating the regulatory landscape for the first time or an established enterprise expanding into new markets, we ensure you achieve the certifications you need—on time, every time.</p>
+      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">We've successfully supported hundreds of organizations, guiding them through the maze of regulations and helping them secure critical approvals like <strong style="color:#00c6ff;">BIS, WPC, CDSCO, TEC</strong>, and <strong style="color:#00c6ff;">ISO certifications</strong>. Our focus is on delivering <strong style="color:#00c6ff;">value</strong>, <strong style="color:#00c6ff;">transparency</strong>, and <strong style="color:#00c6ff;">long-term success</strong>, with each certification earned and every project delivered.</p>
+    </div>
+    <!-- Stats Section -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin:2.5rem 0;">
+      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
+        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-calendar-alt"></i></div>
+        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">12+ Years</div>
+        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Industry Experience</div>
+      </div>
+      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
+        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-users"></i></div>
+        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">500+</div>
+        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Clients Served</div>
+      </div>
+      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
+        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-award"></i></div>
+        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">1200+</div>
+        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Certifications Delivered</div>
+      </div>
+      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
+        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-globe-asia"></i></div>
+        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">Global Reach</div>
+        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Pan-India & Worldwide</div>
+      </div>
+    </div>
+    <!-- Mission Section -->
+    <div style="background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%);padding:2.5rem;border-radius:1.2rem;margin:2.5rem 0;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,114,255,0.12);">
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:1.2rem;display:inline-block;">Our Mission</h2>
+      <p style="font-size:1.13rem;color:rgba(255,255,255,0.97);max-width:800px;line-height:1.8;margin-top:20px;">At SmartQue, we believe compliance should never be a roadblock to your growth. Our mission is to make compliance <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">simple</strong>, <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">transparent</strong>, and <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">hassle-free</strong>, so you can focus on what truly matters: building your business, driving innovation, and achieving your goals.</p>
+    </div>
+    <!-- Values Section -->
+    <div style="margin-bottom:2.5rem;">
+      <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;color:#0088ff;margin-bottom:2rem;text-align:center;position:relative;display:inline-block;left:50%;transform:translateX(-50%);">Our Core Values</h2>
+      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
+        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
+          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-handshake" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Integrity & Transparency</h3>
+          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">We operate with the highest ethical standards, ensuring our clients always know exactly where they stand.</p>
+        </div>
+        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
+          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-trophy" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Client Success</h3>
+          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">Your success is our success. We work tirelessly to ensure that your regulatory journey is smooth, efficient, and rewarding.</p>
+        </div>
+        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
+          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-chart-line" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Continuous Improvement</h3>
+          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">We're always evolving—learning, innovating, and refining our processes to deliver better, faster, and smarter solutions.</p>
+        </div>
+        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
+          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-lightbulb" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Expert Guidance</h3>
+          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">Our team is made up of seasoned professionals who bring deep industry knowledge and insights to every project, ensuring you're always ahead of the curve.</p>
+        </div>
+      </div>
+    </div>
 
-  <div class="stats-bar">
-    <div class="stat">
-      <div class="stat-num"><i class="fa-solid fa-users"></i><br>1000+</div>
-      <div class="stat-label">Clients Served</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num"><i class="fa-solid fa-certificate"></i><br>2500+</div>
-      <div class="stat-label">Certifications Delivered</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num"><i class="fa-solid fa-industry"></i><br>100+</div>
-      <div class="stat-label">Industries Covered</div>
-    </div>
-    <div class="stat">
-      <div class="stat-num"><i class="fa-solid fa-headset"></i><br>24x7</div>
-      <div class="stat-label">Support</div>
-    </div>
   </div>
+</section>
 
   <section class="features-section">
     <h2>Why Choose SmartQue?</h2>
@@ -1033,17 +1080,16 @@ header {
       </div>
     </div>
   </section>
-
-  <div class="page-header services-header-centered">
-  <h1 class="services-header-title">Our Services</h1>
-</div>
 <section id="services" class="features-section services-section-centered" style="overflow:hidden;max-width:1200px;margin:2rem auto;">
+  <div class="page-header services-header-centered">
+    <h1 class="services-header-title">Our Services</h1>
+  </div>
   <h2 class="services-heading" style="font-size:1.6rem;margin-bottom:1.2rem;">
     <i class="fa-solid fa-layer-group"></i> What We Offer
   </h2>
   <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
     <!-- Card 1 -->
-    <div class="service-card-modern" data-badge="Popular">
+    <div class="service-card-modern" data-badge="Popular" >
       <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
       <div class="service-card-body">
         <div class="service-title-modern">BIS Registration & ISI Mark</div>
@@ -1123,38 +1169,87 @@ header {
   </div>
 </section>
 
-  <section class="features-section" style="overflow:hidden;">
-    <h2>Latest Blog Posts</h2>
-    <div class="owl-carousel custom-owl-theme blog-owl-overflow" id="blogOwl">
-      <!-- Blog Card 1 -->
-      <div class="service-card-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">How to Get BIS Certification in India</div>
-          <div class="service-desc-modern">
-            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently.</p>
-          </div>
-        </div>
+  <!-- Blog Carousel Section for Home Page -->
+<section class="features-section" style="overflow:hidden;">
+  <h2 class="services-heading">
+    <i class="fa-solid fa-newspaper"></i> Latest Blog Posts
+  </h2>
+  <div class="owl-carousel" id="blogOwlHome">
+    <!-- Blog Card 1 -->
+    <div class="blog-card" data-badge="NEW">
+      <div class="blog-feature-icon">
+        <i class="fa-solid fa-certificate"></i>
       </div>
-      <!-- Blog Card 2 -->
-      <div class="service-card-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">WPC ETA: What You Need to Know</div>
-          <div class="service-desc-modern">
-            <p>Understand the process and documentation required for WPC Equipment Type Approval.</p>
-          </div>
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="How to Get BIS Certification in India" class="blog-img">
+      <div class="blog-card-body">
+        <div class="blog-title">How to Get BIS Certification in India</div>
+        <div class="blog-desc">
+          <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our expert assistance.</p>
         </div>
-      </div>
-      <!-- Blog Card 3 -->
-      <div class="service-card-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">ISO Certification Benefits</div>
-          <div class="service-desc-modern">
-            <p>Discover how ISO certification can boost your business credibility and efficiency.</p>
-          </div>
-        </div>
+        <a href="#" class="blog-readmore">Read Article</a>
       </div>
     </div>
-  </section>
+    <!-- Blog Card 2 -->
+    <div class="blog-card" data-badge="POPULAR">
+      <div class="blog-feature-icon">
+        <i class="fa-solid fa-broadcast-tower"></i>
+      </div>
+      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="WPC ETA: What You Need to Know" class="blog-img">
+      <div class="blog-card-body">
+        <div class="blog-title">WPC ETA: What You Need to Know</div>
+        <div class="blog-desc">
+          <p>Understand the complete process and documentation required for WPC Equipment Type Approval in India.</p>
+        </div>
+        <a href="#" class="blog-readmore">Read Article</a>
+      </div>
+    </div>
+    <!-- Blog Card 3 -->
+    <div class="blog-card">
+      <div class="blog-feature-icon">
+        <i class="fa-solid fa-shield-halved"></i>
+      </div>
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="ISO Certification Benefits" class="blog-img">
+      <div class="blog-card-body">
+        <div class="blog-title">ISO Certification Benefits</div>
+        <div class="blog-desc">
+          <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.</p>
+        </div>
+        <a href="#" class="blog-readmore">Read Article</a>
+      </div>
+    </div>
+    <!-- Blog Card 4 -->
+    <div class="blog-card">
+      <div class="blog-feature-icon">
+        <i class="fa-solid fa-flask"></i>
+      </div>
+      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80" alt="Testing Requirements" class="blog-img">
+      <div class="blog-card-body">
+        <div class="blog-title">Product Testing Requirements</div>
+        <div class="blog-desc">
+          <p>Learn about the essential testing procedures for various product categories in the Indian market.</p>
+        </div>
+        <a href="#" class="blog-readmore">Read Article</a>
+      </div>
+    </div>
+    <!-- Blog Card 5 -->
+    <div class="blog-card" data-badge="TRENDING">
+      <div class="blog-feature-icon">
+        <i class="fa-solid fa-globe"></i>
+      </div>
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Global Compliance" class="blog-img">
+      <div class="blog-card-body">
+        <div class="blog-title">Global Compliance Standards</div>
+        <div class="blog-desc">
+          <p>Navigating international certification requirements for expanding your business globally with confidence.</p>
+        </div>
+        <a href="#" class="blog-readmore">Read Article</a>
+      </div>
+    </div>
+  </div>
+  <div id="blog-carousel-progress">
+    <div id="blog-carousel-progress-bar"></div>
+  </div>
+</section>
 
   <section id="contact" class="features-section">
     <h2>Contact Us</h2>
@@ -1174,7 +1269,7 @@ header {
       <p>
         <strong>Location:</strong> Branch office: 20/147, Sector 20, Indira Nagar, Lucknow - 226016
       </p>
-      <a href="https://wa.me/916387350899" target="_blank" class="whatsapp-btn">
+      <a href="https://wa.me/916387350899" target="_blank" rel="noopener" class="whatsapp-btn">
         <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i> Chat on WhatsApp
       </a>
     </div>
@@ -1265,9 +1360,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
   </script>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Carousel CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  </script>
+  
+  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
+   <script>
   $(document).ready(function(){
     // Services carousel (already present)
     $("#servicesOwl").owlCarousel({
@@ -1318,6 +1424,42 @@ document.addEventListener("DOMContentLoaded", function () {
   </script>
   <script>
 $(document).ready(function(){
+  $("#blogOwlHome").owlCarousel({
+    loop:true,
+    margin:32,
+    nav:true,
+    dots:true,
+    center:true,
+    stagePadding: 80,
+    autoplay:true,
+    autoplayTimeout:3500,
+    autoplayHoverPause:true,
+    navText: [
+      '<i class="fa fa-chevron-left"></i>',
+      '<i class="fa fa-chevron-right"></i>'
+    ],
+    responsive:{
+      0:{ items:1, stagePadding: 20 },
+      600:{ items:1, stagePadding: 40 },
+      900:{ items:2, stagePadding: 60 },
+      1200:{ items:3, stagePadding: 80 }
+    }
+  });
+
+  // Blog progress bar
+  blogOwl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+    if (!event.namespace) return;
+   
+   
+    var carousel = event.relatedTarget;
+    var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
+    $('#blog-carousel-progress-bar').css('width', percent + '%');
+  });
+});
+</script>
+
+  <script>
+$(document).ready(function(){
   var owl = $("#servicesOwl").owlCarousel({
     loop:true,
     margin:40,
@@ -1348,6 +1490,106 @@ $(document).ready(function(){
     $('#carousel-progress-bar').css('width', percent + '%');
   });
 });
-  </script>
+</script>
+  
+  <script>
+  $(document).ready(function(){
+    $('.hero-carousel').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      dots: true,
+      arrows: true,
+      speed: 500,
+      adaptiveHeight: true,
+      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+  
+    });
+  });
+</script>
+<script>
+  $(document).ready(function(){
+    // Services carousel using Slick
+    $('#servicesOwl').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3500,
+      infinite: true,
+      dots: true,
+      arrows: true,
+      centerMode: true,
+      variableWidth: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: { slidesToShow: 2, centerMode: true }
+        },
+        {
+          breakpoint: 900,
+          settings: { slidesToShow: 1, centerMode: true }
+        },
+        {
+          breakpoint: 600,
+          settings: { slidesToShow: 1, centerMode: false }
+        }
+      ],
+      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+      appendDots: $('#carousel-progress'),
+      customPaging: function(slider, i) {
+        return '<span class="slick-dot"></span>';
+      }
+    });
+
+    // Progress bar for services carousel
+    $('#servicesOwl').on('afterChange', function(event, slick, currentSlide){
+      var percent = ((currentSlide + 1) / slick.slideCount) * 100;
+      $('#carousel-progress-bar').css('width', percent + '%');
+    });
+
+    // Blog carousel using Slick
+    $('#blogOwlHome').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3500,
+      infinite: true,
+      dots: true,
+      arrows: true,
+      centerMode: true,
+      variableWidth: false,
+      responsive: [
+        {
+          breakpoint: 1200,
+          settings: { slidesToShow: 2, centerMode: true }
+        },
+        {
+          breakpoint: 900,
+          settings: { slidesToShow: 1, centerMode: true }
+        },
+        {
+          breakpoint: 600,
+          settings: { slidesToShow: 1, centerMode: false }
+        }
+      ],
+      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+      appendDots: $('#blog-carousel-progress'),
+      customPaging: function(slider, i) {
+        return '<span class="slick-dot"></span>';
+      }
+    });
+
+    // Progress bar for blog carousel
+    $('#blogOwlHome').on('afterChange', function(event, slick, currentSlide){
+      var percent = ((currentSlide + 1) / slick.slideCount) * 100;
+      $('#blog-carousel-progress-bar').css('width', percent + '%');
+    });
+  });
+</script>
 </body>
 </html>

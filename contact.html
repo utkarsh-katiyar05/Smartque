@@ -10,22 +10,76 @@
     body {
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      color: #222;
+    }
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      border-radius: 0 0 1.5rem 1.5rem;
+      padding: 1.2rem 0 0.7rem 0;
+      margin-bottom: 2rem;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #00c6ff33;
+      background: #fff;
+    }
+    .logo-title-gradient {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .main-nav a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a.active,
+    .main-nav a:hover {
+      background: linear-gradient(90deg, #00c6ff 60%, #ffdd57 100%);
+      color: #222;
+      text-decoration: none;
     }
     .features-section {
-      max-width: 500px;
-      margin: 3.5rem auto 2.5rem auto;
+      max-width: 1100px;
+      margin: 2.5rem auto;
       background: #fff;
       border-radius: 2.2rem;
       box-shadow: 0 8px 32px rgba(0,123,255,0.10);
       padding: 2.5rem 2rem 2rem 2rem;
-      animation: fadeInUp 1.2s;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
-    .features-section h2 {
+    .section-title {
       text-align: center;
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       font-weight: 900;
       margin-bottom: 2.2rem;
       background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
@@ -34,39 +88,53 @@
       background-clip: text;
       letter-spacing: 1px;
     }
-    .contact-card {
+    .accent { color: #00c6ff; }
+    .contact-flex-wrap {
+      display: flex;
+      gap: 2.5rem;
       width: 100%;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: nowrap;
+    }
+    .contact-card {
+      flex: 1 1 340px;
+      max-width: 440px;
+      min-width: 260px;
       background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
       border-radius: 1.2rem;
       box-shadow: 0 2px 12px rgba(0,0,0,0.07);
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
-      align-items: center;
       gap: 0.7rem;
+      margin: 0;
+      box-sizing: border-box;
     }
-    .contact-card p {
+    .contact-info-card p {
       font-size: 1.13rem;
       color: #444;
       margin-bottom: 0.5rem;
-      text-align: center;
+      text-align: left;
     }
-    .contact-card a {
-      color: #2563eb;
+    .contact-info-card a {
+      color: #007bff;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       transition: color 0.2s;
     }
-    .contact-card a:hover {
+    .contact-info-card a:hover {
       color: #00c6ff;
       text-decoration: underline;
     }
+    .label { color: #222; font-weight: 700; }
+    .address { font-weight: 400; }
     .whatsapp-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: #25D366;
+      background: linear-gradient(90deg,#25D366,#00c6ff);
       color: #fff;
       font-weight: 600;
       font-size: 1.13rem;
@@ -76,27 +144,119 @@
       margin-top: 1.2rem;
       box-shadow: 0 2px 8px rgba(0,0,0,0.07);
       transition: background 0.2s;
+      border: none;
+      cursor: pointer;
     }
-    .whatsapp-btn:hover {
-      background: #1ebe5d;
+    .whatsapp-btn:hover,
+    .send-btn:focus {
+      background: linear-gradient(90deg,#1ebe5d,#00c6ff);
+      outline: none;
+    }
+    .contact-form-card form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 0;
+    }
+    .form-title {
+      text-align: center;
+      color: #00c6ff;
+      margin-bottom: 1.2rem;
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+    .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      flex: 1 1 120px;
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: #007bff;
+      margin-bottom: 2px;
+      font-size: 1rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e0e7ff;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 4px;
+      font-family: inherit;
+      transition: border 0.2s;
+      background: #fff;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border: 2px solid #00c6ff;
+      outline: none;
+    }
+    .form-group textarea {
+      min-height: 100px;
+    }
+    .required { color: #ff4757; }
+    #formStatus {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      min-height: 1.2em;
+      font-size: 1.05rem;
+    }
+    @media (max-width: 950px) {
+      .features-section {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem;
+      }
+      .contact-flex-wrap {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+      .contact-card {
+        max-width: 100%;
+      }
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      .whatsapp-btn {
+        width: 100%;
+      }
     }
     @media (max-width: 600px) {
       .features-section { padding: 1.2rem 0.5rem; }
       .contact-card { padding: 1.2rem 0.5rem; }
+      .section-title { font-size: 2rem; }
+      .logo-title-gradient { font-size: 1.3rem; }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header class="header">
     <div class="logo-container animated-logo">
       <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
       <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
     </div>
-    <nav>
+    <nav class="main-nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
-      <a href="contact.html" style="color:#ffdd57;">Contact</a>
+      <a href="contact.html" class="active">Contact</a>
       <a href="clients.html">Our Clients</a>
       <a href="team.html">Team</a>
       <a href="faq.html">FAQ</a>
@@ -104,30 +264,111 @@
     </nav>
   </header>
   <section class="features-section">
-    <h2>Contact Us</h2>
-    <div class="contact-card">
-      <p>
-        <strong>Email:</strong>
-        <a href="mailto:info@smartqueglobal.com">info@smartqueglobal.com</a>
-      </p>
-      <p>
-        <strong>Phone:</strong>
-        <a href="tel:+916387350899">+91 63873 50899</a>,
-        <a href="tel:+917607770991">+91 76077 70991</a>
-      </p>
-      <p>
-        <strong>Location:</strong> Head office: A-175, Gulab Bagh, Uttam Nagar, Delhi - 110059
-      </p>
-      <p>
-        <strong>Location:</strong> Branch office: 20/147, Sector 20, Indira Nagar, Lucknow - 226016
-      </p>
-      <a href="https://wa.me/916387350899" target="_blank" class="whatsapp-btn">
-        <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i> Chat on WhatsApp
-      </a>
+    <h2 class="section-title">
+      Contact <span class="accent">Us</span>
+    </h2>
+    <div class="contact-flex-wrap">
+      <!-- Contact Info Card -->
+      <div class="contact-card contact-info-card">
+        <p>
+          <span class="label">Email:</span><br>
+          <a href="mailto:info@smartqueglobal.com">info@smartqueglobal.com</a>
+        </p>
+        <p>
+          <span class="label">Phone:</span><br>
+          <a href="tel:+916387350899">+91 63873 50899</a>,
+          <a href="tel:+917607770991">+91 76077 70991</a>
+        </p>
+        <p>
+          <span class="label">Location:</span> Head office:<br>
+          <span class="address">A-175, Gulab Bagh, Uttam Nagar, Delhi - 110059</span>
+        </p>
+        <p>
+          <span class="label">Location:</span> Branch office:<br>
+          <span class="address">20/147, Sector 20, Indira Nagar, Lucknow - 226016</span>
+        </p>
+        <a href="https://wa.me/916387350899" target="_blank" class="whatsapp-btn">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+      </div>
+      <!-- Query Form Card -->
+      <div class="contact-card contact-form-card">
+        <form id="queryForm" action="#" method="POST">
+          <h3 class="form-title">Send Us a Query</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Your Name <span class="required">*</span></label>
+              <input type="text" id="name" name="name" required placeholder="Enter your full name">
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required placeholder="Enter your email address">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject <span class="required">*</span></label>
+            <select id="subject" name="subject" required>
+              <option value="">Select a subject</option>
+              <option value="General Inquiry">General Inquiry</option>
+              <option value="Product Support">Product Support</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Feedback">Feedback</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message <span class="required">*</span></label>
+            <textarea id="message" name="message" required placeholder="Please describe your query in detail"></textarea>
+          </div>
+          <div id="formStatus"></div>
+          <button type="submit" class="whatsapp-btn send-btn">
+            <i class="fas fa-paper-plane"></i> Send Query
+          </button>
+        </form>
+      </div>
     </div>
   </section>
-  <footer>
-    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
-  </footer>
+  <script>
+    document.getElementById('queryForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+      const statusDiv = document.getElementById('formStatus');
+      statusDiv.style.color = "#ff4757";
+      statusDiv.textContent = "";
+
+      // Basic validation
+      if (!name || !email || !subject || !message) {
+        statusDiv.textContent = "Please fill in all required fields.";
+        return;
+      }
+      // Email format validation
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailPattern.test(email)) {
+        statusDiv.textContent = "Please enter a valid email address.";
+        return;
+      }
+
+      const btn = this.querySelector('button[type="submit"]');
+      btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      btn.disabled = true;
+      statusDiv.textContent = "";
+
+      // Simulate sending (replace with real AJAX in production)
+      setTimeout(() => {
+        statusDiv.style.color = "#22bb33";
+        statusDiv.textContent = "Thank you! Your query has been sent to info@smartqueglobal.com.";
+        btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Query';
+        btn.disabled = false;
+        this.reset();
+      }, 1800);
+    });
+  </script>
 </body>
 </html>

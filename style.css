@@ -11,7 +11,25 @@
   --yellow: #ffdd57;
   --green: #28a745;
 }
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box;
+}
+
+/* Extra code */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+  padding: 0;
+}
+
+.button-reset {
+  border: none;
+  background-color: transparent;
+}
+/* Extra code ends */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: var(--bg-light);
@@ -19,8 +37,8 @@ body {
   line-height: 1.7;
 }
 header {
-  background: var(--primary);
-  color: #fff;
+  /* background: var(--primary); */
+  /* color: #fff; */
   padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
@@ -104,8 +122,8 @@ header {
   0% { opacity: 0.3; transform: translateY(-50%) scale(0.9);}
   100% { opacity: 0.8; transform: translateY(-50%) scale(1.2);}
 }
-.logo-title-gradient {
-  font-size: 2.3rem;
+/* .logo-title-gradient {
+  font-size: 1rem;
   font-weight: 900;
   background: linear-gradient(90deg, #007bff, #00c6ff 40%, #ffdd57 90%);
   -webkit-background-clip: text;
@@ -116,7 +134,7 @@ header {
   animation: logoTextPop2 1.2s cubic-bezier(.77,0,.18,1), logoTextGlow2 2.8s ease-in-out infinite alternate;
   position: relative;
   z-index: 2;
-}
+} */
 @keyframes logoTextPop2 {
   from { opacity: 0; transform: scale(0.7);}
   to { opacity: 1; transform: scale(1);}
@@ -125,16 +143,42 @@ header {
   0% { filter: drop-shadow(0 2px 12px #00c6ff22);}
   100% { filter: drop-shadow(0 6px 24px #ffdd5744);}
 }
-nav a {
-  margin-left: 1.5rem;
-  color: #fff;
+/* Extra code ends */
+.navbar {
+  --navbar-max-width: 25rem;
+  --navbar-link-font-size: 1.5rem;
+
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-height: 100svh;
+  width: 100%;
+  max-width: min(100%, var(--navbar-max-width));
+  display: grid;
+  place-content: center;
+  background-color: var(--bg-light);
+  translate: 100%;
+  transition: translate 500ms ease-in-out;
+}
+
+.show-navbar {
+  translate: 0;
+}
+
+.navbar--list {
+  display: grid;
+  gap: 1rem;
+}
+
+.navbar--link {
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
+  font-size: var(--navbar-link-font-size);
   transition: color 0.3s;
-  font-size: 1.1rem;
   position: relative;
 }
-nav a::after {
+.navbar--link::after {
   content: '';
   display: block;
   width: 0;
@@ -145,8 +189,55 @@ nav a::after {
   bottom: -4px;
   left: 0;
 }
-nav a:hover { color: var(--yellow);}
-nav a:hover::after { width: 100%; }
+.navbar--link:hover { 
+  color: var(--yellow);
+}
+.navbar--link:hover::after { 
+  width: 100%;
+}
+
+.close-menu {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.hamburger-menu,
+.close-menu {
+  cursor: pointer;
+}
+
+.hamburger-menu > svg,
+.close-menu > svg {
+  width: 2rem;
+  height: 2rem;
+}
+
+/* 70em = 1120px */
+@media screen and (min-width: 70em) {
+  .navbar {
+    --navbar-link-font-size: 1rem;
+
+    position: static;
+    max-width: unset;
+    width: unset;
+    min-height: unset;
+    translate: 0;
+    background-color: transparent;
+  }
+
+  .navbar--list {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .close-menu,
+  .hamburger-menu {
+    display: none;
+  }
+}
+
+/* Extra code ends */
 main, section {
   max-width: 1200px;
   margin: 0 auto;
@@ -168,12 +259,19 @@ footer {
   margin-top: 3rem;
 }
 @media (max-width: 900px) {
-  main, section { padding: 2rem 0.5rem; }
-  .logo-container h1 { font-size: 1.3rem; }
+  main, section { 
+    padding: 2rem 0.5rem;
+  }
+
+  .logo-container h1 { 
+    font-size: 1.3rem; 
+  }
 }
 @media (max-width: 700px) {
-  .logo { height: 40px; width: 40px; }
-  nav a { margin-left: 0.7rem; font-size: 1rem; }
+  .logo { 
+    height: 40px; 
+    width: 40px; 
+  }
 }
 
 /* --- Core Services Section --- */
@@ -213,7 +311,7 @@ footer {
   padding: 0.7rem;
   margin-left: -0.7rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 .card:hover .card-icon {
   background: var(--yellow);
@@ -338,7 +436,7 @@ footer {
   border-radius: 18px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   padding: 1.2rem 0.5rem;
-  transition: transform 0.25s, box-shadow 0.25s, background 0.25s;
+  transition: transform 0.25s, box-shadow 0.25s, background-image 0.25s;
   position: relative;
   z-index: 1;
 }
@@ -435,8 +533,8 @@ footer {
   0% { opacity: 0.5; }
   100% { opacity: 1; }
 }
-.logo-title-gradient {
-  font-size: 2.2rem;
+/* .logo-title-gradient {
+  font-size: 1.5rem;
   font-weight: 900;
   background: linear-gradient(90deg, #007bff, #00c6ff 40%, #ffdd57 90%);
   -webkit-background-clip: text;
@@ -445,7 +543,7 @@ footer {
   letter-spacing: 2px;
   filter: drop-shadow(0 2px 8px #00c6ff22);
   animation: logoTextPop 1.2s cubic-bezier(.77,0,.18,1), logoTextGlow 2.5s ease-in-out infinite alternate;
-}
+} */
 @keyframes logoTextPop {
   from { opacity: 0; transform: scale(0.8);}
   to { opacity: 1; transform: scale(1);}
@@ -505,11 +603,11 @@ footer {
   align-items: center;
   animation: fadeInUp 1s;
 }
-<link rel="stylesheet" href="style.css" />
+/* <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <!-- Owl Carousel CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/> */
 .services-heading {
   font-size: 2.2rem;
   font-weight: 900;
@@ -601,21 +699,30 @@ footer {
   color: #fff !important;
   margin: 0 8px !important;
   box-shadow: 0 2px 8px #00c6ff22;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
 }
-.owl-nav button:hover { background: #22c55e !important; color: #fff !important; }
+.owl-nav button:hover { 
+  background: #22c55e !important; 
+  color: #fff !important; 
+}
+.owl-dots {
+  margin-block: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 .owl-dots .owl-dot span {
-  width: 13px;
-  height: 13px;
+  display: block;
+  width: 0.75rem;
+  height: 0.75rem;
   border-radius: 50%;
   background: #eaf6ff;
   border: 2px solid #00c6ff;
   margin: 0 4px;
-  transition: background 0.2s, border 0.2s;
+  transition: background-color 0.2s, border 0.2s;
 }
 .owl-dots .owl-dot.active span {
-  background: #00c6ff;
-  border: 2px solid #ffdd57;
+  background-color: #00c6ff;
 }
 @media (max-width: 900px) {
   #servicesOwl .service-card-fancy { max-width: 98vw; }
@@ -627,9 +734,6 @@ footer {
   .logo {
     width: 48px;
     height: 48px;
-  }
-  .logo-title-gradient {
-    font-size: 1.2rem;
   }
   nav {
     gap: 0.5rem;
@@ -813,7 +917,7 @@ footer {
   box-shadow: 0 12px 48px 0 #00c6ff22, 0 2px 12px #ffdd5733;
   padding-top: 3.5rem !important;
   padding-bottom: 3.5rem !important;
-  max-width: 1100px !important;
+  max-width: 1200px !important;
 }
 .services-heading {
   font-size: 2.5rem !important;

@@ -3,126 +3,290 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Team | SmartQue Global</title>
+  <title>Meet Our Visionary | SmartQue Global</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     body {
-      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
+      background: linear-gradient(120deg, #eaf6ff 60%, #f4f4f9 100%);
       min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+      overflow-x: hidden;
     }
-    .features-section {
-      max-width: 950px;
-      margin: 3.5rem auto 2.5rem auto;
-      background: #fff;
-      border-radius: 2.2rem;
-      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
-      padding: 2.5rem 2rem 2rem 2rem;
-      animation: fadeInUp 1.2s;
+    .team-hero-glass {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      background: linear-gradient(120deg, #00c6ff 0%, #ffdd57 100%);
+      position: relative;
+      overflow: hidden;
+      padding-bottom: 3rem;
     }
-    .features-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
+    .team-hero-glass::before, .team-hero-glass::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.4;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .team-hero-glass::before {
+      width: 420px; height: 420px;
+      background: #00c6ff;
+      left: -120px; top: -80px;
+      animation: heroFloat1 7s ease-in-out infinite alternate;
+    }
+    .team-hero-glass::after {
+      width: 340px; height: 340px;
+      background: #ffdd57;
+      right: -100px; bottom: -60px;
+      animation: heroFloat2 8s ease-in-out infinite alternate;
+    }
+    @keyframes heroFloat1 {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(40px);}
+    }
+    @keyframes heroFloat2 {
+      0% { transform: translateY(0);}
+      100% { transform: translateY(-40px);}
+    }
+    .glass-card {
+      margin-top: 5rem;
+      background: rgba(255,255,255,0.25);
+      border-radius: 2.5rem;
+      box-shadow: 0 8px 32px 0 rgba(0,123,255,0.18), 0 2px 12px #ffdd5733;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      padding: 3rem 2.5rem 2.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      max-width: 420px;
+      width: 95vw;
+      animation: fadeInUp 1.2s cubic-bezier(.77,0,.18,1);
+      border: 1.5px solid #eaf6ff88;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(60px);}
+      to { opacity: 1; transform: none;}
+    }
+    .avatar-3d {
+      position: relative;
+      margin-bottom: 1.5rem;
+      width: 140px;
+      height: 140px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      perspective: 600px;
+    }
+    .avatar-3d img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 8px 36px #00c6ff44, 0 4px 18px #ffdd5777;
+      object-fit: cover;
+      background: #eaf6ff;
+      position: relative;
+      z-index: 2;
+      animation: avatarFloat 3.5s ease-in-out infinite alternate;
+      transition: transform 0.3s cubic-bezier(.77,0,.18,1);
+    }
+    .avatar-3d::before {
+      content: "";
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px; height: 150px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, #00c6ff 0%, #ffdd57 100%);
+      filter: blur(22px);
+      opacity: 0.45;
+      z-index: 1;
+      animation: avatarGlowSpin 7s linear infinite;
+    }
+    @keyframes avatarFloat {
+      0% { transform: translateY(0) rotateY(0deg);}
+      100% { transform: translateY(-18px) rotateY(8deg);}
+    }
+    @keyframes avatarGlowSpin {
+      0% { transform: translate(-50%, -50%) rotate(0deg);}
+      100% { transform: translate(-50%, -50%) rotate(360deg);}
+    }
+    .badge-glass {
+      position: absolute;
+      top: -22px; right: -22px;
+      background: linear-gradient(90deg, #ffdd57 60%, #00c6ff 100%);
+      color: #fff;
+      font-size: 1.08rem;
+      font-weight: 700;
+      padding: 0.5em 1.2em;
+      border-radius: 2em;
+      box-shadow: 0 2px 8px #ffdd5733;
+      letter-spacing: 1px;
+      animation: badgePop 1.2s cubic-bezier(.77,0,.18,1) infinite alternate;
+      z-index: 3;
+      border: 2px solid #fff;
+      backdrop-filter: blur(8px);
+    }
+    @keyframes badgePop {
+      0% { transform: scale(1);}
+      100% { transform: scale(1.12);}
+    }
+    .ceo-name-glass {
+      font-size: 2rem;
       font-weight: 900;
-      margin-bottom: 2.2rem;
       background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
-      letter-spacing: 1px;
-    }
-    .features-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    .feature-card {
-      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2.2rem 1.5rem 1.5rem 1.5rem;
-      min-width: 220px;
-      max-width: 260px;
-      flex: 1 1 220px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transition: box-shadow 0.2s, transform 0.2s;
-      position: relative;
-    }
-    .feature-card:hover {
-      box-shadow: 0 8px 32px rgba(0,123,255,0.13);
-      transform: translateY(-6px) scale(1.03);
-    }
-    .feature-card img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px #00c6ff22;
-      border: 3px solid #fff;
-      object-fit: cover;
-      background: #eaf6ff;
-    }
-    .feature-title {
-      font-size: 1.18rem;
-      font-weight: 700;
-      color: #007bff;
-      margin-bottom: 0.7rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.3rem;
       text-align: center;
+      text-shadow: 0 2px 8px #00c6ff11;
     }
-    .feature-desc {
-      font-size: 1.05rem;
+    .ceo-role-glass {
+      font-size: 1.18rem;
+      color: #00c6ff;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-shadow: 0 2px 8px #00c6ff11;
+    }
+    .ceo-quote-glass {
+      font-style: italic;
+      color: #007bff;
+      font-size: 1.18rem;
+      margin-bottom: 1.2rem;
+      text-align: center;
+      position: relative;
+      animation: quoteFade 3.5s infinite alternate;
+      z-index: 2;
+    }
+    .ceo-quote-glass::before, .ceo-quote-glass::after {
+      content: '"';
+      color: #ffdd57;
+      font-size: 1.7rem;
+      vertical-align: top;
+      opacity: 0.7;
+    }
+    @keyframes quoteFade {
+      0% { opacity: 0.7;}
+      100% { opacity: 1;}
+    }
+    .ceo-desc-glass {
+      font-size: 1.13rem;
       color: #444;
       text-align: center;
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+      animation: fadeInUp 1.5s 0.2s backwards;
     }
-    @media (max-width: 900px) {
-      .features-list { flex-direction: column; align-items: center; }
-      .features-section { padding: 1.2rem 0.5rem; }
+    .ceo-social-glass {
+      display: flex;
+      gap: 1.3rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+      z-index: 2;
+    }
+    .ceo-social-glass a {
+      color: #fff;
+      font-size: 1.45rem;
+      transition: color 0.2s, background 0.2s, transform 0.2s;
+      background: linear-gradient(90deg, #00c6ff 60%, #ffdd57 100%);
+      border-radius: 50%;
+      padding: 0.7em;
+      box-shadow: 0 2px 8px #00c6ff11;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      outline: none;
+      position: relative;
+    }
+    .ceo-social-glass a:hover {
+      color: #007bff;
+      background: #fff;
+      transform: scale(1.18) rotate(-8deg);
+      box-shadow: 0 4px 18px #00c6ff33;
+    }
+    .glass-wave {
+      position: absolute;
+      bottom: -1px; left: 0; width: 100%; height: 90px;
+      z-index: 1;
+      pointer-events: none;
+    }
+    .glass-wave svg {
+      width: 100%; height: 100%;
+      display: block;
+    }
+    @media (max-width: 700px) {
+      .glass-card { padding: 2rem 0.5rem; }
+      .team-hero-glass { min-height: 80vh; }
+      .ceo-name-glass { font-size: 1.3rem; }
+      .ceo-role-glass { font-size: 1rem; }
+      .ceo-quote-glass { font-size: 1rem; }
+    }
+    footer {
+      text-align: center;
+      color: #888;
+      font-size: 1rem;
+      margin: 2.5rem 0 1rem 0;
+      letter-spacing: 0.5px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
+    <div class="logo-container animated-logo" style="display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:2rem;">
+      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" style="height:54px;width:54px;border-radius:50%;box-shadow:0 2px 12px #00c6ff33;background:#fff;" />
+      <h1 class="logo-title-gradient" style="font-size:2rem;font-weight:900;background:linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:1px;margin:0;">Smartque Tech QMS </h1>
     </div>
-    <nav>
+    <nav style="display:flex;justify-content:center;gap:1.5rem;margin-top:0.7rem;flex-wrap:wrap;">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
       <a href="clients.html">Our Clients</a>
       <a href="team.html" style="color:#ffdd57;">Team</a>
-      <a href="faq.html">FAQ</a>
       <a href="blog.html">Blog</a>
     </nav>
   </header>
-  <section class="features-section">
-    <h2>Meet Our Team</h2>
-    <div class="features-list">
-      <div class="feature-card">
+  <section class="team-hero-glass">
+    <div class="glass-card">
+      <span class="badge-glass"><i class="fa-solid fa-star"></i> Founder</span>
+      <div class="avatar-3d">
         <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Amit Sharma">
-        <div class="feature-title">Amit Sharma</div>
-        <div class="feature-desc">Founder & CEO</div>
       </div>
-      <div class="feature-card">
-        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Priya Verma">
-        <div class="feature-title">Priya Verma</div>
-        <div class="feature-desc">Head of Regulatory Affairs</div>
+      <div class="ceo-name-glass">Amit Sharma</div>
+      <div class="ceo-role-glass">Founder &amp; CEO</div>
+      <div class="ceo-quote-glass">
+        Empowering businesses to grow with trust, compliance, and innovation.
       </div>
-      <div class="feature-card">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rahul Singh">
-        <div class="feature-title">Rahul Singh</div>
-        <div class="feature-desc">Lead Compliance Consultant</div>
+      <div class="ceo-desc-glass">
+        Amit Sharma is the driving force behind SmartQue Global. With a relentless passion for regulatory excellence and a decade of leadership, Amit has built a culture of integrity, innovation, and client-first service. His vision is to make compliance simple, accessible, and empowering for every business.
       </div>
-      <div class="feature-card">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Neha Gupta">
-        <div class="feature-title">Neha Gupta</div>
-        <div class="feature-desc">Client Relations Manager</div>
+      <div class="ceo-social-glass">
+        <a href="mailto:amit.sharma@smartqueglobal.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/amitsharma" target="_blank" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="tel:+916387350899" title="Call"><i class="fa-solid fa-phone"></i></a>
       </div>
+    </div>
+    <div class="glass-wave">
+      <svg viewBox="0 0 1440 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" fill-opacity="0.7" d="M0,60 C360,120 1080,0 1440,60 L1440,90 L0,90 Z"></path>
+      </svg>
     </div>
   </section>
   <footer>
