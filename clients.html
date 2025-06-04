@@ -3,35 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Clients | SmartQue Global</title>
+  <title>Our Clients | Smartque Global</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
-    body {
-      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
-      min-height: 100vh;
-    }
-    .features-section {
-      max-width: 1050px;
-      margin: 3.5rem auto 2.5rem auto;
-      background: #fff;
-      border-radius: 2.2rem;
-      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
-      padding: 2.5rem 2rem 2rem 2rem;
-      animation: fadeInUp 1.2s;
-    }
-    .features-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 2.2rem;
-      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 1px;
-    }
-    .features-section p {
+  .features-section p {
       max-width: 700px;
       margin: 1.2rem auto 2.5rem auto;
       text-align: center;
@@ -85,6 +62,249 @@
     @media (max-width: 900px) {
       .features-list { flex-direction: column; align-items: center; }
       .features-section { padding: 1.2rem 0.5rem; }
+      
+    }
+    /* Removed invalid property 'ground-size: cover;' */
+    .gradient-text {
+      background: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+    }
+    /* Gradient icon utility */
+    .gradient-icon {
+      background: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent !important;
+      display: inline-block;
+    }
+
+    body {
+      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
+      min-height: 100vh;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      color: #222;
+    }
+    .header {
+      background: #fff;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      border-radius: 0 0 1.5rem 1.5rem;
+      padding: 1.2rem 0 0.7rem 0;
+      margin-bottom: 2rem;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .logo {
+      height: 54px;
+      width: 54px;
+      border-radius: 50%;
+      box-shadow: 0 2px 12px #00c6ff33;
+      background: #fff;
+    }
+    .logo-title-gradient {
+      font-size: 2rem;
+      font-weight: 900;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+      margin: 0;
+    }
+    .main-nav {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.7rem;
+      flex-wrap: wrap;
+    }
+    .main-nav a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.08rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 8px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a.active,
+    .main-nav a:hover {
+      background: linear-gradient(90deg, #00c6ff 60%, #ffdd57 100%);
+      color: #222;
+      text-decoration: none;
+    }
+    .features-section {
+      max-width: 1100px;
+      margin: 2.5rem auto;
+      background: #fff;
+      border-radius: 2.2rem;
+      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
+      padding: 2.5rem 2rem 2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin-bottom: 2.2rem;
+      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: 1px;
+    }
+    .accent { color: #00c6ff; }
+    .contact-flex-wrap {
+      display: flex;
+      gap: 2.5rem;
+      width: 100%;
+      justify-content: center;
+      align-items: stretch;
+      flex-wrap: nowrap;
+    }
+    .contact-card {
+      flex: 1 1 340px;
+      max-width: 440px;
+      min-width: 260px;
+      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
+      border-radius: 1.2rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .contact-info-card p {
+      font-size: 1.13rem;
+      color: #444;
+      margin-bottom: 0.5rem;
+      text-align: left;
+    }
+    .contact-info-card a {
+      color: #007bff;
+      text-decoration: none;
+      font-weight: 700;
+      transition: color 0.2s;
+    }
+    .contact-info-card a:hover {
+      color: #00c6ff;
+      text-decoration: underline;
+    }
+    .label { color: #222; font-weight: 700; }
+    .address { font-weight: 400; }
+    .whatsapp-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(90deg,#25D366,#00c6ff);
+      color: #fff;
+      font-weight: 600;
+      font-size: 1.13rem;
+      padding: 0.85rem 2.2rem;
+      border-radius: 30px;
+      text-decoration: none;
+      margin-top: 1.2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      transition: background 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .whatsapp-btn:hover,
+    .send-btn:focus {
+      background: linear-gradient(90deg,#1ebe5d,#00c6ff);
+      outline: none;
+    }
+    .contact-form-card form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: stretch;
+      gap: 0;
+    }
+    .form-title {
+      text-align: center;
+      color: #00c6ff;
+      margin-bottom: 1.2rem;
+      font-weight: 900;
+      font-size: 1.3rem;
+    }
+    .form-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      flex: 1 1 120px;
+      min-width: 120px;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+    }
+    .form-group label {
+      font-weight: 600;
+      color: #007bff;
+      margin-bottom: 2px;
+      font-size: 1rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e0e7ff;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-top: 4px;
+      font-family: inherit;
+      transition: border 0.2s;
+      background: #fff;
+      resize: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border: 2px solid #00c6ff;
+      outline: none;
+    }
+    .form-group textarea {
+      min-height: 100px;
+    }
+    .required { color: #ff4757; }
+    #formStatus {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      min-height: 1.2em;
+      font-size: 1.05rem;
+    }
+    @media (max-width: 950px) {
+      .features-section {
+        max-width: 98vw;
+        padding: 1.2rem 0.5rem;
+      }
+      .contact-flex-wrap {
+        flex-direction: column;
+        gap: 1.5rem;
+        align-items: stretch;
+      }
+      .contact-card {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
@@ -99,9 +319,7 @@
       <a href="services.html">Services</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="clients.html" style="color:#ffdd57;">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="faq.html">FAQ</a>
+      <a href="clients.html" >Our Clients</a>      <a href="team.html">Team</a>
       <a href="blog.html">Blog</a>
     </nav>
   </header>
@@ -113,41 +331,41 @@
     </p>
     <div class="features-list">
       <div class="feature-card">
-        <img src="images/samsung.png" alt="Samsung" class="client-logo">
-        <div class="feature-title">Samsung</div>
+        <img src="images/client 1.png" alt="JAFPA" class="client-logo">
+        <div class="feature-title">JAFPA</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LG Electronics" class="client-logo">
-        <div class="feature-title">LG Electronics</div>
+        <img src="images/client 2.webp" alt="Romsons" class="client-logo">
+        <div class="feature-title">Romsons</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174848.png" alt="Philips" class="client-logo">
-        <div class="feature-title">Philips</div>
+        <img src="images/client 4.png" alt="MILTON" class="client-logo">
+        <div class="feature-title">MILTON</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174855.png" alt="Sony" class="client-logo">
-        <div class="feature-title">Sony</div>
+        <img src="images/client 5.jpg" alt="Eagle" class="client-logo">
+        <div class="feature-title">Eagle</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174872.png" alt="Haier" class="client-logo">
-        <div class="feature-title">Haier</div>
+        <img src="images/client 6.webp" alt="Disney" class="client-logo">
+        <div class="feature-title">Disney</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174881.png" alt="Honeywell" class="client-logo">
-        <div class="feature-title">Honeywell</div>
+        <img src="images/client7.webp" alt="Iscon" class="client-logo">
+        <div class="feature-title">Iscon</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174858.png" alt="ABB" class="client-logo">
-        <div class="feature-title">ABB</div>
+        <img src="images/clients 8.webp" alt="Firstcry" class="client-logo">
+        <div class="feature-title">Firstcry</div>
       </div>
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/174/174865.png" alt="Siemens" class="client-logo">
-        <div class="feature-title">Siemens</div>
+        <img src="images/client 9.webp" alt="babyhug" class="client-logo">
+        <div class="feature-title">babyhug</div>
       </div>
       <!-- Dummy colored social media icons as client logos -->
       <div class="feature-card">
-        <img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="ACME Corp" class="client-logo">
-        <div class="feature-title">ACME Corp</div>
+        <img src="images/client 10.webp" alt="कपिला पशु आहार" class="client-logo">
+        <div class="feature-title">कपिला पशु आहार</div>
       </div>
       <div class="feature-card">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="XYZ Ltd" class="client-logo">
@@ -168,7 +386,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
+    <p>&copy; 2025 Smartque Global. Empowering Compliance Nationwide.</p>
   </footer>
 </body>
 </html>

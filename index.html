@@ -10,6 +10,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<link rel="stylesheet" href="./service.css">
+<!-- Slick Carousel Core -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
   <style>
     :root {
       --primary: #007bff;
@@ -21,8 +27,10 @@
       --shadow: 0 8px 32px rgba(0,123,255,0.10);
       --gradient: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
     }
+
+    
     body {
-      background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
+       background: white;
       min-height: 100vh;
       animation: fadeInBody 1.2s;
       font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
@@ -932,7 +940,7 @@ header {
 <body>
   <header>
     <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
+      <img src="images/logo-1.png" alt="Smartque Global logo" class="logo spin-glow" />
       <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
     </div>
     <nav class="navbar">
@@ -992,7 +1000,7 @@ header {
     </div>
     <!-- Introduction -->
     <div style="margin-bottom:2.5rem;text-align:center;max-width:900px;margin-left:auto;margin-right:auto;position:relative;padding:30px;border-radius:16px;background:rgba(0,198,255,0.03);border:1px solid rgba(0,198,255,0.1);">
-      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">SmartQue Global was founded in 2012 with a bold vision: to transform the way businesses approach compliance and certification. Over the years, we've grown from a small consultancy into an emerging industry leader, trusted by businesses across India and around the globe.</p>
+      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">Smartque Global was founded in 2012 with a bold vision: to transform the way businesses approach compliances and certification. Over the years, we've grown from a small consultancy into an emerging industry leader, trusted by businesses across India and around the globe.</p>
       <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">What sets us apart? Our passion for simplifying the complex. Whether you're a startup navigating the regulatory landscape for the first time or an established enterprise expanding into new markets, we ensure you achieve the certifications you need—on time, every time.</p>
       <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">We've successfully supported hundreds of organizations, guiding them through the maze of regulations and helping them secure critical approvals like <strong style="color:#00c6ff;">BIS, WPC, CDSCO, TEC</strong>, and <strong style="color:#00c6ff;">ISO certifications</strong>. Our focus is on delivering <strong style="color:#00c6ff;">value</strong>, <strong style="color:#00c6ff;">transparency</strong>, and <strong style="color:#00c6ff;">long-term success</strong>, with each certification earned and every project delivered.</p>
     </div>
@@ -1022,7 +1030,7 @@ header {
     <!-- Mission Section -->
     <div style="background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%);padding:2.5rem;border-radius:1.2rem;margin:2.5rem 0;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,114,255,0.12);">
       <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:1.2rem;display:inline-block;">Our Mission</h2>
-      <p style="font-size:1.13rem;color:rgba(255,255,255,0.97);max-width:800px;line-height:1.8;margin-top:20px;">At SmartQue, we believe compliance should never be a roadblock to your growth. Our mission is to make compliance <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">simple</strong>, <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">transparent</strong>, and <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">hassle-free</strong>, so you can focus on what truly matters: building your business, driving innovation, and achieving your goals.</p>
+      <p style="font-size:1.13rem;color:rgba(255,255,255,0.97);max-width:800px;line-height:1.8;margin-top:20px;">At Smartque, we believe compliances should never be a roadblock to your growth. Our mission is to make compliance <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">simple</strong>, <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">transparent</strong>, and <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">hassle-free</strong>, so you can focus on what truly matters: building your business, driving innovation, and achieving your goals.</p>
     </div>
     <!-- Values Section -->
     <div style="margin-bottom:2.5rem;">
@@ -1051,7 +1059,7 @@ header {
 </section>
 
   <section class="features-section">
-    <h2>Why Choose SmartQue?</h2>
+    <h2>Why Choose Smartque?</h2>
     <div class="features-list">
       <div class="feature-card">
         <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
@@ -1080,94 +1088,99 @@ header {
       </div>
     </div>
   </section>
-<section id="services" class="features-section services-section-centered" style="overflow:hidden;max-width:1200px;margin:2rem auto;">
-  <div class="page-header services-header-centered">
-    <h1 class="services-header-title">Our Services</h1>
+
+    <div class="page-header">
+    <h1>Our Services</h1>
   </div>
-  <h2 class="services-heading" style="font-size:1.6rem;margin-bottom:1.2rem;">
-    <i class="fa-solid fa-layer-group"></i> What We Offer
-  </h2>
-  <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
-    <!-- Card 1 -->
-    <div class="service-card-modern" data-badge="Popular" >
-      <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
-      <div class="service-card-body">
-        <div class="service-title-modern">BIS Registration & ISI Mark</div>
-        <div class="service-desc-modern">
-          <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
-          <ul>
-            <li>Documentation &amp; application filing</li>
-            <li>Product testing coordination</li>
-            <li>End-to-end project management</li>
-          </ul>
+  <section id="services" class="features-section" style="overflow:hidden;">
+    <h2 class="services-heading">
+      <i class="fa-solid fa-layer-group"></i> What We Offer
+    </h2>
+    <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
+      <!-- Card 1 -->
+      <div class="service-card-modern" data-badge="Popular">
+        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">BIS Registration & ISI Mark</div>
+          <div class="service-desc-modern">
+            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
+            <ul>
+              <li>Documentation &amp; application filing</li>
+              <li>Product testing coordination</li>
+              <li>End-to-end project management</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="service-card-modern">
+        <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">WPC & ETA Approvals</div>
+          <div class="service-desc-modern">
+            <p>Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.</p>
+            <ul>
+              <li>ETA for importers &amp; manufacturers</li>
+              <li>Import license assistance</li>
+              <li>Technical documentation support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="service-card-modern">
+        <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">CDSCO & Medical Device Registration</div>
+          <div class="service-desc-modern">
+            <p>Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.</p>
+            <ul>
+              <li>Medical device import licensing</li>
+              <li>Cosmetic registration</li>
+              <li>Regulatory consulting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="service-card-modern">
+        <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">ISO Certification & Audits</div>
+          <div class="service-desc-modern">
+            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
+            <ul>
+              <li>Internal auditor training</li>
+              <li>Gap analysis &amp; documentation</li>
+              <li>Process improvement consulting</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="service-card-modern">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
+        <div class="service-card-body">
+          <div class="service-title-modern">Global Certifications</div>
+          <div class="service-desc-modern">
+            <p>International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.</p>
+            <ul>
+              <li>CE &amp; FCC certification</li>
+              <li>RoHS, EPR, BEE approvals</li>
+              <li>Customs clearance support</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
-    <!-- Card 2 -->
-    <div class="service-card-modern">
-      <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern">
-      <div class="service-card-body">
-        <div class="service-title-modern">WPC & ETA Approvals</div>
-        <div class="service-desc-modern">
-          <p>Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.</p>
-          <ul>
-            <li>ETA for importers &amp; manufacturers</li>
-            <li>Import license assistance</li>
-            <li>Technical documentation support</li>
-          </ul>
-        </div>
-      </div>
+    <div id="carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
+      <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
     </div>
-    <!-- Card 3 -->
-    <div class="service-card-modern">
-      <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern">
-      <div class="service-card-body">
-        <div class="service-title-modern">CDSCO & Medical Device Registration</div>
-        <div class="service-desc-modern">
-          <p>Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.</p>
-          <ul>
-            <li>Medical device import licensing</li>
-            <li>Cosmetic registration</li>
-            <li>Regulatory consulting</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Card 4 -->
-    <div class="service-card-modern">
-      <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern">
-      <div class="service-card-body">
-        <div class="service-title-modern">ISO Certification & Audits</div>
-        <div class="service-desc-modern">
-          <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
-          <ul>
-            <li>Internal auditor training</li>
-            <li>Gap analysis &amp; documentation</li>
-            <li>Process improvement consulting</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <!-- Card 5 -->
-    <div class="service-card-modern">
-      <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
-      <div class="service-card-body">
-        <div class="service-title-modern">Global Certifications</div>
-        <div class="service-desc-modern">
-          <p>International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.</p>
-          <ul>
-            <li>CE &amp; FCC certification</li>
-            <li>RoHS, EPR, BEE approvals</li>
-            <li>Customs clearance support</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0.5rem auto 1.5rem auto;max-width:700px;">
-    <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
-  </div>
-</section>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+ 
 
   <!-- Blog Carousel Section for Home Page -->
 <section class="features-section" style="overflow:hidden;">
@@ -1238,7 +1251,7 @@ header {
       </div>
       <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Global Compliance" class="blog-img">
       <div class="blog-card-body">
-        <div class="blog-title">Global Compliance Standards</div>
+        <div class="blog-title">Global Compliances Standards</div>
         <div class="blog-desc">
           <p>Navigating international certification requirements for expanding your business globally with confidence.</p>
         </div>
@@ -1276,7 +1289,7 @@ header {
   </section>
 
   <footer>
-    <p>&copy; 2025 SmartQue Global. Empowering Compliance Nationwide.</p>
+    <p>&copy; 2025 Smartque Global. Empowering Compliance Nationwide.</p>
   </footer>
 
   <script>
@@ -1591,5 +1604,8 @@ $(document).ready(function(){
     });
   });
 </script>
+
+
+  <script src="./serviceScript.js"></script>
 </body>
 </html>
