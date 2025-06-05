@@ -1,17 +1,20 @@
-'use strict';
+document.addEventListener("DOMContentLoaded", () => {
+  // Wait for the component to be injected
+  const checkNavbar = setInterval(() => {
+    const navbar = document.querySelector('.navbar');
+    const hamburgerBtn = document.querySelector('#hamburgerBtn');
+    const closeBtn = document.querySelector('#closeBtn');
 
-// Navbar
-const navbar = document.querySelector('.navbar');
-const hamburgerBtn = document.querySelector('#hamburgerBtn');
-const closeBtn = document.querySelector('#closeBtn');
+    if (navbar && hamburgerBtn && closeBtn) {
+      hamburgerBtn.addEventListener('click', function () {
+        navbar.classList.add('show-navbar');
+      });
 
-console.log(navbar, hamburgerBtn, closeBtn);
+      closeBtn.addEventListener('click', function () {
+        navbar.classList.remove('show-navbar');
+      });
 
-hamburgerBtn.addEventListener('click', function() {
-  navbar.classList.add('show-navbar');
+      clearInterval(checkNavbar); // Stop checking
+    }
+  }, 100);
 });
-
-closeBtn.addEventListener('click', function() {
-  navbar.classList.remove('show-navbar');
-});
-// End Of Navbar

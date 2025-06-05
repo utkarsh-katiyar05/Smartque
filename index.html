@@ -1,1268 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smartque Global | Compliances Made Simple</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<link rel="stylesheet" href="./service.css">
-<!-- Slick Carousel Core -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./service.css">
+  <!-- Slick Carousel Core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-  <style>
-    :root {
-      --primary: #007bff;
-      --accent: #00c6ff;
-      --yellow: #ffdd57;
-      --green: #22c55e;
-      --bg-light: #f8fbff;
-      --radius: 1.2rem;
-      --shadow: 0 8px 32px rgba(0,123,255,0.10);
-      --gradient: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
-    }
-
-    
-    body {
-       background: white;
-      min-height: 100vh;
-      animation: fadeInBody 1.2s;
-      font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-      overflow-x: hidden;
-      margin: 0;
-      padding: 0;
-    }
-    @keyframes fadeInBody {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    /* Header */
-    header {
-      background: rgba(255,255,255,0.95);
-      /* color: var(--accent); */
-      box-shadow: 0 2px 16px rgba(0,123,255,0.07);
-      padding: 1.2rem 0 1.2rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      animation: fadeInDown 1.2s;
-      margin-bottom: 0 !important;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px);}
-      to { opacity: 1; transform: none;}
-    }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 1.1rem;
-      justify-content: center;
-      margin-bottom: 0.5rem;
-    }
-    .logo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%);
-      border: 4px solid #fff;
-      box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44;
-      animation: logoOrbit 5s linear infinite, logoGlowPulse2 2.8s ease-in-out infinite alternate;
-    }
-    @keyframes logoOrbit {
-      0% { box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44; transform: rotate(0deg) scale(1);}
-      50% { box-shadow: 0 0 48px 18px #ffdd5744, 0 0 64px 24px #00c6ff66; transform: rotate(180deg) scale(1.07);}
-      100% { box-shadow: 0 0 0 0 #007bff44, 0 0 32px 8px #00c6ff44; transform: rotate(360deg) scale(1);}
-    }
-    @keyframes logoGlowPulse2 {
-      0% { filter: drop-shadow(0 0 0 #ffdd5744);}
-      100% { filter: drop-shadow(0 0 16px #ffdd57cc);}
-    }
-    .logo-title-gradient {
-      font-size: 1.5rem;
-      font-weight: 800;
-      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 1px;
-      animation: textGlow 1.5s ease-in-out infinite alternate;
-    }
-    @keyframes textGlow {
-      0% { filter: brightness(1);}
-      100% { filter: brightness(1.15);}
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      margin-top: 0.2rem;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #007bff;
-      font-weight: 600;
-      text-decoration: none;
-      font-size: 1.08rem;
-      padding: 0.4rem 1.1rem;
-      border-radius: 2rem;
-      transition: background-image 0.2s, color 0.2s;
-    }
-    nav a:hover, nav a:focus {
-      background: linear-gradient(90deg, #00c6ff 30%, #ffdd57 100%);
-      color: #fff;
-    }
-    /* Hero Section */
-    .hero-section {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4rem;
-      background: var(--gradient);
-      color: white;
-      padding: 6rem 2rem 5rem 2rem;
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 1.2s;
-      margin-top: 0;
-      padding-top: 1.2rem !important;
-      padding-bottom: 2rem !important;
-      min-height: 60vh !important;
-    }
-    .hero-section::before {
-      content: "";
-      position: absolute;
-      top: -100px;
-      right: -120px;
-      width: 400px;
-      height: 400px;
-      background: radial-gradient(circle, #fff3 40%, transparent 80%);
-      z-index: 0;
-      border-radius: 50%;
-      pointer-events: none;
-    }
-    .hero-content {
-      z-index: 2;
-      animation: fadeInLeft 1.2s;
-    }
-    .hero-content h2 {
-      font-size: 3.2rem;
-      margin-bottom: 1.2rem;
-      font-weight: 900;
-      line-height: 1.1;
-      letter-spacing: -1px;
-      background: linear-gradient(90deg, #fff, var(--yellow) 80%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      animation: fadeInLeft 1.2s;
-    }
-    .hero-content p {
-      font-size: 1.35rem;
-      margin-bottom: 2.2rem;
-      color: #e6e6e6;
-      font-weight: 500;
-      animation: fadeInLeft 1.5s;
-    }
-    .hero-highlight {
-      color: var(--yellow);
-      font-weight: 600;
-    }
-    .hero-btn {
-      display: inline-block;
-      padding: 1rem 2.5rem;
-      font-size: 1.15rem;
-      color: white;
-      background: linear-gradient(90deg, var(--green), #00c6ff 80%);
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: background-image 0.3s, transform 0.2s;
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.13);
-      letter-spacing: 0.5px;
-      margin-bottom: 1.2rem;
-      animation: fadeInLeft 1.8s;
-    }
-    .hero-btn:hover { background: linear-gradient(90deg, #218838, #007bff 80%); transform: scale(1.04);}
-    .hero-note {
-      margin-top: 2rem;
-      font-size: 1.08rem;
-      color: var(--yellow);
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      animation: fadeInLeft 2s;
-    }
-    .hero-carousel {
-      max-width: 400px;
-      width: 100%;
-       max-width: 1000px;
-       margin: 0 auto;
-    }
-    .hero-img {
-      width: 400px;
-      height: 400px;
-      max-width: 95vw;
-      border-radius: var(--radius);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-      background: #fff;
-      padding: 1.2rem;
-      z-index: 1;
-      position: relative;
-      border: 4px solid #fff;
-      transition: transform 0.3s;
-      animation: fadeInRight 1.2s;
-    }
-    .hero-img:hover {
-      transform: scale(1.04) rotate(-2deg);
-      box-shadow: 0 12px 40px rgba(0,0,0,0.18);
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px);}
-      to { opacity: 1; transform: none;}
-    }
-    @keyframes fadeInLeft {
-      from { opacity: 0; transform: translateX(-40px);}
-      to { opacity: 1; transform: none;}
-    }
-    @keyframes fadeInRight {
-      from { opacity: 0; transform: translateX(40px);}
-      to { opacity: 1; transform: none;}
-    }
-    
-  
-    /* Features Section */
-    .features-section {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin: 3rem auto 2rem auto;
-      max-width: 1200px;
-      padding: 3rem 2rem;
-      animation: fadeInUp 1.2s;
-      margin-top: 1.2rem !important;
-      margin-bottom: 1.2rem !important;
-      padding-top: 1.5rem !important;
-      padding-bottom: 1.5rem !important;
-    }
-    .features-section h2 {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 900;
-      margin-bottom: 2.2rem;
-      background: linear-gradient(90deg, #007bff, #00c6ff 60%, #ffdd57 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      letter-spacing: 1px;
-    }
-    .features-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 2.2rem;
-      margin-top: 1.5rem;
-    }
-    .feature-card {
-      background: var(--bg-light);
-      border-radius: var(--radius);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-      padding: 2rem 1.5rem;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      animation: fadeInUp 1.2s;
-    }
-    .feature-card:hover {
-      transform: translateY(-7px) scale(1.04);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.13);
-      background: linear-gradient(120deg, #f4f4f9 80%, #eaf6ff 100%);
-    }
-    .feature-icon {
-      font-size: 2.5rem;
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-    .feature-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--primary);
-      margin-bottom: 0.5rem;
-    }
-    .feature-desc {
-      color: #555;
-      font-size: 1.05rem;
-    }
-    /* About Section Animation */
-    .about-section {
-      background: #fff;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-top: 2rem;
-      padding: 3rem 2rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2.5rem;
-      animation: fadeInUp 1.2s;
-      margin-top: 1.2rem !important;
-      padding-top: 1.5rem !important;
-      padding-bottom: 1.5rem !important;
-    }
-
-    .about-section > h2 {
-      font-size: xx-large;
-    }
-
-    .about-img-home {
-      width: 20em;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-      object-fit: cover;
-      margin-right: 1.5rem;
-      flex-shrink: 0;
-      display: block;
-      animation: fadeInLeft 1.2s;
-    }
-    .about-section p {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: left;
-      font-size: 1.18rem;
-      color: #444;
-      animation: fadeInRight 1.2s;
-    }
-    .about-highlight {
-      color: var(--accent);
-      font-weight: 600;
-    }
-    /* Stats Bar */
-    .stats-bar {
-      display: flex;
-      justify-content: center;
-      gap: 2.5rem;
-      margin: 2.5rem auto 2.5rem auto;
-      max-width: 900px;
-      background: linear-gradient(90deg, #eaf6ff 60%, #f8fbff 100%);
-      border-radius: 2rem;
-      box-shadow: 0 2px 12px rgba(0,123,255,0.07);
-      padding: 1.5rem 2rem;
-      animation: fadeInUp 1.2s;
-      margin-top: 1.2rem !important;
-      margin-bottom: 1.2rem !important;
-      padding-top: 1.5rem !important;
-      padding-bottom: 1.5rem !important;
-    }
-    .stat {
-      text-align: center;
-      flex: 1 1 120px;
-    }
-    .stat-num {
-      font-size: 2.1rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 0.3rem;
-    }
-    .stat-label {
-      color: #444;
-      font-size: 1.05rem;
-      font-weight: 600;
-    }
-    /* Testimonials */
-    .testimonial-cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-      align-items: stretch;
-      margin-top: 2rem;
-    }
-    .testimonial {
-      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      min-width: 260px;
-      max-width: 320px;
-      flex: 1 1 260px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: box-shadow 0.2s, transform 0.2s;
-      position: relative;
-    }
-    .testimonial-photo {
-      width: 70px;
-      height: 70px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 8px #00c6ff22;
-      border: 3px solid #fff;
-      background: #eaf6ff;
-    }
-    .testimonial-content {
-      font-size: 1.08rem;
-      color: #444;
-      margin-bottom: 1rem;
-    }
-    .testimonial-footer {
-      font-size: 0.98rem;
-      color: #007bff;
-      font-weight: 600;
-      margin-top: 0.5rem;
-    }
-    /* Contact Card */
-    .contact-card {
-      width: 100%;
-      max-width: 420px;
-      margin: 0 auto;
-      background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
-      border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.7rem;
-    }
-    .contact-card p {
-      font-size: 1.13rem;
-      color: #444;
-      margin-bottom: 0.5rem;
-      text-align: center;
-    }
-    .contact-card a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-    .contact-card a:hover {
-      color: #00c6ff;
-      text-decoration: underline;
-    }
-    .whatsapp-btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background: #25D366;
-      color: #fff;
-      font-weight: 600;
-      font-size: 1.13rem;
-      padding: 0.85rem 2.2rem;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-      transition: background 0.2s;
-    }
-    .whatsapp-btn:hover {
-      background: #1ebe5d;
-    }
-    /* Reduce gap between header/hero and hero/stats/about/sections */
-header {
-  margin-bottom: 0 !important;
-}
-.hero-section {
-  margin-top: 0 !important;
-  padding-top: 1.2rem !important;
-  padding-bottom: 2rem !important;
-  min-height: 60vh !important;
-}
-.about-section,
-.stats-bar,
-.features-section {
-  margin-top: 1.2rem !important;
-  margin-bottom: 1.2rem !important;
-  padding-top: 1.5rem !important;
-  padding-bottom: 1.5rem !important;
-}
-    /* Add to your <style> block for compact services carousel */
-.compact-services {
-  padding: 1.2rem 0.5rem 1.2rem 0.5rem !important;
-  max-width: 900px !important;
-  margin: 1.2rem auto !important;
-}
-.compact-card {
-  max-width: 210px !important;
-  min-width: 180px !important;
-  margin: 0.7rem auto !important;
-  border-radius: 1rem !important;
-  box-shadow: 0 2px 8px #00c6ff11;
-}
-.compact-img {
-  height: 60px !important;
-  border-radius: 1rem 1rem 0 0 !important;
-  margin-bottom: 0.2rem !important;
-}
-.compact-body {
-  padding: 0.5rem 0.3rem 0.5rem 0.3rem !important;
-}
-.compact-title {
-  font-size: 0.97rem !important;
-  margin-top: 0.2rem !important;
-  margin-bottom: 0.2rem !important;
-}
-.compact-desc {
-  font-size: 0.91rem !important;
-}
-.compact-desc ul {
-  margin: 0.3rem 0 0 1rem !important;
-  font-size: 0.91rem !important;
-}
-#servicesOwl .owl-nav button {
-  width: 28px !important;
-  height: 28px !important;
-  font-size: 1rem !important;
-  top: 44%;
-}
-#servicesOwl .owl-nav .owl-prev { left: -4px; }
-#servicesOwl .owl-nav .owl-next { right: -4px; }
-#carousel-progress {
-  height: 4px !important;
-  max-width: 400px !important;
-}
-    /* Responsive */
-    @media (max-width: 1100px) {
-      .hero-section { flex-direction: column; text-align: center; gap: 2rem; }
-      .about-section { flex-direction: column; text-align: center; gap: 1.5rem; }
-      .about-img-home { margin: 0 auto 1.5rem auto; }
-      .about-section p { text-align: center; }
-      .stats-bar { flex-direction: column; gap: 1.2rem; }
-    }
-    @media (max-width: 900px) {
-      .features-section { padding: 1.2rem 0.5rem; }
-      .features-list { grid-template-columns: 1fr; }
-      .testimonial-cards { flex-direction: column; align-items: center; }
-      .stats-bar { padding: 1rem 0.5rem; }
-      .services-slider-container { max-width: 98vw; }
-      .service-img, .service-card { max-width: 98vw; }
-      .slider-btn-left { left: 0; }
-      .slider-btn-right { right: 0; }
-    }
-    @media (max-width: 600px) {
-      header {
-        padding: 0.5rem 0 0.5rem 0;
-      }
-      .logo {
-        width: 44px;
-        height: 44px;
-      }
-      nav {
-        gap: 0.3rem;
-        font-size: 0.93rem;
-        flex-wrap: wrap;
-        padding: 0 0.1rem;
-      }
-      nav a {
-        padding: 0.2rem 0.5rem;
-        font-size: 0.93rem;
-      }
-      .hero-section {
-        flex-direction: column;
-        padding: 1.2rem 0.2rem 1rem 0.2rem;
-        min-height: unset;
-        gap: 0.7rem;
-      }
-      .hero-content h2 {
-        font-size: 1.2rem;
-      }
-      .hero-content p {
-        font-size: 0.97rem;
-      }
-      .hero-btn {
-        font-size: 0.97rem;
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-      }
-      .hero-img {
-        width: 98vw;
-        min-width: 0;
-        padding: 0.2rem;
-        margin: 0 auto;
-      }
-      .about-section {
-        flex-direction: column;
-        padding: 0.7rem 0.1rem;
-        gap: 0.7rem;
-      }
-      .about-img-home {
-        width: 95vw;
-        min-width: 0;
-        margin: 0 auto 0.7rem auto;
-      }
-      .about-section p {
-        font-size: 0.97rem;
-        padding: 0 0.1rem;
-      }
-      .stats-bar {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 0.5rem 0.1rem;
-        border-radius: 1rem;
-      }
-      .stat-num {
-        font-size: 1rem;
-      }
-      .stat-label {
-        font-size: 0.93rem;
-      }
-      .features-section {
-        padding: 0.5rem 0.05rem;
-        border-radius: 1rem;
-        margin: 0.7rem 0.05rem;
-      }
-      .features-section h2 {
-        font-size: 1rem;
-        margin-bottom: 0.7rem;
-      }
-      .features-list {
-        gap: 0.7rem;
-        grid-template-columns: 1fr;
-      }
-      .feature-card {
-        padding: 0.7rem 0.3rem;
-        border-radius: 1rem;
-      }
-      .testimonial-cards {
-        flex-direction: column;
-        gap: 0.7rem;
-        align-items: center;
-      }
-      .testimonial {
-        min-width: 0;
-        max-width: 98vw;
-        padding: 0.7rem 0.3rem;
-        border-radius: 1rem;
-      }
-      .testimonial-photo {
-        width: 38px;
-        height: 38px;
-      }
-      .contact-card {
-        padding: 0.7rem 0.2rem;
-        border-radius: 1rem;
-      }
-      .whatsapp-btn {
-        font-size: 0.97rem;
-        padding: 0.5rem 1rem;
-        border-radius: 1rem;
-      }
-      footer {
-        font-size: 0.93rem;
-        padding: 0.7rem 0 0.5rem 0;
-        border-radius: 1rem;
-      }
-      /* Carousel arrows and dots */
-      /* .owl-nav button {
-        width: 28px !important;
-        height: 28px !important;
-        font-size: 0.9rem !important;
-        top: 44%;
-      } */
-      /* .owl-nav .owl-prev { left: -4px; }
-      .owl-nav .owl-next { right: -4px; }
-      .owl-dots {
-        display: flex;
-        gap: 1rem;
-      }
-      .owl-dots .owl-dot span {
-        display: block;
-        width: 8px;
-        height: 8px;
-      } */
-      #servicesOwl {
-        padding-bottom: 1rem;
-      }
-      .service-card-modern {
-        max-width: 99vw;
-        margin: 0.3rem auto;
-        padding: 0.2rem 0.05rem;
-        border-radius: 1rem;
-      }
-      .service-img-modern {
-        height: 60px;
-        border-radius: 1rem 1rem 0 0;
-      }
-      .service-card-body {
-        padding: 0.3rem 0.1rem 0.3rem 0.1rem;
-      }
-      .service-title-modern {
-        font-size: 0.93rem;
-        margin-top: 0.2rem;
-        margin-bottom: 0.2rem;
-      }
-      .service-desc-modern {
-        font-size: 0.91rem;
-      }
-    }
-    /* Footer */
-    footer {
-      background: #fff;
-      color: #007bff;
-      text-align: center;
-      padding: 1.5rem 0 1.2rem 0;
-      font-weight: 600;
-      font-size: 1.08rem;
-      border-top: 1px solid #eaf6ff;
-      margin-top: 2.5rem;
-      letter-spacing: 0.5px;
-      animation: fadeInUp 1.2s;
-    }
-    .services-slider-container {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .services-slider {
-      display: flex;
-      transition: transform 0.6s cubic-bezier(.77,0,.18,1);
-      width: 100%;
-      max-width: 900px;
-      overflow: hidden;
-    }
-    .service-slide {
-      min-width: 100%;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: fadeInUp 1s;
-    }
-    .service-img {
-      width: 100%;
-      max-width: 600px;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 1.2rem 1.2rem 0 0;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-    }
-    .service-card {
-      background: #fff;
-      border-radius: 0 0 1.2rem 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
-      padding: 2rem 1.5rem 1.5rem 1.5rem;
-      margin-top: -8px;
-      width: 100%;
-      max-width: 600px;
-      text-align: center;
-    }
-    .service-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: #22c55e;
-      margin-bottom: 0.7rem;
-    }
-    .service-desc {
-      font-size: 1.08rem;
-      color: #444;
-    }
-    .slider-btn {
-      background: #eaf6ff;
-      border: none;
-      border-radius: 50%;
-      width: 44px;
-      height: 44px;
-      font-size: 1.5rem;
-      color: #00c6ff;
-      box-shadow: 0 2px 8px #00c6ff22;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 2;
-    }
-    .slider-btn-left { left: -24px; }
-    .slider-btn-right { right: -24px; }
-    .slider-btn:hover { background: #00c6ff; color: #fff; }
-    /* --- Services Card & Carousel Styles (match services page) --- */
-#services {
-  background: linear-gradient(120deg, #fff 70%, #eaf6ff 100%);
-  border-radius: 2rem;
-  box-shadow: 0 8px 32px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
-  padding-bottom: 2.5rem;
-}
-.service-card-modern {
-  background: #fff;
-  border-radius: 1.5rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-  overflow: hidden;
-  max-width: 340px;
-  margin: 1.5rem auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: box-shadow 0.3s, transform 0.3s;
-  position: relative;
-  border-top: 5px solid #00c6ff33;
-}
-.service-card-modern[data-badge]:before {
-  content: attr(data-badge);
-  position: absolute;
-  top: 18px;
-  left: 18px;
-  background: linear-gradient(90deg,#00c6ff,#ffdd57);
-  color: #fff;
-  font-size: 0.95rem;
-  font-weight: 700;
-  padding: 0.3em 1em;
-  border-radius: 1em;
-  box-shadow: 0 2px 8px #00c6ff22;
-  z-index: 2;
-  letter-spacing: 1px;
-  opacity: 0.92;
-  pointer-events: none;
-}
-.service-card-modern:hover {
-  box-shadow: 0 8px 32px #00c6ff33, 0 1.5px 8px #ffdd5733;
-  transform: scale(1.04) translateY(-6px);
-  z-index: 2;
-}
-.service-img-modern {
-  width: 100%;
-  height: 170px;
-  object-fit: contain;
-  background: #fff;
-  border-bottom: 2px solid #eaf6ff;
-  margin-bottom: 0.5rem;
-}
-.service-card-body {
-  padding: 1.2rem 1.1rem 1.1rem 1.1rem;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-}
-.service-title-modern {
-  font-size: 1.18rem;
-  font-weight: 800;
-  color: #22c55e;
-  margin-bottom: 0.7rem;
-  letter-spacing: 0.5px;
-  margin-top: 0.7rem;
-  text-align: center;
-}
-.service-desc-modern {
-  font-size: 1.01rem;
-  color: #444;
-  text-align: center;
-}
-.service-desc-modern ul {
-  margin: 1rem 0 0 1.2rem;
-  color: #007bff;
-  font-size: 1.01rem;
-  font-weight: 500;
-  list-style: disc inside;
-  padding-left: 0;
-  text-align: left;
-}
-#servicesOwl .owl-nav,
-#blogOwlHome .owl-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute !important;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  margin: 0;
-  pointer-events: none;
-  z-index: 100;
-  padding: 0 1.5rem;
-  box-sizing: border-box;
-  background: none !important;
-  border-radius: 0;
-}
-
-#servicesOwl .owl-nav button,
-#blogOwlHome .owl-nav button {
-  background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
-  border-radius: 50% !important;
-  width: 32px !important;
-  height: 32px !important;
-  font-size: 1rem !important;
-  border: 3px solid #00c6ff !important;
-  /* box-shadow: 0 0 0 8px #eaf6ff, 0 8px 32px #00c6ff22; */
-  transition: box-shadow 0.2s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  position: relative;
-  pointer-events: all;
-}
-
-#servicesOwl .owl-nav button:hover,
-#blogOwlHome .owl-nav button:hover {
-  background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
-  color: #fff !important;
-  border: 3px solid #ffdd57 !important;
-  transform: scale(1.10) rotate(-8deg);
-  box-shadow: 0 0 0 16px #eaf6ff, 0 12px 36px #00c6ff33;
-}
-/* @media (max-width: 900px) {
-  #blogOwlHome .owl-nav button {
-    width: 42px !important;
-    height: 42px !important;
-    font-size: 1.3rem !important;
-  }
-}
-@media (max-width: 600px) {
-  #blogOwlHome .owl-nav button {
-    width: 30px !important;
-    height: 30px !important;
-    font-size: 1rem !important;
-  }
-} */
-  </style>
+  <link rel="stylesheet" href="./index.css">
 
   <script src="navbar.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="Smartque Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
-    </div>
-    <nav class="navbar">
-      <ul role="list" class="navbar--list">
-        <li class="navbar--list-item"><a class="navbar--link" href="index.html">Home</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="services.html">Services</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="about.html">About</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="contact.html">Contact</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="clients.html">Our Clients</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="team.html">Team</a></li>
-        <li class="navbar--list-item"><a class="navbar--link" href="blog.html">Blog</a></li>
-      </ul>
-      <button type="button"  id="closeBtn" class="close-menu button-reset" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
-    </nav>
-    <!-- Hamburger Icon -->
-<button type="button" class="hamburger-menu button-reset" id="hamburgerBtn" aria-label="Open menu">
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 12h16"/><path d="M4 18h16"/><path d="M4 6h16"/></svg>
-</button>
-  </header>
+  <header id="main_navbar"> </header>
 
-  <section id="hero" class="hero-section">
-    <div class="hero-content">
-      <h2>
-      Certifications, Compliances &<br>Trustable Solutions for Your Business.
-      </h2>
-      <p>
-        Trusted by 1000+ organizations for BIS, WPC, CDSCO, TEC, and ISO certifications.<br>
-        <span class="hero-highlight">We simplify regulatory approvals and empower your growth with expert guidance and end-to-end support.</span>
-      </p>
-      <a href="#contact" class="hero-btn">
-        <i class="fa-solid fa-paper-plane"></i> Get Free Consultation
-      </a>
-      <div class="hero-note">
-        <i class="fa-solid fa-award"></i> 12+ Years of Excellence in Compliance
-      </div>
-    </div>
-    <!-- Slick Carousel wrapper -->
-    <div class="hero-carousel" style="max-width:400px;width:100%;margin-left:2rem;">
-      <div><img src="images/Bureau_of_Indian_Standards_Logo.svg (1).png" alt="Image 1" class="hero-img" /></div>
-      <div><img src="images/fssai8862.jpg" alt="Image 2" class="hero-img" /></div>
-      <div><img src="images/nabl.png" alt="Image 3" class="hero-img" /></div>
-      <div><img src="images/crs.png" alt="Image 3" class="hero-img" /></div>
-    </div>
-  </section>
 
-  <section id="about" class="features-section" style="margin:2.5rem auto;max-width:1200px;border-radius:2rem;box-shadow:0 8px 32px rgba(0,123,255,0.10);background:#fff;position:relative;overflow:hidden;">
-  <!-- Decorative Elements -->
-  <div style="position:absolute;top:-120px;right:-120px;width:240px;height:240px;border-radius:50%;background:#00c6ff;opacity:0.06;z-index:0;"></div>
-  <div style="position:absolute;bottom:-80px;left:-80px;width:160px;height:160px;border-radius:50%;background:#0072ff;opacity:0.06;z-index:0;"></div>
-  <div style="position:absolute;bottom:0;left:0;width:100%;height:60px;opacity:0.08;z-index:0;background:url('data:image/svg+xml;utf8,<svg viewBox=\'0 0 1200 120\' xmlns=\'http://www.w3.org/2000/svg\' fill=\'%2300c6ff\'><path d=\'M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z\' /></svg>');background-size:1200px 60px;"></div>
-  <div class="content-wrapper" style="position:relative;z-index:10;padding:3.5rem 2rem;">
-    <!-- Header Section -->
-    <div style="text-align:center;margin-bottom:2.5rem;position:relative;padding-bottom:1.5rem;">
-      <h1 style="font-family:'Montserrat',sans-serif;font-size:2.5rem;font-weight:900;background:linear-gradient(90deg,#00c6ff,#0072ff 60%,#00ffd5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:0.7rem;letter-spacing:-0.5px;">About SmartQue Global</h1>
-      <p class="subheading" style="font-size:1.2rem;color:#0072ff;font-weight:600;max-width:600px;margin:0 auto;">Empowering Businesses. Simplifying Compliance.</p>
-      <div style="content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,#00c6ff,#0072ff);border-radius:2px;"></div>
-    </div>
-    <!-- Introduction -->
-    <div style="margin-bottom:2.5rem;text-align:center;max-width:900px;margin-left:auto;margin-right:auto;position:relative;padding:30px;border-radius:16px;background:rgba(0,198,255,0.03);border:1px solid rgba(0,198,255,0.1);">
-      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">Smartque Global was founded in 2012 with a bold vision: to transform the way businesses approach compliances and certification. Over the years, we've grown from a small consultancy into an emerging industry leader, trusted by businesses across India and around the globe.</p>
-      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">What sets us apart? Our passion for simplifying the complex. Whether you're a startup navigating the regulatory landscape for the first time or an established enterprise expanding into new markets, we ensure you achieve the certifications you need—on time, every time.</p>
-      <p style="font-size:1.13rem;margin-bottom:1.2rem;color:#334155;line-height:1.8;">We've successfully supported hundreds of organizations, guiding them through the maze of regulations and helping them secure critical approvals like <strong style="color:#00c6ff;">BIS, WPC, CDSCO, TEC</strong>, and <strong style="color:#00c6ff;">ISO certifications</strong>. Our focus is on delivering <strong style="color:#00c6ff;">value</strong>, <strong style="color:#00c6ff;">transparency</strong>, and <strong style="color:#00c6ff;">long-term success</strong>, with each certification earned and every project delivered.</p>
-    </div>
-    <!-- Stats Section -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:25px;margin:2.5rem 0;">
-      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
-        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-calendar-alt"></i></div>
-        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">12+ Years</div>
-        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Industry Experience</div>
-      </div>
-      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
-        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-users"></i></div>
-        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">500+</div>
-        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Clients Served</div>
-      </div>
-      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
-        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-award"></i></div>
-        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">1200+</div>
-        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Certifications Delivered</div>
-      </div>
-      <div style="text-align:center;background:#fff;padding:2rem 1rem;border-radius:1.2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border:1px solid rgba(0,198,255,0.15);">
-        <div style="font-size:2.2rem;color:#00c6ff;margin-bottom:0.7rem;"><i class="fas fa-globe-asia"></i></div>
-        <div style="font-size:1.5rem;font-weight:700;color:#0088ff;">Global Reach</div>
-        <div style="font-size:1.05rem;color:#334155;font-weight:500;">Pan-India & Worldwide</div>
-      </div>
-    </div>
-    <!-- Mission Section -->
-    <div style="background:linear-gradient(135deg,#00c6ff 0%,#0072ff 100%);padding:2.5rem;border-radius:1.2rem;margin:2.5rem 0;position:relative;overflow:hidden;box-shadow:0 10px 30px rgba(0,114,255,0.12);">
-      <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;color:#fff;margin-bottom:1.2rem;display:inline-block;">Our Mission</h2>
-      <p style="font-size:1.13rem;color:rgba(255,255,255,0.97);max-width:800px;line-height:1.8;margin-top:20px;">At Smartque, we believe compliances should never be a roadblock to your growth. Our mission is to make compliance <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">simple</strong>, <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">transparent</strong>, and <strong style="color:#fff;text-shadow:0 1px 3px rgba(0,0,0,0.2);">hassle-free</strong>, so you can focus on what truly matters: building your business, driving innovation, and achieving your goals.</p>
-    </div>
-    <!-- Values Section -->
-    <div style="margin-bottom:2.5rem;">
-      <h2 style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;color:#0088ff;margin-bottom:2rem;text-align:center;position:relative;display:inline-block;left:50%;transform:translateX(-50%);">Our Core Values</h2>
-      <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
-        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
-          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-handshake" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Integrity & Transparency</h3>
-          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">We operate with the highest ethical standards, ensuring our clients always know exactly where they stand.</p>
-        </div>
-        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
-          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-trophy" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Client Success</h3>
-          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">Your success is our success. We work tirelessly to ensure that your regulatory journey is smooth, efficient, and rewarding.</p>
-        </div>
-        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
-          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-chart-line" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Continuous Improvement</h3>
-          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">We're always evolving—learning, innovating, and refining our processes to deliver better, faster, and smarter solutions.</p>
-        </div>
-        <div style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
-          <h3 style="font-size:1.15rem;color:#0088ff;margin-bottom:1rem;display:flex;align-items:center;position:relative;z-index:1;"><i class="fas fa-lightbulb" style="margin-right:12px;color:#00c6ff;background:#e6f9ff;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2rem;"></i> Expert Guidance</h3>
-          <p style="font-size:1.05rem;color:#334155;padding-left:48px;position:relative;z-index:1;">Our team is made up of seasoned professionals who bring deep industry knowledge and insights to every project, ensuring you're always ahead of the curve.</p>
-        </div>
-      </div>
-    </div>
+  <!-- hero -->
+  <div id="Hero"></div>
 
-  </div>
-</section>
+  <!-- about and Feature  -->
+  <div id="About"></div>
 
-  <section class="features-section">
-    <h2>Why Choose Smartque?</h2>
-    <div class="features-list">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-        <div class="feature-title">Fast Turnaround</div>
-        <div class="feature-desc">We deliver certifications and approvals quickly, without compromising on quality.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
-        <div class="feature-title">Client-Centric</div>
-        <div class="feature-desc">We build lasting partnerships and tailor our services to each client’s unique needs.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-lightbulb"></i></div>
-        <div class="feature-title">Expertise</div>
-        <div class="feature-desc">Our team brings years of regulatory and technical experience to every project.</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-award"></i></div>
-        <div class="feature-title">Quality Work</div>
-        <div class="feature-desc">We strive to serve both domestic and international patrons with excellence..</div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-globe"></i></div>
-        <div class="feature-title">Global Reach</div>
-        <div class="feature-desc">From India to international markets, we help you achieve compliance everywhere.</div>
-      </div>
-    </div>
-  </section>
-
-    <div class="page-header">
+  <div class="page-header">
     <h1>Our Services</h1>
   </div>
+
+  <!-- service  -->
   <section id="services" class="features-section" style="overflow:hidden;">
     <h2 class="services-heading">
       <i class="fa-solid fa-layer-group"></i> What We Offer
     </h2>
-    <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
-      <!-- Card 1 -->
-      <div class="service-card-modern" data-badge="Popular">
-        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">BIS Registration & ISI Mark</div>
-          <div class="service-desc-modern">
-            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
-            <ul>
-              <li>Documentation &amp; application filing</li>
-              <li>Product testing coordination</li>
-              <li>End-to-end project management</li>
-            </ul>
-          </div>
-        </div>
+    <div id="service-container"></div>
+    <div id="carousel-progress"
+      style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
+      <div id="carousel-progress-bar"
+        style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);">
       </div>
-      <!-- Card 2 -->
-      <div class="service-card-modern">
-        <img src="images/wpc.jpg" alt="WPC & ETA Approvals" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">WPC & ETA Approvals</div>
-          <div class="service-desc-modern">
-            <p>Wireless Planning & Coordination (WPC) and Equipment Type Approval (ETA) for RF and wireless devices.</p>
-            <ul>
-              <li>ETA for importers &amp; manufacturers</li>
-              <li>Import license assistance</li>
-              <li>Technical documentation support</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 3 -->
-      <div class="service-card-modern">
-        <img src="images/cdsco.webp" alt="CDSCO & Medical Device Registration" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">CDSCO & Medical Device Registration</div>
-          <div class="service-desc-modern">
-            <p>Regulatory approvals for medical devices, cosmetics, and pharmaceuticals under CDSCO guidelines.</p>
-            <ul>
-              <li>Medical device import licensing</li>
-              <li>Cosmetic registration</li>
-              <li>Regulatory consulting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 4 -->
-      <div class="service-card-modern">
-        <img src="images/download.png" alt="ISO Certification & Audits" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">ISO Certification & Audits</div>
-          <div class="service-desc-modern">
-            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
-            <ul>
-              <li>Internal auditor training</li>
-              <li>Gap analysis &amp; documentation</li>
-              <li>Process improvement consulting</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <!-- Card 5 -->
-      <div class="service-card-modern">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
-        <div class="service-card-body">
-          <div class="service-title-modern">Global Certifications</div>
-          <div class="service-desc-modern">
-            <p>International compliance for CE, FCC, RoHS, EPR, BEE, and more for global market access.</p>
-            <ul>
-              <li>CE &amp; FCC certification</li>
-              <li>RoHS, EPR, BEE approvals</li>
-              <li>Customs clearance support</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
-      <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
     </div>
   </section>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
- 
-
   <!-- Blog Carousel Section for Home Page -->
-<section class="features-section" style="overflow:hidden;">
-  <h2 class="services-heading">
-    <i class="fa-solid fa-newspaper"></i> Latest Blog Posts
-  </h2>
-  <div class="owl-carousel" id="blogOwlHome">
-    <!-- Blog Card 1 -->
-    <div class="blog-card" data-badge="NEW">
-      <div class="blog-feature-icon">
-        <i class="fa-solid fa-certificate"></i>
-      </div>
-      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="How to Get BIS Certification in India" class="blog-img">
-      <div class="blog-card-body">
-        <div class="blog-title">How to Get BIS Certification in India</div>
-        <div class="blog-desc">
-          <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our expert assistance.</p>
+  <section class="features-section" style="overflow:hidden;">
+    <h2 class="services-heading">
+      <i class="fa-solid fa-newspaper"></i> Latest Blog Posts
+    </h2>
+    <div class="owl-carousel" id="blogOwlHome">
+      <!-- Blog Card 1 -->
+      <div class="blog-card" data-badge="NEW">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-certificate"></i>
         </div>
-        <a href="#" class="blog-readmore">Read Article</a>
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+          alt="How to Get BIS Certification in India" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">How to Get BIS Certification in India</div>
+          <div class="blog-desc">
+            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our
+              expert assistance.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 2 -->
+      <div class="blog-card" data-badge="POPULAR">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-broadcast-tower"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+          alt="WPC ETA: What You Need to Know" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">WPC ETA: What You Need to Know</div>
+          <div class="blog-desc">
+            <p>Understand the complete process and documentation required for WPC Equipment Type Approval in India.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 3 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          alt="ISO Certification Benefits" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">ISO Certification Benefits</div>
+          <div class="blog-desc">
+            <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.
+            </p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 4 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80"
+          alt="Testing Requirements" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">Product Testing Requirements</div>
+          <div class="blog-desc">
+            <p>Learn about the essential testing procedures for various product categories in the Indian market.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 5 -->
+      <div class="blog-card" data-badge="TRENDING">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
+          alt="Global Compliance" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">Global Compliances Standards</div>
+          <div class="blog-desc">
+            <p>Navigating international certification requirements for expanding your business globally with confidence.
+            </p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
       </div>
     </div>
-    <!-- Blog Card 2 -->
-    <div class="blog-card" data-badge="POPULAR">
-      <div class="blog-feature-icon">
-        <i class="fa-solid fa-broadcast-tower"></i>
-      </div>
-      <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="WPC ETA: What You Need to Know" class="blog-img">
-      <div class="blog-card-body">
-        <div class="blog-title">WPC ETA: What You Need to Know</div>
-        <div class="blog-desc">
-          <p>Understand the complete process and documentation required for WPC Equipment Type Approval in India.</p>
-        </div>
-        <a href="#" class="blog-readmore">Read Article</a>
-      </div>
+    <div id="blog-carousel-progress">
+      <div id="blog-carousel-progress-bar"></div>
     </div>
-    <!-- Blog Card 3 -->
-    <div class="blog-card">
-      <div class="blog-feature-icon">
-        <i class="fa-solid fa-shield-halved"></i>
-      </div>
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="ISO Certification Benefits" class="blog-img">
-      <div class="blog-card-body">
-        <div class="blog-title">ISO Certification Benefits</div>
-        <div class="blog-desc">
-          <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.</p>
-        </div>
-        <a href="#" class="blog-readmore">Read Article</a>
-      </div>
-    </div>
-    <!-- Blog Card 4 -->
-    <div class="blog-card">
-      <div class="blog-feature-icon">
-        <i class="fa-solid fa-flask"></i>
-      </div>
-      <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80" alt="Testing Requirements" class="blog-img">
-      <div class="blog-card-body">
-        <div class="blog-title">Product Testing Requirements</div>
-        <div class="blog-desc">
-          <p>Learn about the essential testing procedures for various product categories in the Indian market.</p>
-        </div>
-        <a href="#" class="blog-readmore">Read Article</a>
-      </div>
-    </div>
-    <!-- Blog Card 5 -->
-    <div class="blog-card" data-badge="TRENDING">
-      <div class="blog-feature-icon">
-        <i class="fa-solid fa-globe"></i>
-      </div>
-      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Global Compliance" class="blog-img">
-      <div class="blog-card-body">
-        <div class="blog-title">Global Compliances Standards</div>
-        <div class="blog-desc">
-          <p>Navigating international certification requirements for expanding your business globally with confidence.</p>
-        </div>
-        <a href="#" class="blog-readmore">Read Article</a>
-      </div>
-    </div>
-  </div>
-  <div id="blog-carousel-progress">
-    <div id="blog-carousel-progress-bar"></div>
-  </div>
-</section>
+  </section>
 
   <section id="contact" class="features-section">
     <h2>Contact Us</h2>
@@ -1293,319 +170,199 @@ header {
   </footer>
 
   <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const hamburger = document.getElementById('hamburgerBtn');
-  const nav = document.querySelector('nav');
-  hamburger.addEventListener('click', function() {
-    nav.classList.toggle('open');
-    hamburger.classList.toggle('open');
-    document.body.classList.toggle('menu-open');
-  });
-  // Close menu when clicking a link (optional)
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('open');
-      hamburger.classList.remove('open');
-      document.body.classList.remove('menu-open');
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburgerBtn');
+      const nav = document.querySelector('nav');
+      hamburger.addEventListener('click', function () {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+      });
+      // Close menu when clicking a link (optional)
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          hamburger.classList.remove('open');
+          document.body.classList.remove('menu-open');
+        });
+      });
     });
-  });
-});
-</script>
+  </script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick Carousel CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  </script>
+
+
+  <!-- navbar -->
   <script>
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById('servicesSlider');
-  const slides = slider.querySelectorAll('.services-slide');
-  const dotsContainer = document.getElementById('servicesSliderDots');
-  let currentPage = 0;
+    function loadServiceComponent() {
+      fetch('/component/NavBar.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('main_navbar');
+          container.innerHTML = html;
 
-  function updateSlider() {
-    slider.style.transform = `translateX(-${currentPage * 100}%)`;
-    dotsContainer.querySelectorAll('.services-slider-dot').forEach((dot, idx) => {
-      dot.classList.toggle('active', idx === currentPage);
-    });
-  }
-
-  // Create dots
-  dotsContainer.innerHTML = '';
-  for (let i = 0; i < slides.length; i++) {
-    const dot = document.createElement('div');
-    dot.className = 'services-slider-dot' + (i === 0 ? ' active' : '');
-    dot.style.width = '13px';
-    dot.style.height = '13px';
-    dot.style.borderRadius = '50%';
-    dot.style.background = '#eaf6ff';
-    dot.style.border = '2px solid #00c6ff';
-    dot.style.cursor = 'pointer';
-    dot.style.transition = 'background 0.2s, border 0.2s';
-    dot.addEventListener('click', () => {
-      currentPage = i;
-      updateSlider();
-    });
-    dotsContainer.appendChild(dot);
-  }
-
-  function goToPrev() {
-    currentPage = (currentPage - 1 + slides.length) % slides.length;
-    updateSlider();
-  }
-  function goToNext() {
-    currentPage = (currentPage + 1) % slides.length;
-    updateSlider();
-  }
-
-  document.getElementById('servicesPrev').onclick = goToPrev;
-  document.getElementById('servicesNext').onclick = goToNext;
-
-  // Touch/Swipe support
-  let startX = null;
-  slider.addEventListener('touchstart', e => {
-    startX = e.touches[0].clientX;
-  });
-  slider.addEventListener('touchend', e => {
-    if (startX === null) return;
-    let endX = e.changedTouches[0].clientX;
-    if (endX - startX > 50) goToPrev();
-    else if (startX - endX > 50) goToNext();
-    startX = null;
-  });
-
-  updateSlider();
-});
-  </script>
-
-<!-- jQuery -->
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Slick Carousel CSS & JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-
-  </script>
-  
-  <!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> -->
-   <script>
-  $(document).ready(function(){
-    // Services carousel (already present)
-    $("#servicesOwl").owlCarousel({
-      loop:true,
-      margin:32,
-      nav:true,
-      dots:true,
-      center:true,
-      stagePadding: 80,
-      autoplay:true,
-      autoplayTimeout:3500,
-      autoplayHoverPause:true,
-      navText: [
-        '<i class="fa fa-chevron-left"></i>',
-        '<i class="fa fa-chevron-right"></i>'
-      ],
-      responsive:{
-        0:{ items:1, stagePadding: 20 },
-        600:{ items:1, stagePadding: 40 },
-        900:{ items:2, stagePadding: 60 },
-        1200:{ items:3, stagePadding: 80 }
-      }
-    });
-
-    // Blog carousel (same style as services)
-    $("#blogOwl").owlCarousel({
-      loop:true,
-      margin:32,
-      nav:true,
-      dots:true,
-      center:true,
-      stagePadding: 80,
-      autoplay:true,
-      autoplayTimeout:3500,
-      autoplayHoverPause:true,
-      navText: [
-        '<i class="fa fa-chevron-left"></i>',
-        '<i class="fa fa-chevron-right"></i>'
-      ],
-      responsive:{
-        0:{ items:1, stagePadding: 20 },
-        600:{ items:1, stagePadding: 40 },
-        900:{ items:2, stagePadding: 60 },
-        1200:{ items:3, stagePadding: 80 }
-      }
-    });
-  });
-  </script>
-  <script>
-$(document).ready(function(){
-  $("#blogOwlHome").owlCarousel({
-    loop:true,
-    margin:32,
-    nav:true,
-    dots:true,
-    center:true,
-    stagePadding: 80,
-    autoplay:true,
-    autoplayTimeout:3500,
-    autoplayHoverPause:true,
-    navText: [
-      '<i class="fa fa-chevron-left"></i>',
-      '<i class="fa fa-chevron-right"></i>'
-    ],
-    responsive:{
-      0:{ items:1, stagePadding: 20 },
-      600:{ items:1, stagePadding: 40 },
-      900:{ items:2, stagePadding: 60 },
-      1200:{ items:3, stagePadding: 80 }
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript); // Append to body so it executes
+          });
+        });
     }
-  });
 
-  // Blog progress bar
-  blogOwl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-    if (!event.namespace) return;
-   
-   
-    var carousel = event.relatedTarget;
-    var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
-    $('#blog-carousel-progress-bar').css('width', percent + '%');
-  });
-});
-</script>
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
 
+  <!-- hero -->
   <script>
-$(document).ready(function(){
-  var owl = $("#servicesOwl").owlCarousel({
-    loop:true,
-    margin:40,
-    nav:true,
-    dots:false,
-    center:true,
-    stagePadding: 120,
-    autoplay:true,
-    autoplayTimeout:3500,
-    autoplayHoverPause:true,
-    navText: [
-      '<i class="fa fa-chevron-left"></i>',
-      '<i class="fa fa-chevron-right"></i>'
-    ],
-    responsive:{
-      0:{ items:1, stagePadding: 20 },
-      600:{ items:1, stagePadding: 40 },
-      900:{ items:2, stagePadding: 60 },
-      1200:{ items:3, stagePadding: 120 }
+    function loadHeroComponent() {
+      fetch('/component/Hero.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('Hero');
+          container.innerHTML = html;
+
+          // Init Slick Carousel
+          setTimeout(() => {
+            if ($('.hero-carousel').length) {
+              $('.hero-carousel').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                speed: 500,
+                adaptiveHeight: true,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+              });
+            }
+          }, 100);
+        });
     }
-  });
 
-  // Progress bar
-  owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
-    if (!event.namespace) return;
-    var carousel = event.relatedTarget;
-    var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
-    $('#carousel-progress-bar').css('width', percent + '%');
-  });
-});
-</script>
-  
+    document.addEventListener("DOMContentLoaded", loadHeroComponent);
+  </script>
+
+
+  <!-- other section -->
+
   <script>
-  $(document).ready(function(){
-    $('.hero-carousel').slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000,
-      infinite: true,
-      dots: true,
-      arrows: true,
-      speed: 500,
-      adaptiveHeight: true,
-      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
-  
-    });
-  });
-</script>
-<script>
-  $(document).ready(function(){
-    // Services carousel using Slick
-    $('#servicesOwl').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3500,
-      infinite: true,
-      dots: true,
-      arrows: true,
-      centerMode: true,
-      variableWidth: false,
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: { slidesToShow: 2, centerMode: true }
-        },
-        {
-          breakpoint: 900,
-          settings: { slidesToShow: 1, centerMode: true }
-        },
-        {
-          breakpoint: 600,
-          settings: { slidesToShow: 1, centerMode: false }
-        }
-      ],
-      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
-      appendDots: $('#carousel-progress'),
-      customPaging: function(slider, i) {
-        return '<span class="slick-dot"></span>';
-      }
-    });
+    function loadServiceComponent() {
+      fetch('/component/SimplePages.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('About');
+          container.innerHTML = html;
+        });
+    }
 
-    // Progress bar for services carousel
-    $('#servicesOwl').on('afterChange', function(event, slick, currentSlide){
-      var percent = ((currentSlide + 1) / slick.slideCount) * 100;
-      $('#carousel-progress-bar').css('width', percent + '%');
-    });
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
 
-    // Blog carousel using Slick
-    $('#blogOwlHome').slick({
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3500,
-      infinite: true,
-      dots: true,
-      arrows: true,
-      centerMode: true,
-      variableWidth: false,
-      responsive: [
-        {
-          breakpoint: 1200,
-          settings: { slidesToShow: 2, centerMode: true }
-        },
-        {
-          breakpoint: 900,
-          settings: { slidesToShow: 1, centerMode: true }
-        },
-        {
-          breakpoint: 600,
-          settings: { slidesToShow: 1, centerMode: false }
-        }
-      ],
-      prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-      nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
-      appendDots: $('#blog-carousel-progress'),
-      customPaging: function(slider, i) {
-        return '<span class="slick-dot"></span>';
-      }
-    });
+  <!-- service section -->
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/service.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('service-container');
+          container.innerHTML = html;
+          setTimeout(() => {
+            if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+              $("#servicesOwl").owlCarousel({
+                loop: true,
+                margin: 40,
+                nav: true,
+                dots: false,
+                center: true,
+                stagePadding: 120,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                  '<i class="fa fa-chevron-left"></i>',
+                  '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsive: {
+                  0: { items: 1, stagePadding: 20 },
+                  600: { items: 1, stagePadding: 40 },
+                  900: { items: 2, stagePadding: 60 },
+                  1200: { items: 3, stagePadding: 120 }
+                }
+              });
 
-    // Progress bar for blog carousel
-    $('#blogOwlHome').on('afterChange', function(event, slick, currentSlide){
-      var percent = ((currentSlide + 1) / slick.slideCount) * 100;
-      $('#blog-carousel-progress-bar').css('width', percent + '%');
-    });
-  });
-</script>
+              // Optional: Add card hover effect again
+              document.querySelectorAll('.service-card-modern').forEach(card => {
+                card.addEventListener('mousemove', function (e) {
+                  const rect = card.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const xc = rect.width / 2;
+                  const yc = rect.height / 2;
+                  const dx = (x - xc) / xc;
+                  const dy = (y - yc) / yc;
+                  card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.04)`;
+                });
+                card.addEventListener('mouseleave', function () {
+                  card.style.transform = '';
+                });
+              });
+
+            } else {
+              console.error("OwlCarousel is not available.");
+            }
+          }, 100);
+        });
+    }
+
+    // Call it when ready
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+  <script src="../main.js"></script>
+
+  <!-- ✅ jQuery (only once!) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- ✅ Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <!-- ✅ Slick Carousel CSS (if also using it) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <!-- ✅ Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- ✅ Slick Carousel JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 
   <script src="./serviceScript.js"></script>
 </body>
+
 </html>
