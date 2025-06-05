@@ -1,34 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Services | SmartQue Global</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="./service.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="header">
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient gradient-text">Smartque Tech QMS </h1>
-    </div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="clients.html">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+  <header id="main_navbar"> </header>
 
   <div class="page-header">
     <h1>Our Services</h1>
@@ -40,11 +28,13 @@
     <div class="owl-carousel custom-owl-theme services-owl-overflow" id="servicesOwl">
       <!-- Card 1 -->
       <div class="service-card-modern" data-badge="Popular">
-        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark" class="service-img-modern">
+        <img src="images/Bureau_of_Indian_Standards_Logo.svg.png" alt="BIS Registration & ISI Mark"
+          class="service-img-modern">
         <div class="service-card-body">
           <div class="service-title-modern">BIS Registration & ISI Mark</div>
           <div class="service-desc-modern">
-            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and consumer products.</p>
+            <p>Comprehensive support for BIS CRS, ISI, FMCS, and Hallmarking certifications for electronics, IT, and
+              consumer products.</p>
             <ul>
               <li>Documentation &amp; application filing</li>
               <li>Product testing coordination</li>
@@ -89,7 +79,8 @@
         <div class="service-card-body">
           <div class="service-title-modern">ISO Certification & Audits</div>
           <div class="service-desc-modern">
-            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.</p>
+            <p>ISO 9001, 14001, 45001, 27001 certification, audits, and training for quality and process improvement.
+            </p>
             <ul>
               <li>Internal auditor training</li>
               <li>Gap analysis &amp; documentation</li>
@@ -100,7 +91,8 @@
       </div>
       <!-- Card 5 -->
       <div class="service-card-modern">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80" alt="Global Certifications" class="service-img-modern">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=facearea&w=400&q=80"
+          alt="Global Certifications" class="service-img-modern">
         <div class="service-card-body">
           <div class="service-title-modern">Global Certifications</div>
           <div class="service-desc-modern">
@@ -114,13 +106,44 @@
         </div>
       </div>
     </div>
-    <div id="carousel-progress" style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
-      <div id="carousel-progress-bar" style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);"></div>
+    <div id="carousel-progress"
+      style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
+      <div id="carousel-progress-bar"
+        style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);">
+      </div>
     </div>
   </section>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+
+  <!-- navbar -->
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/NavBar.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('main_navbar');
+          container.innerHTML = html;
+
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript); // Append to body so it executes
+          });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+
   <script src="./serviceScript.js"></script>
 </body>
+
 </html>

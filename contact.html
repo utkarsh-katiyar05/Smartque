@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact | Smartque Global</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     body {
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
@@ -14,19 +15,22 @@
       margin: 0;
       color: #222;
     }
+
     .header {
       background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       border-radius: 0 0 1.5rem 1.5rem;
       padding: 1.2rem 0 0.7rem 0;
       margin-bottom: 2rem;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1rem;
     }
+
     .logo {
       height: 54px;
       width: 54px;
@@ -34,6 +38,7 @@
       box-shadow: 0 2px 12px #00c6ff33;
       background: #fff;
     }
+
     .logo-title-gradient {
       font-size: 2rem;
       font-weight: 900;
@@ -44,6 +49,7 @@
       letter-spacing: 1px;
       margin: 0;
     }
+
     .main-nav {
       display: flex;
       justify-content: center;
@@ -51,6 +57,7 @@
       margin-top: 0.7rem;
       flex-wrap: wrap;
     }
+
     .main-nav a {
       color: #007bff;
       text-decoration: none;
@@ -60,23 +67,26 @@
       border-radius: 8px;
       transition: background 0.2s, color 0.2s;
     }
+
     .main-nav a.active,
     .main-nav a:hover {
       background: linear-gradient(90deg, #00c6ff 60%, #ffdd57 100%);
       color: #222;
       text-decoration: none;
     }
+
     .features-section {
       max-width: 1100px;
       margin: 2.5rem auto;
       background: #fff;
       border-radius: 2.2rem;
-      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
+      box-shadow: 0 8px 32px rgba(0, 123, 255, 0.10);
       padding: 2.5rem 2rem 2rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .section-title {
       text-align: center;
       font-size: 2.5rem;
@@ -88,7 +98,11 @@
       background-clip: text;
       letter-spacing: 1px;
     }
-    .accent { color: #00c6ff; }
+
+    .accent {
+      color: #00c6ff;
+    }
+
     .contact-flex-wrap {
       display: flex;
       gap: 2.5rem;
@@ -97,13 +111,14 @@
       align-items: stretch;
       flex-wrap: nowrap;
     }
+
     .contact-card {
       flex: 1 1 340px;
       max-width: 440px;
       min-width: 260px;
       background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
       border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
@@ -111,30 +126,41 @@
       margin: 0;
       box-sizing: border-box;
     }
+
     .contact-info-card p {
       font-size: 1.13rem;
       color: #444;
       margin-bottom: 0.5rem;
       text-align: left;
     }
+
     .contact-info-card a {
       color: #007bff;
       text-decoration: none;
       font-weight: 700;
       transition: color 0.2s;
     }
+
     .contact-info-card a:hover {
       color: #00c6ff;
       text-decoration: underline;
     }
-    .label { color: #222; font-weight: 700; }
-    .address { font-weight: 400; }
+
+    .label {
+      color: #222;
+      font-weight: 700;
+    }
+
+    .address {
+      font-weight: 400;
+    }
+
     .whatsapp-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: linear-gradient(90deg,#25D366,#00c6ff);
+      background: linear-gradient(90deg, #25D366, #00c6ff);
       color: #fff;
       font-weight: 600;
       font-size: 1.13rem;
@@ -142,16 +168,18 @@
       border-radius: 30px;
       text-decoration: none;
       margin-top: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
       transition: background 0.2s;
       border: none;
       cursor: pointer;
     }
+
     .whatsapp-btn:hover,
     .send-btn:focus {
-      background: linear-gradient(90deg,#1ebe5d,#00c6ff);
+      background: linear-gradient(90deg, #1ebe5d, #00c6ff);
       outline: none;
     }
+
     .contact-form-card form {
       width: 100%;
       display: flex;
@@ -160,6 +188,7 @@
       align-items: stretch;
       gap: 0;
     }
+
     .form-title {
       text-align: center;
       color: #00c6ff;
@@ -167,12 +196,14 @@
       font-weight: 900;
       font-size: 1.3rem;
     }
+
     .form-row {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 1rem;
     }
+
     .form-group {
       flex: 1 1 120px;
       min-width: 120px;
@@ -180,12 +211,14 @@
       flex-direction: column;
       margin-bottom: 1rem;
     }
+
     .form-group label {
       font-weight: 600;
       color: #007bff;
       margin-bottom: 2px;
       font-size: 1rem;
     }
+
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -200,16 +233,22 @@
       background: #fff;
       resize: none;
     }
+
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       border: 2px solid #00c6ff;
       outline: none;
     }
+
     .form-group textarea {
       min-height: 100px;
     }
-    .required { color: #ff4757; }
+
+    .required {
+      color: #ff4757;
+    }
+
     #formStatus {
       text-align: center;
       margin-bottom: 1rem;
@@ -217,51 +256,56 @@
       min-height: 1.2em;
       font-size: 1.05rem;
     }
+
     @media (max-width: 950px) {
       .features-section {
         max-width: 98vw;
         padding: 1.2rem 0.5rem;
       }
+
       .contact-flex-wrap {
         flex-direction: column;
         gap: 1.5rem;
         align-items: stretch;
       }
+
       .contact-card {
         max-width: 100%;
       }
+
       .form-row {
         flex-direction: column;
         gap: 0;
       }
+
       .whatsapp-btn {
         width: 100%;
       }
     }
+
     @media (max-width: 600px) {
-      .features-section { padding: 1.2rem 0.5rem; }
-      .contact-card { padding: 1.2rem 0.5rem; }
-      .section-title { font-size: 2rem; }
-      .logo-title-gradient { font-size: 1.3rem; }
+      .features-section {
+        padding: 1.2rem 0.5rem;
+      }
+
+      .contact-card {
+        padding: 1.2rem 0.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .logo-title-gradient {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="header">
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient">Smartque Tech QMS</h1>
-    </div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="clients.html">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
+  <header id="main_navbar"> </header>
+
   <section class="features-section">
     <h2 class="section-title">
       Contact <span class="accent">Us</span>
@@ -321,7 +365,8 @@
           </div>
           <div class="form-group">
             <label for="message">Your Message <span class="required">*</span></label>
-            <textarea id="message" name="message" required placeholder="Please describe your query in detail"></textarea>
+            <textarea id="message" name="message" required
+              placeholder="Please describe your query in detail"></textarea>
           </div>
           <div id="formStatus"></div>
           <button type="submit" class="whatsapp-btn send-btn">
@@ -332,7 +377,7 @@
     </div>
   </section>
   <script>
-    document.getElementById('queryForm').addEventListener('submit', function(e) {
+    document.getElementById('queryForm').addEventListener('submit', function (e) {
       e.preventDefault();
       const name = document.getElementById('name').value.trim();
       const email = document.getElementById('email').value.trim();
@@ -369,5 +414,31 @@
       }, 1800);
     });
   </script>
+
+  <!-- navbar -->
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/NavBar.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('main_navbar');
+          container.innerHTML = html;
+
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript); // Append to body so it executes
+          });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
 </body>
+
 </html>

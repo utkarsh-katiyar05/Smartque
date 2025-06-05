@@ -1,366 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visionary Leadership | Our Founder</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-        
-        :root {
-            --gradient: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
-            --gradient-animated: linear-gradient(120deg, #007bff 0%, #00c6ff 30%, #ffdd57 60%, #007bff 100%);
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
-            overflow-x: hidden;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visionary Leadership | Our Founder</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+    :root {
+      --gradient: linear-gradient(120deg, #007bff 0%, #00c6ff 60%, #ffdd57 100%);
+      --gradient-animated: linear-gradient(120deg, #007bff 0%, #00c6ff 30%, #ffdd57 60%, #007bff 100%);
+
+      body {
+        font-family: 'Poppins', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+        color: #333;
+        overflow-x: hidden;
+      }
+
+      .team-section {
+        max-width: 1200px;
+        margin: 80px auto;
+        padding: 0 20px;
+        position: relative;
+      }
+
+      /* Animated background elements */
+      .gradient-orb {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: var(--gradient);
+        filter: blur(60px);
+        opacity: 0.15;
+        z-index: 0;
+      }
+
+      .orb-1 {
+        top: -100px;
+        left: -100px;
+        animation: float 8s ease-in-out infinite;
+      }
+
+      .orb-2 {
+        bottom: -50px;
+        right: -100px;
+        animation: float 10s ease-in-out infinite 2s;
+      }
+
+      @keyframes float {
+
+        0%,
+        100% {
+          transform: translateY(0) rotate(0deg);
         }
-        
-        .team-section {
-            max-width: 1200px;
-            margin: 80px auto;
-            padding: 0 20px;
-            position: relative;
+
+        50% {
+          transform: translateY(-20px) rotate(5deg);
         }
-        
-        /* Animated background elements */
-        .gradient-orb {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            background: var(--gradient);
-            filter: blur(60px);
-            opacity: 0.15;
-            z-index: 0;
+      }
+
+      .section-header {
+        margin-bottom: 70px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-header h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline-block;
+        position: relative;
+      }
+
+      .section-header h2::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: var(--gradient);
+        border-radius: 2px;
+      }
+
+      .section-header p {
+        font-size: 1.2rem;
+        color: #555;
+        max-width: 800px;
+        margin: 0 auto;
+        line-height: 1.7;
+      }
+
+      .founder-highlight {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        align-items: center;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 1;
+      }
+
+      .founder-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        max-width: 380px;
+        width: 100%;
+        position: relative;
+      }
+
+      .founder-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 8px;
+        background: var(--gradient-animated);
+        background-size: 300% 300%;
+        animation: gradientBG 8s ease infinite;
+      }
+
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%
         }
-        
-        .orb-1 {
-            top: -100px;
-            left: -100px;
-            animation: float 8s ease-in-out infinite;
+
+        50% {
+          background-position: 100% 50%
         }
-        
-        .orb-2 {
-            bottom: -50px;
-            right: -100px;
-            animation: float 10s ease-in-out infinite 2s;
+
+        100% {
+          background-position: 0% 50%
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
+      }
+
+      .founder-card:hover {
+        transform: translateY(-15px) rotate(1deg);
+      }
+
+      .member-image {
+        height: 380px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+      }
+
+      .founder-card:hover .member-image img {
+        transform: scale(1.05);
+      }
+
+      .member-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 221, 87, 0.9);
+        color: #333;
+        padding: 8px 15px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
         }
-        
-        .section-header {
-            margin-bottom: 70px;
-            text-align: center;
-            position: relative;
-            z-index: 1;
+
+        50% {
+          transform: scale(1.05);
         }
-        
+
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .member-info {
+        padding: 30px;
+        text-align: center;
+      }
+
+      .member-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        color: #222;
+      }
+
+      .member-info p.position {
+        color: #007bff;
+        font-weight: 700;
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+      }
+
+      .member-info p.bio {
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 25px;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+
+      .social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: #f0f0f0;
+        color: #555;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--gradient);
+        color: white;
+        transform: translateY(-3px);
+      }
+
+      .founder-quote {
+        flex: 1;
+        min-width: 300px;
+        max-width: 500px;
+        padding: 30px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .founder-quote::before {
+        content: '"';
+        position: absolute;
+        top: -30px;
+        left: 10px;
+        font-size: 120px;
+        color: rgba(0, 198, 255, 0.1);
+        font-family: serif;
+        line-height: 1;
+        z-index: 0;
+      }
+
+      .quote-text {
+        font-size: 1.3rem;
+        line-height: 1.8;
+        color: #444;
+        font-weight: 300;
+        font-style: italic;
+        margin-bottom: 25px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .quote-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .quote-author img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 3px solid #00c6ff;
+      }
+
+      .author-info h4 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: #333;
+      }
+
+      .author-info p {
+        margin: 3px 0 0;
+        font-size: 0.9rem;
+        color: #777;
+      }
+
+      .founder-stats {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 50px;
+        flex-wrap: wrap;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 25px;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+        min-width: 150px;
+        transition: transform 0.3s ease;
+      }
+
+      .stat-item:hover {
+        transform: translateY(-10px);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        background: var(--gradient);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+      }
+
+      .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
         .section-header h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-            position: relative;
+          font-size: 2.2rem;
         }
-        
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background: var(--gradient);
-            border-radius: 2px;
-        }
-        
-        .section-header p {
-            font-size: 1.2rem;
-            color: #555;
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.7;
-        }
-        
+
         .founder-highlight {
-            display: flex;
-            justify-content: center;
-            gap: 50px;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-            z-index: 1;
+          gap: 30px;
         }
-        
-        .founder-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            max-width: 380px;
-            width: 100%;
-            position: relative;
-        }
-        
-        .founder-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 8px;
-            background: var(--gradient-animated);
-            background-size: 300% 300%;
-            animation: gradientBG 8s ease infinite;
-        }
-        
-        @keyframes gradientBG {
-            0% { background-position: 0% 50% }
-            50% { background-position: 100% 50% }
-            100% { background-position: 0% 50% }
-        }
-        
-        .founder-card:hover {
-            transform: translateY(-15px) rotate(1deg);
-        }
-        
-        .member-image {
-            height: 380px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .member-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-        
-        .founder-card:hover .member-image img {
-            transform: scale(1.05);
-        }
-        
-        .member-badge {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: rgba(255, 221, 87, 0.9);
-            color: #333;
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        
-        .member-info {
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .member-info h3 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            color: #222;
-        }
-        
-        .member-info p.position {
-            color: #007bff;
-            font-weight: 700;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            letter-spacing: 1px;
-        }
-        
-        .member-info p.bio {
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 25px;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: #f0f0f0;
-            color: #555;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-links a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
-        
+
+        .founder-card,
         .founder-quote {
-            flex: 1;
-            min-width: 300px;
-            max-width: 500px;
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
-            position: relative;
-            overflow: hidden;
+          max-width: 100%;
         }
-        
-        .founder-quote::before {
-            content: '"';
-            position: absolute;
-            top: -30px;
-            left: 10px;
-            font-size: 120px;
-            color: rgba(0, 198, 255, 0.1);
-            font-family: serif;
-            line-height: 1;
-            z-index: 0;
+
+        .member-image {
+          height: 320px;
         }
-        
-        .quote-text {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: #444;
-            font-weight: 300;
-            font-style: italic;
-            margin-bottom: 25px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .quote-author {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .quote-author img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #00c6ff;
-        }
-        
-        .author-info h4 {
-            margin: 0;
-            font-size: 1.1rem;
-            color: #333;
-        }
-        
-        .author-info p {
-            margin: 3px 0 0;
-            font-size: 0.9rem;
-            color: #777;
-        }
-        
-        .founder-stats {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 50px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-item {
-            text-align: center;
-            padding: 25px;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-            min-width: 150px;
-            transition: transform 0.3s ease;
-        }
-        
-        .stat-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            margin-bottom: 10px;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        @media (max-width: 768px) {
-            .section-header h2 {
-                font-size: 2.2rem;
-            }
-            
-            .founder-highlight {
-                gap: 30px;
-            }
-            
-            .founder-card, .founder-quote {
-                max-width: 100%;
-            }
-            
-            .member-image {
-                height: 320px;
-            }
-        }
-  
+      }
+
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
-      font-family: 'Segoe UI', Arial, sans-serif;
+      font-family: 'Segoe UI',
+      Arial,
+      sans-serif;
       margin: 0;
       color: #222;
     }
+
     .header {
       background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       border-radius: 0 0 1.5rem 1.5rem;
       padding: 1.2rem 0 0.7rem 0;
       margin-bottom: 2rem;
     }
+
     .logo-container {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 1rem;
     }
+
     .logo {
       height: 54px;
       width: 54px;
@@ -368,6 +398,7 @@
       box-shadow: 0 2px 12px #00c6ff33;
       background: #fff;
     }
+
     .logo-title-gradient {
       font-size: 2rem;
       font-weight: 900;
@@ -378,6 +409,7 @@
       letter-spacing: 1px;
       margin: 0;
     }
+
     .main-nav {
       display: flex;
       justify-content: center;
@@ -385,6 +417,7 @@
       margin-top: 0.7rem;
       flex-wrap: wrap;
     }
+
     .main-nav a {
       color: #007bff;
       text-decoration: none;
@@ -394,23 +427,26 @@
       border-radius: 8px;
       transition: background 0.2s, color 0.2s;
     }
+
     .main-nav a.active,
     .main-nav a:hover {
       background: linear-gradient(90deg, #00c6ff 60%, #ffdd57 100%);
       color: #222;
       text-decoration: none;
     }
+
     .features-section {
       max-width: 1100px;
       margin: 2.5rem auto;
       background: #fff;
       border-radius: 2.2rem;
-      box-shadow: 0 8px 32px rgba(0,123,255,0.10);
+      box-shadow: 0 8px 32px rgba(0, 123, 255, 0.10);
       padding: 2.5rem 2rem 2rem 2rem;
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .section-title {
       text-align: center;
       font-size: 2.5rem;
@@ -422,7 +458,11 @@
       background-clip: text;
       letter-spacing: 1px;
     }
-    .accent { color: #00c6ff; }
+
+    .accent {
+      color: #00c6ff;
+    }
+
     .contact-flex-wrap {
       display: flex;
       gap: 2.5rem;
@@ -431,13 +471,14 @@
       align-items: stretch;
       flex-wrap: nowrap;
     }
+
     .contact-card {
       flex: 1 1 340px;
       max-width: 440px;
       min-width: 260px;
       background: linear-gradient(120deg, #f8fbff 80%, #eaf6ff 100%);
       border-radius: 1.2rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
       padding: 2rem 1.5rem 1.5rem 1.5rem;
       display: flex;
       flex-direction: column;
@@ -445,30 +486,41 @@
       margin: 0;
       box-sizing: border-box;
     }
+
     .contact-info-card p {
       font-size: 1.13rem;
       color: #444;
       margin-bottom: 0.5rem;
       text-align: left;
     }
+
     .contact-info-card a {
       color: #007bff;
       text-decoration: none;
       font-weight: 700;
       transition: color 0.2s;
     }
+
     .contact-info-card a:hover {
       color: #00c6ff;
       text-decoration: underline;
     }
-    .label { color: #222; font-weight: 700; }
-    .address { font-weight: 400; }
+
+    .label {
+      color: #222;
+      font-weight: 700;
+    }
+
+    .address {
+      font-weight: 400;
+    }
+
     .whatsapp-btn {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      background: linear-gradient(90deg,#25D366,#00c6ff);
+      background: linear-gradient(90deg, #25D366, #00c6ff);
       color: #fff;
       font-weight: 600;
       font-size: 1.13rem;
@@ -476,16 +528,18 @@
       border-radius: 30px;
       text-decoration: none;
       margin-top: 1.2rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
       transition: background 0.2s;
       border: none;
       cursor: pointer;
     }
+
     .whatsapp-btn:hover,
     .send-btn:focus {
-      background: linear-gradient(90deg,#1ebe5d,#00c6ff);
+      background: linear-gradient(90deg, #1ebe5d, #00c6ff);
       outline: none;
     }
+
     .contact-form-card form {
       width: 100%;
       display: flex;
@@ -494,6 +548,7 @@
       align-items: stretch;
       gap: 0;
     }
+
     .form-title {
       text-align: center;
       color: #00c6ff;
@@ -501,12 +556,14 @@
       font-weight: 900;
       font-size: 1.3rem;
     }
+
     .form-row {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
       margin-bottom: 1rem;
     }
+
     .form-group {
       flex: 1 1 120px;
       min-width: 120px;
@@ -514,12 +571,14 @@
       flex-direction: column;
       margin-bottom: 1rem;
     }
+
     .form-group label {
       font-weight: 600;
       color: #007bff;
       margin-bottom: 2px;
       font-size: 1rem;
     }
+
     .form-group input,
     .form-group select,
     .form-group textarea {
@@ -534,16 +593,22 @@
       background: #fff;
       resize: none;
     }
+
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       border: 2px solid #00c6ff;
       outline: none;
     }
+
     .form-group textarea {
       min-height: 100px;
     }
-    .required { color: #ff4757; }
+
+    .required {
+      color: #ff4757;
+    }
+
     #formStatus {
       text-align: center;
       margin-bottom: 1rem;
@@ -551,113 +616,157 @@
       min-height: 1.2em;
       font-size: 1.05rem;
     }
+
     @media (max-width: 950px) {
       .features-section {
         max-width: 98vw;
         padding: 1.2rem 0.5rem;
       }
+
       .contact-flex-wrap {
         flex-direction: column;
         gap: 1.5rem;
         align-items: stretch;
       }
+
       .contact-card {
         max-width: 100%;
       }
+
       .form-row {
         flex-direction: column;
         gap: 0;
       }
+
       .whatsapp-btn {
         width: 100%;
       }
     }
+
     @media (max-width: 600px) {
-      .features-section { padding: 1.2rem 0.5rem; }
-      .contact-card { padding: 1.2rem 0.5rem; }
-      .section-title { font-size: 2rem; }
-      .logo-title-gradient { font-size: 1.3rem; }
+      .features-section {
+        padding: 1.2rem 0.5rem;
+      }
+
+      .contact-card {
+        padding: 1.2rem 0.5rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .logo-title-gradient {
+        font-size: 1.3rem;
+      }
     }
   </style>
 </head>
+
 <body>
-  <header class="header">
-    <div class="logo-container animated-logo">
-      <img src="images/logo-1.png" alt="SmartQue Global logo" class="logo spin-glow" />
-      <h1 class="logo-title-gradient">Smartque Tech QMS </h1>
-    </div>
-    <nav class="main-nav">
-      <a href="index.html">Home</a>
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-      <a href="contact.html" class="active">Contact</a>
-      <a href="clients.html">Our Clients</a>
-      <a href="team.html">Team</a>
-      <a href="blog.html">Blog</a>
-    </nav>
-  </header>
-    </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  </head>
+
+  <body>
+    <header id="main_navbar"> </header>
+
+
     <section class="team-section">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        
-        <div class="section-header">
-            <h2>The Visionary Behind Our Success</h2>
-            <p>At the heart of our company lies the extraordinary leadership and relentless innovation of our founder. With a unique blend of strategic foresight and passionate execution, they've built more than a company — they've created a movement.</p>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+
+      <div class="section-header">
+        <h2>The Visionary Behind Our Success</h2>
+        <p>At the heart of our company lies the extraordinary leadership and relentless innovation of our founder. With
+          a unique blend of strategic foresight and passionate execution, they've built more than a company — they've
+          created a movement.</p>
+      </div>
+
+      <div class="founder-highlight">
+        <div class="founder-card">
+          <div class="member-image">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+              alt="Founder & CEO">
+            <div class="member-badge">Founder</div>
+          </div>
+          <div class="member-info">
+            <h3>Mr. Sachin Sachan</h3>
+            <p class="position">Chief Executive Officer & Vision Architect</p>
+            <p class="bio">Serial entrepreneur with 3 successful exits. Harvard MBA. Named "Top 30 Under 30" by Forbes.
+              Believes technology should serve humanity, not the other way around.</p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-medium"></i></a>
+              <a href="#"><i class="fas fa-globe"></i></a>
+            </div>
+          </div>
         </div>
-        
-        <div class="founder-highlight">
-            <div class="founder-card">
-                <div class="member-image">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Founder & CEO">
-                    <div class="member-badge">Founder</div>
-                </div>
-                <div class="member-info">
-                    <h3>Mr. Sachin Sachan</h3>
-                    <p class="position">Chief Executive Officer & Vision Architect</p>
-                    <p class="bio">Serial entrepreneur with 3 successful exits. Harvard MBA. Named "Top 30 Under 30" by Forbes. Believes technology should serve humanity, not the other way around.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-medium"></i></a>
-                        <a href="#"><i class="fas fa-globe"></i></a>
-                    </div>
-                </div>
+
+        <div class="founder-quote">
+          <p class="quote-text">"We didn't set out to build just another company. We're crafting the future — where
+            technology amplifies human potential without compromising our values. Every line of code, every business
+            decision must answer one question: Does this make the world more human?"</p>
+          <div class="quote-author">
+            <img
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80"
+              alt="Founder">
+            <div class="author-info">
+              <h4>Dr. Samantha Chen</h4>
+              <p>From TED Talk "Human-First Technology"</p>
             </div>
-            
-            <div class="founder-quote">
-                <p class="quote-text">"We didn't set out to build just another company. We're crafting the future — where technology amplifies human potential without compromising our values. Every line of code, every business decision must answer one question: Does this make the world more human?"</p>
-                <div class="quote-author">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=100&q=80" alt="Founder">
-                    <div class="author-info">
-                        <h4>Dr. Samantha Chen</h4>
-                        <p>From TED Talk "Human-First Technology"</p>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
-        
-        <div class="founder-stats">
-            <div class="stat-item">
-                <div class="stat-number">15+</div>
-                <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">3</div>
-                <div class="stat-label">Successful Exits</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">50+</div>
-                <div class="stat-label">Patents Held</div>
-            </div>
-            <div class="stat-item">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Passion</div>
-            </div>
+      </div>
+
+      <div class="founder-stats">
+        <div class="stat-item">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Years Experience</div>
         </div>
+        <div class="stat-item">
+          <div class="stat-number">3</div>
+          <div class="stat-label">Successful Exits</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">50+</div>
+          <div class="stat-label">Patents Held</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Passion</div>
+        </div>
+      </div>
     </section>
-</body>
+
+
+      <script>
+    function loadServiceComponent() {
+      fetch('/component/NavBar.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('main_navbar');
+          container.innerHTML = html;
+
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript); // Append to body so it executes
+          });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+  </body>
+
 </html>
