@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../service.css">
+    <!-- Slick Carousel Core -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+    <link rel="stylesheet" href="../index.css">
+
+    <script src="navbar.js" defer></script>
+</head>
+
+<body>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h2>
+                Certifications, Compliances &<br>Trustable Solutions for Your Business.
+            </h2>
+            <p>
+                Trusted by 1000+ organizations for BIS, WPC, CDSCO, TEC, and ISO certifications.<br>
+                <span class="hero-highlight">We simplify regulatory approvals and empower your growth with expert
+                    guidance and
+                    end-to-end support.</span>
+            </p>
+            <a href="#contact" class="hero-btn">
+                <i class="fa-solid fa-paper-plane"></i> Get Free Consultation
+            </a>
+            <div class="hero-note">
+                <i class="fa-solid fa-award"></i> 12+ Years of Excellence in Compliance
+            </div>
+        </div>
+        <!-- Slick Carousel wrapper -->
+        <div class="hero-carousel" style="max-width:400px;width:100%;margin-left:2rem;">
+            <div><img src="images/Bureau_of_Indian_Standards_Logo.svg (1).png" alt="Image 1" class="hero-img" /></div>
+            <div><img src="images/fssai8862.jpg" alt="Image 2" class="hero-img" /></div>
+            <div><img src="images/nabl.png" alt="Image 3" class="hero-img" /></div>
+            <div><img src="images/crs.png" alt="Image 3" class="hero-img" /></div>
+        </div>
+    </section>
+
+
+
+    <script>
+        $(document).ready(function () {
+            // Services carousel (already present)
+            $("#servicesOwl").owlCarousel({
+                loop: true,
+                margin: 32,
+                nav: true,
+                dots: true,
+                center: true,
+                stagePadding: 80,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="fa fa-chevron-left"></i>',
+                    '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: { items: 1, stagePadding: 20 },
+                    600: { items: 1, stagePadding: 40 },
+                    900: { items: 2, stagePadding: 60 },
+                    1200: { items: 3, stagePadding: 80 }
+                }
+            });
+
+            // Blog carousel (same style as services)
+            $("#blogOwl").owlCarousel({
+                loop: true,
+                margin: 32,
+                nav: true,
+                dots: true,
+                center: true,
+                stagePadding: 80,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="fa fa-chevron-left"></i>',
+                    '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: { items: 1, stagePadding: 20 },
+                    600: { items: 1, stagePadding: 40 },
+                    900: { items: 2, stagePadding: 60 },
+                    1200: { items: 3, stagePadding: 80 }
+                }
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#blogOwlHome").owlCarousel({
+                loop: true,
+                margin: 32,
+                nav: true,
+                dots: true,
+                center: true,
+                stagePadding: 80,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="fa fa-chevron-left"></i>',
+                    '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: { items: 1, stagePadding: 20 },
+                    600: { items: 1, stagePadding: 40 },
+                    900: { items: 2, stagePadding: 60 },
+                    1200: { items: 3, stagePadding: 80 }
+                }
+            });
+
+            // Blog progress bar
+            blogOwl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+                if (!event.namespace) return;
+
+
+                var carousel = event.relatedTarget;
+                var percent = ((carousel.relative(carousel.current()) + 1) / carousel.items().length) * 100;
+                $('#blog-carousel-progress-bar').css('width', percent + '%');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            var owl = $("#servicesOwl").owlCarousel({
+                loop: true,
+                margin: 40,
+                nav: true,
+                dots: false,
+                center: true,
+                stagePadding: 120,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                    '<i class="fa fa-chevron-left"></i>',
+                    '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsive: {
+                    0: { items: 1, stagePadding: 20 },
+                    600: { items: 1, stagePadding: 40 },
+                    900: { items: 2, stagePadding: 60 },
+                    1200: { items: 3, stagePadding: 120 }
+                }
+            });
+
+            // Progress bar
+            owl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+                if (!event.namespace) return;
+                var carousel = event.relatedTarget;
+                var percent = ((carousel.relative(carousel.current()) + 1) / carousel.items().length) * 100;
+                $('#carousel-progress-bar').css('width', percent + '%');
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('.hero-carousel').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                speed: 500,
+                adaptiveHeight: true,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            // Services carousel using Slick
+            $('#servicesOwl').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3500,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                centerMode: true,
+                variableWidth: false,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: { slidesToShow: 2, centerMode: true }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: { slidesToShow: 1, centerMode: true }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: { slidesToShow: 1, centerMode: false }
+                    }
+                ],
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+                appendDots: $('#carousel-progress'),
+                customPaging: function (slider, i) {
+                    return '<span class="slick-dot"></span>';
+                }
+            });
+
+            // Progress bar for services carousel
+            $('#servicesOwl').on('afterChange', function (event, slick, currentSlide) {
+                var percent = ((currentSlide + 1) / slick.slideCount) * 100;
+                $('#carousel-progress-bar').css('width', percent + '%');
+            });
+
+            // Blog carousel using Slick
+            $('#blogOwlHome').slick({
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3500,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                centerMode: true,
+                variableWidth: false,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: { slidesToShow: 2, centerMode: true }
+                    },
+                    {
+                        breakpoint: 900,
+                        settings: { slidesToShow: 1, centerMode: true }
+                    },
+                    {
+                        breakpoint: 600,
+                        settings: { slidesToShow: 1, centerMode: false }
+                    }
+                ],
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+                appendDots: $('#blog-carousel-progress'),
+                customPaging: function (slider, i) {
+                    return '<span class="slick-dot"></span>';
+                }
+            });
+
+            // Progress bar for blog carousel
+            $('#blogOwlHome').on('afterChange', function (event, slick, currentSlide) {
+                var percent = ((currentSlide + 1) / slick.slideCount) * 100;
+                $('#blog-carousel-progress-bar').css('width', percent + '%');
+            });
+        });
+    </script>
+
+
+</body>
+
+</html>
