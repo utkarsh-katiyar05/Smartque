@@ -643,6 +643,10 @@ header {
     max-width: 400px !important;
 }
 
+.content-wrapper .about-stats{
+
+}
+
 /* Responsive */
 @media (max-width: 1100px) {
     .hero-section {
@@ -843,6 +847,15 @@ header {
         font-size: 0.93rem;
         padding: 0.7rem 0 0.5rem 0;
         border-radius: 1rem;
+    }
+    .content-wrapper .about-stats{
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .content-wrapper .about-core-values{
+        display: flex !important;
+        flex-direction: column;
     }
 
     /* Carousel arrows and dots */

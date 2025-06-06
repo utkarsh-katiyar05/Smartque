@@ -100,70 +100,42 @@ $(document).ready(function () {
             arrows: true,
             speed: 500,
             adaptiveHeight: true,
+            adaptiveWidth: true,
             prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
             nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
         });
     }
 
     // Slick - Services
-    if ($('#servicesOwl').length && $.fn.slick) {
-        $('#servicesOwl').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3500,
-            infinite: true,
-            dots: true,
-            arrows: true,
-            centerMode: true,
-            variableWidth: false,
-            responsive: [
-                { breakpoint: 1200, settings: { slidesToShow: 2, centerMode: true } },
-                { breakpoint: 900, settings: { slidesToShow: 1, centerMode: true } },
-                { breakpoint: 600, settings: { slidesToShow: 1, centerMode: false } }
-            ],
-            prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
-            appendDots: $('#carousel-progress'),
-            customPaging: function (slider, i) {
-                return '<span class="slick-dot"></span>';
-            }
-        });
+    // if ($('#servicesOwl').length && $.fn.slick) {
+    //     $('#servicesOwl').slick({
+    //         slidesToShow: 3,
+    //         slidesToScroll: 1,
+    //         autoplay: true,
+    //         autoplaySpeed: 3500,
+    //         infinite: true,
+    //         dots: true,
+    //         arrows: true,
+    //         centerMode: true,
+    //         variableWidth: false,
+    //         responsive: [
+    //             { breakpoint: 1200, settings: { slidesToShow: 2, centerMode: true } },
+    //             { breakpoint: 900, settings: { slidesToShow: 1, centerMode: true } },
+    //             { breakpoint: 600, settings: { slidesToShow: 1, centerMode: false } }
+    //         ],
+    //         prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+    //         nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+    //         appendDots: $('#carousel-progress'),
+    //         customPaging: function (slider, i) {
+    //             return '<span class="slick-dot"></span>';
+    //         }
+    //     });
 
-        $('#servicesOwl').on('afterChange', function (event, slick, currentSlide) {
-            var percent = ((currentSlide + 1) / slick.slideCount) * 100;
-            $('#carousel-progress-bar').css('width', percent + '%');
-        });
-    }
+    //     $('#servicesOwl').on('afterChange', function (event, slick, currentSlide) {
+    //         var percent = ((currentSlide + 1) / slick.slideCount) * 100;
+    //         $('#carousel-progress-bar').css('width', percent + '%');
+    //     });
+    // }
 
-    // Slick - Blog
-    if ($('#blogOwlHome').length && $.fn.slick) {
-        $('#blogOwlHome').slick({
-            slidesToShow: 3,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3500,
-            infinite: true,
-            dots: true,
-            arrows: true,
-            centerMode: true,
-            variableWidth: false,
-            responsive: [
-                { breakpoint: 1200, settings: { slidesToShow: 2, centerMode: true } },
-                { breakpoint: 900, settings: { slidesToShow: 1, centerMode: true } },
-                { breakpoint: 600, settings: { slidesToShow: 1, centerMode: false } }
-            ],
-            prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
-            nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
-            appendDots: $('#blog-carousel-progress'),
-            customPaging: function (slider, i) {
-                return '<span class="slick-dot"></span>';
-            }
-        });
-
-        $('#blogOwlHome').on('afterChange', function (event, slick, currentSlide) {
-            var percent = ((currentSlide + 1) / slick.slideCount) * 100;
-            $('#blog-carousel-progress-bar').css('width', percent + '%');
-        });
-    }
+    
 });
