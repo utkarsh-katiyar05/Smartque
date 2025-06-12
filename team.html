@@ -661,6 +661,7 @@
       }
     }
   </style>
+  <script src="navbar.js" defer></script>
 </head>
 
 <body>
@@ -743,29 +744,29 @@
     </section>
 
 
-      <script>
-    function loadServiceComponent() {
-      fetch('/component/NavBar.html')
-        .then(res => res.text())
-        .then(html => {
-          const container = document.getElementById('main_navbar');
-          container.innerHTML = html;
+    <script>
+      function loadServiceComponent() {
+        fetch('/component/NavBar.html')
+          .then(res => res.text())
+          .then(html => {
+            const container = document.getElementById('main_navbar');
+            container.innerHTML = html;
 
-          const scripts = container.querySelectorAll("script");
-          scripts.forEach(oldScript => {
-            const newScript = document.createElement("script");
-            if (oldScript.src) {
-              newScript.src = oldScript.src;
-            } else {
-              newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript); // Append to body so it executes
+            const scripts = container.querySelectorAll("script");
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement("script");
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript); // Append to body so it executes
+            });
           });
-        });
-    }
+      }
 
-    document.addEventListener("DOMContentLoaded", loadServiceComponent);
-  </script>
+      document.addEventListener("DOMContentLoaded", loadServiceComponent);
+    </script>
 
   </body>
 
