@@ -1,36 +1,36 @@
 $(document).ready(function () {
     // OwlCarousel - Services Carousel
-    if ($("#servicesOwl").length && $.fn.owlCarousel) {
-        var owl = $("#servicesOwl").owlCarousel({
-            loop: true,
-            margin: 40,
-            nav: true,
-            dots: false,
-            center: true,
-            stagePadding: 120,
-            autoplay: true,
-            autoplayTimeout: 3500,
-            autoplayHoverPause: true,
-            navText: [
-                '<i class="fa fa-chevron-left"></i>',
-                '<i class="fa fa-chevron-right"></i>'
-            ],
-            responsive: {
-                0: { items: 1, stagePadding: 20 },
-                600: { items: 1, stagePadding: 40 },
-                900: { items: 2, stagePadding: 60 },
-                1200: { items: 3, stagePadding: 120 }
-            }
-        });
+    // if ($("#servicesOwl").length && $.fn.owlCarousel) {
+    //     var owl = $("#servicesOwl").owlCarousel({
+    //         loop: true,
+    //         margin: 40,
+    //         nav: true,
+    //         dots: false,
+    //         center: true,
+    //         stagePadding: 120,
+    //         autoplay: true,
+    //         autoplayTimeout: 3500,
+    //         autoplayHoverPause: true,
+    //         navText: [
+    //             '<i class="fa fa-chevron-left"></i>',
+    //             '<i class="fa fa-chevron-right"></i>'
+    //         ],
+    //         responsive: {
+    //             0: { items: 1, stagePadding: 20 },
+    //             600: { items: 1, stagePadding: 40 },
+    //             900: { items: 2, stagePadding: 60 },
+    //             1200: { items: 3, stagePadding: 120 }
+    //         }
+    //     });
 
-        // Owl Progress Bar
-        owl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
-            if (!event.namespace) return;
-            var carousel = event.relatedTarget;
-            var percent = ((carousel.relative(carousel.current()) + 1) / carousel.items().length) * 100;
-            $('#carousel-progress-bar').css('width', percent + '%');
-        });
-    }
+    //     // Owl Progress Bar
+    //     owl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
+    //         if (!event.namespace) return;
+    //         var carousel = event.relatedTarget;
+    //         var percent = ((carousel.relative(carousel.current()) + 1) / carousel.items().length) * 100;
+    //         $('#carousel-progress-bar').css('width', percent + '%');
+    //     });
+    // }
 
     // OwlCarousel - Blog Section
     if ($("#blogOwl").length && $.fn.owlCarousel) {

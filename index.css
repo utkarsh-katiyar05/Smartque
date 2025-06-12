@@ -239,6 +239,7 @@ nav a:focus {
     letter-spacing: 0.5px;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.5rem;
     animation: fadeInLeft 2s;
 }
@@ -571,7 +572,7 @@ header {
     margin-top: 0 !important;
     padding-top: 1.2rem !important;
     padding-bottom: 2rem !important;
-    min-height: 60vh !important;
+    min-height: 60vh !important;   
 }
 
 .about-section,
@@ -715,6 +716,9 @@ header {
     header {
         padding: 0.5rem 0 0.5rem 0;
     }
+    .page-header h1{
+        font-size: 2rem !important;
+    }
 
     .logo {
         width: 44px;
@@ -742,10 +746,13 @@ header {
 
     .hero-content h2 {
         font-size: 1.2rem;
+        line-height: 1.4;
     }
 
     .hero-content p {
-        font-size: 0.97rem;
+        font-size: 0.95rem !important;
+        text-align: left;
+        padding: 12px;
     }
 
     .hero-btn {
@@ -760,6 +767,7 @@ header {
         padding: 0.2rem;
         margin: 0 auto;
     }
+    .hero-note
 
     .about-section {
         flex-direction: column;
@@ -800,8 +808,11 @@ header {
     }
 
     .features-section h2 {
-        font-size: 1rem;
+        font-size: 2rem !important;
         margin-bottom: 0.7rem;
+    }
+    .features-section .services-heading{
+        font-size: 1.4rem  !important;
     }
 
     .features-list {
