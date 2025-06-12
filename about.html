@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Smartque Global</title>
-  <link rel="stylesheet" href="style.css" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     html,
@@ -37,7 +37,7 @@
       display: inline-block;
     }
 
-    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /><style>body {
+    body {
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -285,21 +285,136 @@
       min-height: 1.2em;
       font-size: 1.05rem;
     }
+    .core-values {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 1.5rem;
+    }
+    .gradient-line{
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border-radius: 2px;
+    }
 
-    @media (max-width: 950px) {
+    /* --- Responsive Styles --- */
+    @media (max-width: 1100px) {
       .features-section {
         max-width: 98vw;
         padding: 1.2rem 0.5rem;
       }
+    }
 
+    @media (max-width: 950px) {
+      .features-section {
+        max-width: 99vw;
+        padding: 1.2rem 0.5rem;
+      }
       .contact-flex-wrap {
         flex-direction: column;
         gap: 1.5rem;
         align-items: stretch;
       }
-
       .contact-card {
         max-width: 100%;
+      }
+    }
+
+    @media (max-width: 800px) {
+      .content-wrapper {
+        padding: 2rem 0.5rem !important;
+      }
+      .features-section {
+        padding: 1.2rem 0.2rem;
+      }
+      .section-title {
+        font-size: 2rem;
+      }
+      .gradient-text {
+        font-size: 1.2rem;
+      }
+      /* Stats grid: 2 columns */
+      #about .content-wrapper > div[style*="display:grid;grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 18px !important;
+      }
+      /* Core values grid: 1 column */
+      #about .content-wrapper > div[style*="display:grid;grid-template-columns:repeat(2,1fr)"] {
+        grid-template-columns: repeat(1,1fr) !important;
+        gap: 18px !important;
+      }
+       .gradient-line{
+        width: 60px !important;
+        height:1px !important;
+        padding: 2px !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .features-section {
+        padding: 0.7rem 0.1rem;
+        border-radius: 1rem;
+        margin: 0.7rem 0.05rem;
+      }
+      .content-wrapper {
+        padding: 1rem 0.1rem !important;
+      }
+      .section-title {
+        font-size: 1.3rem;
+      }
+      .gradient-text {
+        font-size: 1rem;
+      }
+      /* Stats grid: 1 column */
+      #about .content-wrapper > div[style*="display:grid;grid-template-columns:repeat(4,1fr)"] {
+        grid-template-columns:  1fr !important;
+        gap: 12px !important;
+      }
+      /* Core values grid: 1 column */
+      #about .content-wrapper .core-values{
+        grid-template-columns: repeat(1,1fr) !important;
+        gap: 12px !important;
+      }
+      /* Padding and font size adjustments */
+      #about .content-wrapper > div {
+        padding: 1rem 0.5rem !important;
+        font-size: 0.97rem !important;
+      }
+      .whatsapp-btn {
+        font-size: 0.97rem;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+      }
+      .gradient-line{
+        width: 60px !important;
+        height:1px !important;
+        padding: 2px !important;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .features-section {
+        padding: 0.3rem 0.01rem;
+      }
+      .content-wrapper {
+        padding: 0.5rem 0.01rem !important;
+      }
+      .section-title {
+        font-size: 1.1rem;
+      }
+      .gradient-text {
+        font-size: 0.9rem;
+      }
+       .gradient-line{
+        width: 60px !important;
+        height:1px !important;
+        padding: 1px !important;
       }
     }
   </style>
@@ -331,8 +446,7 @@
             About SmartQue Global</h1>
           <p class="subheading gradient-text" style="font-size:1.2rem;font-weight:600;max-width:600px;margin:0 auto;">
             Empowering Businesses. Simplifying Compliance.</p>
-          <div
-            style="content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:80px;height:4px;background:linear-gradient(90deg,#00c6ff,#0072ff);border-radius:2px;">
+          <div class="gradient-line">
           </div>
         </div>
         <!-- Introduction -->
@@ -399,7 +513,7 @@
           <h2 class="gradient-text"
             style="font-family:'Montserrat',sans-serif;font-size:1.7rem;font-weight:700;margin-bottom:2rem;text-align:center;position:relative;display:inline-block;left:50%;transform:translateX(-50%);">
             Our Core Values</h2>
-          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
+          <div class="core-values">
             <div
               style="background:#fff;border-radius:1.2rem;padding:2rem;box-shadow:0 2px 12px rgba(0,198,255,0.07);border-left:4px solid #00c6ff;position:relative;overflow:hidden;">
               <h3
