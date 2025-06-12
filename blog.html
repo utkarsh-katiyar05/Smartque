@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Blog | SmartQue Global</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
   <style>
     body {
       font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
@@ -14,8 +16,9 @@
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
     }
+
     .page-header {
-      background: rgba(255,255,255,0.97);
+      background: rgba(255, 255, 255, 0.97);
       box-shadow: 0 2px 24px 0 #00c6ff22, 0 1.5px 8px #ffdd5733;
       padding: 3.2rem 0 2.2rem 0;
       text-align: center;
@@ -24,6 +27,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .page-header:after {
       content: "";
       position: absolute;
@@ -37,6 +41,7 @@
       opacity: 0.5;
       z-index: 0;
     }
+
     .page-header h1 {
       font-size: 3.2rem;
       font-weight: 900;
@@ -50,6 +55,7 @@
       z-index: 1;
       text-shadow: 0 4px 24px #00c6ff22;
     }
+
     .features-section {
       background: #fff;
       border-radius: 2.5rem;
@@ -60,6 +66,7 @@
       overflow: hidden;
       position: relative;
     }
+
     .features-section:before {
       content: "";
       position: absolute;
@@ -70,6 +77,7 @@
       background: radial-gradient(circle, #00c6ff22 60%, transparent 100%);
       z-index: 0;
     }
+
     .features-section:after {
       content: "";
       position: absolute;
@@ -80,6 +88,7 @@
       background: radial-gradient(circle, #ffdd5733 60%, transparent 100%);
       z-index: 0;
     }
+
     .services-heading {
       font-size: 2.5rem;
       color: #007bff;
@@ -91,19 +100,22 @@
       z-index: 1;
       text-shadow: 0 2px 12px #00c6ff22;
     }
+
     .services-heading i {
       color: #22c55e;
       margin-right: 0.7rem;
     }
+
     .owl-carousel {
       margin-bottom: 2.5rem;
       position: relative;
       z-index: 1;
     }
+
     .blog-card {
       background: #fff;
       border-radius: 2rem;
-      box-shadow: 0 4px 24px rgba(0,198,255,0.10), 0 1.5px 8px #ffdd5733;
+      box-shadow: 0 4px 24px rgba(0, 198, 255, 0.10), 0 1.5px 8px #ffdd5733;
       overflow: hidden;
       max-width: 440px;
       margin: 2.2rem auto;
@@ -116,10 +128,12 @@
       border-bottom: 3px solid #ffdd5733;
       min-height: 540px;
     }
+
     .blog-card:hover {
       box-shadow: 0 0 0 4px #00c6ff33, 0 12px 40px #00c6ff33, 0 2px 12px #ffdd5733;
       filter: brightness(1.04) drop-shadow(0 0 8px #00c6ff44);
     }
+
     .blog-img {
       width: 100%;
       height: 230px;
@@ -130,9 +144,11 @@
       transition: transform 0.3s;
       border-radius: 2rem 2rem 0 0;
     }
+
     .blog-card:hover .blog-img {
       transform: scale(1.08) rotate(-2deg);
     }
+
     .blog-card-body {
       padding: 2.1rem 1.6rem 1.6rem 1.6rem;
       display: flex;
@@ -141,6 +157,7 @@
       align-items: center;
       justify-content: flex-start;
     }
+
     .blog-title {
       font-size: 1.38rem;
       font-weight: 800;
@@ -151,12 +168,14 @@
       text-align: center;
       text-shadow: 0 2px 8px #00c6ff22;
     }
+
     .blog-desc {
       font-size: 1.15rem;
       color: #444;
       text-align: center;
       margin-bottom: 1.5rem;
     }
+
     .blog-readmore {
       display: inline-block;
       margin-top: auto;
@@ -170,12 +189,14 @@
       transition: all 0.3s;
       box-shadow: 0 4px 12px rgba(0, 198, 255, 0.3);
     }
+
     .blog-readmore:hover {
       transform: translateY(-3px);
       box-shadow: 0 6px 16px rgba(0, 198, 255, 0.4);
       color: #fff;
       text-decoration: none;
     }
+
     .blog-feature-icon {
       width: 54px;
       height: 54px;
@@ -193,14 +214,22 @@
       box-shadow: 0 2px 8px #00c6ff22;
       animation: badgePulse 1.6s infinite alternate;
     }
+
     @keyframes badgePulse {
-      0% { box-shadow: 0 0 0 0 #00c6ff44; }
-      100% { box-shadow: 0 0 16px 4px #ffdd5744; }
+      0% {
+        box-shadow: 0 0 0 0 #00c6ff44;
+      }
+
+      100% {
+        box-shadow: 0 0 16px 4px #ffdd5744;
+      }
     }
+
     /* Hide the default Owl Carousel dots */
     .owl-dots {
       display: none !important;
     }
+
     /* --- ADVANCED ARROW STYLES --- */
     .owl-nav {
       width: 100%;
@@ -220,9 +249,10 @@
       backdrop-filter: none !important;
       border-radius: 0;
     }
+
     .owl-nav button {
       pointer-events: all;
-      background: rgba(255,255,255,0.7) !important;
+      background: rgba(255, 255, 255, 0.7) !important;
       border: 2.5px solid #00c6ff !important;
       border-radius: 50% !important;
       width: 62px !important;
@@ -246,10 +276,17 @@
       top: 0 !important;
       animation: bounceIn 0.7s, arrowPulse 2.2s infinite alternate;
     }
+
     @keyframes arrowPulse {
-      0% { box-shadow: 0 0 0 0 #00c6ff33; }
-      100% { box-shadow: 0 0 24px 8px #00c6ff33; }
+      0% {
+        box-shadow: 0 0 0 0 #00c6ff33;
+      }
+
+      100% {
+        box-shadow: 0 0 24px 8px #00c6ff33;
+      }
     }
+
     .owl-nav button:before {
       content: '';
       display: block;
@@ -261,6 +298,7 @@
       opacity: 0.6;
       transition: box-shadow 0.25s;
     }
+
     .owl-nav button:hover {
       background: linear-gradient(135deg, #00c6ff 60%, #ffdd57 100%) !important;
       color: #fff !important;
@@ -269,43 +307,84 @@
       box-shadow: 0 16px 48px #00c6ff55, 0 2px 12px #ffdd5733, 0 0 0 8px #ffdd5733;
       filter: brightness(1.08) saturate(1.2);
     }
+
     .owl-nav button:active::after {
       content: '';
       position: absolute;
-      left: 50%; top: 50%;
-      width: 0; height: 0;
-      background: rgba(0,198,255,0.25);
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(0, 198, 255, 0.25);
       border-radius: 50%;
       transform: translate(-50%, -50%);
       animation: ripple 0.5s linear;
       z-index: 2;
     }
+
     @keyframes ripple {
-      0% { width: 0; height: 0; opacity: 0.7; }
-      100% { width: 120px; height: 120px; opacity: 0; }
+      0% {
+        width: 0;
+        height: 0;
+        opacity: 0.7;
+      }
+
+      100% {
+        width: 120px;
+        height: 120px;
+        opacity: 0;
+      }
     }
+
     @keyframes bounceIn {
-      0% { transform: scale(0.7) translateY(40px); opacity: 0; }
-      60% { transform: scale(1.15) translateY(-10px); opacity: 1; }
-      80% { transform: scale(0.95) translateY(3px);}
-      100% { transform: scale(1) translateY(0);}
+      0% {
+        transform: scale(0.7) translateY(40px);
+        opacity: 0;
+      }
+
+      60% {
+        transform: scale(1.15) translateY(-10px);
+        opacity: 1;
+      }
+
+      80% {
+        transform: scale(0.95) translateY(3px);
+      }
+
+      100% {
+        transform: scale(1) translateY(0);
+      }
     }
+
     /* --- ADVANCED CARD ANIMATION --- */
     .owl-item.active .blog-card {
-      animation: cardIn 0.7s cubic-bezier(.77,0,.18,1) both;
+      animation: cardIn 0.7s cubic-bezier(.77, 0, .18, 1) both;
     }
+
     @keyframes cardIn {
-      0% { opacity: 0; transform: scale(0.92) translateY(40px);}
-      80% { opacity: 1; transform: scale(1.04) translateY(-6px);}
-      100% { opacity: 1; transform: scale(1) translateY(0);}
+      0% {
+        opacity: 0;
+        transform: scale(0.92) translateY(40px);
+      }
+
+      80% {
+        opacity: 1;
+        transform: scale(1.04) translateY(-6px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
     }
+
     /* --- CARD BADGE FEATURE --- */
     .blog-card[data-badge]:before {
       content: attr(data-badge);
       position: absolute;
       top: 18px;
       right: 18px;
-      background: linear-gradient(90deg,#00c6ff,#ffdd57);
+      background: linear-gradient(90deg, #00c6ff, #ffdd57);
       color: #fff;
       font-size: 0.95rem;
       font-weight: 700;
@@ -318,43 +397,95 @@
       pointer-events: none;
       animation: badgePulse 1.6s infinite alternate;
     }
+
     /* --- RESPONSIVE --- */
     @media (max-width: 1200px) {
-      .features-section { max-width: 98vw; padding: 2.2rem 0.7rem; }
-      .blog-card { max-width: 95vw; min-height: 480px; }
+      .features-section {
+        max-width: 98vw;
+        padding: 2.2rem 0.7rem;
+      }
+
+      .blog-card {
+        max-width: 95vw;
+        min-height: 480px;
+      }
     }
+
     @media (max-width: 900px) {
-      .features-section { padding: 1.2rem 0.5rem; }
-      .blog-card { max-width: 98vw; min-height: 420px; }
+      .features-section {
+        padding: 1.2rem 0.5rem;
+      }
+
+      .blog-card {
+        max-width: 98vw;
+        min-height: 420px;
+      }
+
       .owl-nav {
         width: 100%;
         top: 45%;
       }
+
       .owl-nav button {
         width: 42px !important;
         height: 42px !important;
         font-size: 1.3rem !important;
       }
-      .page-header h1 { font-size: 2.1rem; }
-      .services-heading { font-size: 1.5rem; }
+
+      .page-header h1 {
+        font-size: 2.1rem;
+      }
+
+      .services-heading {
+        font-size: 1.5rem;
+      }
     }
+
     @media (max-width: 600px) {
-      .features-section { padding: 0.5rem 0.05rem; border-radius: 1rem; margin: 0.7rem 0.05rem; }
-      .blog-card { max-width: 99vw; padding: 0.3rem 0.1rem; border-radius: 1rem; min-height: 340px; }
-      .blog-img { height: 120px; border-radius: 1rem 1rem 0 0; }
-      .blog-card-body { padding: 0.7rem 0.3rem 0.7rem 0.3rem; }
-      .blog-title { font-size: 1.05rem; margin-top: 0.5rem; margin-bottom: 0.5rem; }
-      .blog-desc { font-size: 0.97rem; }
+      .features-section {
+        padding: 0.5rem 0.05rem;
+        border-radius: 1rem;
+        margin: 0.7rem 0.05rem;
+      }
+
+      .blog-card {
+        max-width: 99vw;
+        padding: 0.3rem 0.1rem;
+        border-radius: 1rem;
+        min-height: 340px;
+      }
+
+      .blog-img {
+        height: 120px;
+        border-radius: 1rem 1rem 0 0;
+      }
+
+      .blog-card-body {
+        padding: 0.7rem 0.3rem 0.7rem 0.3rem;
+      }
+
+      .blog-title {
+        font-size: 1.05rem;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .blog-desc {
+        font-size: 0.97rem;
+      }
+
       .owl-nav {
         width: 100%;
         top: 40%;
       }
+
       .owl-nav button {
         width: 30px !important;
         height: 30px !important;
         font-size: 1rem !important;
       }
     }
+
     /* Progress bar */
     #carousel-progress {
       width: 100%;
@@ -365,16 +496,20 @@
       margin: 0 auto 1.5rem auto;
       max-width: 700px;
     }
+
     #carousel-progress-bar {
       height: 100%;
       width: 0;
-      background: linear-gradient(90deg,#00c6ff,#ffdd57);
-      transition: width 0.4s cubic-bezier(.77,0,.18,1);
+      background: linear-gradient(90deg, #00c6ff, #ffdd57);
+      transition: width 0.4s cubic-bezier(.77, 0, .18, 1);
     }
   </style>
+
+  <script src="navbar.js" defer></script>
 </head>
+
 <body>
-    <header id="main_navbar"> </header>
+  <header id="main_navbar"> </header>
 
   <div class="page-header">
     <h1>Blog</h1>
@@ -389,11 +524,13 @@
         <div class="blog-feature-icon">
           <i class="fa-solid fa-certificate"></i>
         </div>
-        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="How to Get BIS Certification in India" class="blog-img">
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+          alt="How to Get BIS Certification in India" class="blog-img">
         <div class="blog-card-body">
           <div class="blog-title">How to Get BIS Certification in India</div>
           <div class="blog-desc">
-            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our expert assistance.</p>
+            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our
+              expert assistance.</p>
           </div>
           <a href="#" class="blog-readmore">Read Article</a>
         </div>
@@ -403,7 +540,8 @@
         <div class="blog-feature-icon">
           <i class="fa-solid fa-broadcast-tower"></i>
         </div>
-        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="WPC ETA: What You Need to Know" class="blog-img">
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+          alt="WPC ETA: What You Need to Know" class="blog-img">
         <div class="blog-card-body">
           <div class="blog-title">WPC ETA: What You Need to Know</div>
           <div class="blog-desc">
@@ -417,11 +555,13 @@
         <div class="blog-feature-icon">
           <i class="fa-solid fa-shield-halved"></i>
         </div>
-        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="ISO Certification Benefits" class="blog-img">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          alt="ISO Certification Benefits" class="blog-img">
         <div class="blog-card-body">
           <div class="blog-title">ISO Certification Benefits</div>
           <div class="blog-desc">
-            <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.</p>
+            <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.
+            </p>
           </div>
           <a href="#" class="blog-readmore">Read Article</a>
         </div>
@@ -431,7 +571,8 @@
         <div class="blog-feature-icon">
           <i class="fa-solid fa-flask"></i>
         </div>
-        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80" alt="Testing Requirements" class="blog-img">
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80"
+          alt="Testing Requirements" class="blog-img">
         <div class="blog-card-body">
           <div class="blog-title">Product Testing Requirements</div>
           <div class="blog-desc">
@@ -445,11 +586,13 @@
         <div class="blog-feature-icon">
           <i class="fa-solid fa-globe"></i>
         </div>
-        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80" alt="Global Compliance" class="blog-img">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
+          alt="Global Compliance" class="blog-img">
         <div class="blog-card-body">
           <div class="blog-title">Global Compliance Standards</div>
           <div class="blog-desc">
-            <p>Navigating international certification requirements for expanding your business globally with confidence.</p>
+            <p>Navigating international certification requirements for expanding your business globally with confidence.
+            </p>
           </div>
           <a href="#" class="blog-readmore">Read Article</a>
         </div>
@@ -463,7 +606,7 @@
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
       var owl = $("#blogOwl").owlCarousel({
         loop: true,
         margin: 40,
@@ -481,52 +624,52 @@
           1200: { items: 3, stagePadding: 120 }
         }
       });
-      
+
       // Keyboard navigation
-      $(document).on('keydown', function(e) {
-        if(e.key === "ArrowLeft") {
+      $(document).on('keydown', function (e) {
+        if (e.key === "ArrowLeft") {
           owl.trigger('prev.owl.carousel');
         }
-        if(e.key === "ArrowRight") {
+        if (e.key === "ArrowRight") {
           owl.trigger('next.owl.carousel');
         }
       });
-      
+
       // Progress bar
-      owl.on('initialized.owl.carousel changed.owl.carousel', function(event) {
+      owl.on('initialized.owl.carousel changed.owl.carousel', function (event) {
         if (!event.namespace) return;
         var carousel = event.relatedTarget;
-        var percent = ((carousel.relative(carousel.current())+1) / carousel.items().length) * 100;
+        var percent = ((carousel.relative(carousel.current()) + 1) / carousel.items().length) * 100;
         $('#carousel-progress-bar').css('width', percent + '%');
       });
-      
+
       // 3D hover effect for cards
       document.querySelectorAll('.blog-card').forEach(card => {
-        card.addEventListener('mousemove', function(e) {
+        card.addEventListener('mousemove', function (e) {
           const rect = card.getBoundingClientRect();
           const x = e.clientX - rect.left;
           const y = e.clientY - rect.top;
-          const xc = rect.width/2;
-          const yc = rect.height/2;
+          const xc = rect.width / 2;
+          const yc = rect.height / 2;
           const dx = (x - xc) / xc;
           const dy = (y - yc) / yc;
-          card.style.transform = `rotateY(${dx*8}deg) rotateX(${-dy*8}deg) scale(1.04)`;
+          card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.04)`;
         });
-        card.addEventListener('mouseleave', function() {
+        card.addEventListener('mouseleave', function () {
           card.style.transform = '';
         });
       });
-      
+
       // Auto-pause on hover
-      $('#blogOwl').on('mouseenter', function() {
+      $('#blogOwl').on('mouseenter', function () {
         $(this).trigger('stop.owl.autoplay');
-      }).on('mouseleave', function() {
+      }).on('mouseleave', function () {
         $(this).trigger('play.owl.autoplay');
       });
     });
   </script>
 
-    <script>
+  <script>
     function loadServiceComponent() {
       fetch('/component/NavBar.html')
         .then(res => res.text())
@@ -549,6 +692,7 @@
 
     document.addEventListener("DOMContentLoaded", loadServiceComponent);
   </script>
-
+  <script src="./main.js"></script>
 </body>
+
 </html>
