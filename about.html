@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Smartque Global</title>
+  <script src="navbar.js" defer></script>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -37,7 +38,7 @@
       display: inline-block;
     }
 
-    <link rel="stylesheet" href="style.css" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /><style>body {
+      body {
       background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
       min-height: 100vh;
       font-family: 'Segoe UI', Arial, sans-serif;
@@ -308,7 +309,7 @@
 
 <body>
   <header id="main_navbar"> </header>
- 
+
 
   <body>
     <section id="about" class="features-section"
@@ -456,30 +457,30 @@
     </footer>
 
 
-      <!-- navbar -->
-  <script>
-    function loadServiceComponent() {
-      fetch('/component/NavBar.html')
-        .then(res => res.text())
-        .then(html => {
-          const container = document.getElementById('main_navbar');
-          container.innerHTML = html;
+    <!-- navbar -->
+    <script>
+      function loadServiceComponent() {
+        fetch('/component/NavBar.html')
+          .then(res => res.text())
+          .then(html => {
+            const container = document.getElementById('main_navbar');
+            container.innerHTML = html;
 
-          const scripts = container.querySelectorAll("script");
-          scripts.forEach(oldScript => {
-            const newScript = document.createElement("script");
-            if (oldScript.src) {
-              newScript.src = oldScript.src;
-            } else {
-              newScript.textContent = oldScript.textContent;
-            }
-            document.body.appendChild(newScript); // Append to body so it executes
+            const scripts = container.querySelectorAll("script");
+            scripts.forEach(oldScript => {
+              const newScript = document.createElement("script");
+              if (oldScript.src) {
+                newScript.src = oldScript.src;
+              } else {
+                newScript.textContent = oldScript.textContent;
+              }
+              document.body.appendChild(newScript); // Append to body so it executes
+            });
           });
-        });
-    }
+      }
 
-    document.addEventListener("DOMContentLoaded", loadServiceComponent);
-  </script>
+      document.addEventListener("DOMContentLoaded", loadServiceComponent);
+    </script>
   </body>
 
 </html>
