@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smartque Global | Compliances Made Simple</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./service.css">
+  <!-- Slick Carousel Core -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  <link rel="stylesheet" href="./index.css">
+
+  <script src="navbar.js" defer></script>
+</head>
+
+<body>
+  <header id="main_navbar"> </header>
+
+
+  <!-- hero -->
+  <div id="Hero"></div>
+
+  <!-- about and Feature  -->
+  <div id="About"></div>
+
+  <div class="page-header">
+    <h1>Our Services</h1>
+  </div>
+
+  <!-- service  -->
+  <section id="services" class="features-section" style="overflow:hidden;">
+    <h2 class="services-heading">
+      <i class="fa-solid fa-layer-group"></i> What We Offer
+    </h2>
+    <div id="service-container"></div>
+    <div id="carousel-progress"
+      style="width:100%;height:6px;background:#eaf6ff;border-radius:3px;overflow:hidden;margin:0 auto 1.5rem auto;max-width:700px;">
+      <div id="carousel-progress-bar"
+        style="height:100%;width:0;background:linear-gradient(90deg,#00c6ff,#ffdd57);transition:width 0.4s cubic-bezier(.77,0,.18,1);">
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Carousel Section for Home Page -->
+  <section class="features-section" style="overflow:hidden;">
+    <h2 class="services-heading">
+      <i class="fa-solid fa-newspaper"></i> Latest Blog Posts
+    </h2>
+    <div class="owl-carousel" id="blogOwlHome">
+      <!-- Blog Card 1 -->
+      <div class="blog-card" data-badge="NEW">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-certificate"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80"
+          alt="How to Get BIS Certification in India" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">How to Get BIS Certification in India</div>
+          <div class="blog-desc">
+            <p>A step-by-step guide for manufacturers and importers to achieve BIS compliance efficiently with our
+              expert assistance.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 2 -->
+      <div class="blog-card" data-badge="POPULAR">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-broadcast-tower"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+          alt="WPC ETA: What You Need to Know" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">WPC ETA: What You Need to Know</div>
+          <div class="blog-desc">
+            <p>Understand the complete process and documentation required for WPC Equipment Type Approval in India.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 3 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+          alt="ISO Certification Benefits" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">ISO Certification Benefits</div>
+          <div class="blog-desc">
+            <p>Discover how ISO certification can boost your business credibility, efficiency, and market opportunities.
+            </p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 4 -->
+      <div class="blog-card">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-flask"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=400&q=80"
+          alt="Testing Requirements" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">Product Testing Requirements</div>
+          <div class="blog-desc">
+            <p>Learn about the essential testing procedures for various product categories in the Indian market.</p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+      <!-- Blog Card 5 -->
+      <div class="blog-card" data-badge="TRENDING">
+        <div class="blog-feature-icon">
+          <i class="fa-solid fa-globe"></i>
+        </div>
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80"
+          alt="Global Compliance" class="blog-img">
+        <div class="blog-card-body">
+          <div class="blog-title">Global Compliances Standards</div>
+          <div class="blog-desc">
+            <p>Navigating international certification requirements for expanding your business globally with confidence.
+            </p>
+          </div>
+          <a href="#" class="blog-readmore">Read Article</a>
+        </div>
+      </div>
+    </div>
+    <!-- <div id="blog-carousel-progress">
+      <div id="blog-carousel-progress-bar"></div>
+    </div> -->
+  </section>
+
+  <section id="contact" class="features-section">
+    <h2>Contact Us</h2>
+    <div class="contact-card">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:info@smartqueglobal.com">info@smartqueglobal.com</a>
+      </p>
+      <p>
+        <strong>Phone:</strong>
+        <a href="tel:+916387350899">+91 63873 50899</a>,
+        <a href="tel:+917607770991">+91 76077 70991</a>
+      </p>
+      <p>
+        <strong>Location:</strong> Head office: A-175, Gulab Bagh, Uttam Nagar, Delhi - 110059
+      </p>
+      <p>
+        <strong>Location:</strong> Branch office: 20/147, Sector 20, Indira Nagar, Lucknow - 226016
+      </p>
+      <a href="https://wa.me/916387350899" target="_blank" rel="noopener" class="whatsapp-btn">
+        <i class="fa-brands fa-whatsapp" style="font-size:1.5rem;"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Smartque Global. Empowering Compliance Nationwide.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburger = document.getElementById('hamburgerBtn');
+      const nav = document.querySelector('nav');
+      hamburger.addEventListener('click', function () {
+        nav.classList.toggle('open');
+        hamburger.classList.toggle('open');
+        document.body.classList.toggle('menu-open');
+      });
+      // Close menu when clicking a link (optional)
+      nav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          nav.classList.remove('open');
+          hamburger.classList.remove('open');
+          document.body.classList.remove('menu-open');
+        });
+      });
+    });
+  </script>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- Slick Carousel CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+  </script>
+
+
+  <!-- navbar -->
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/NavBar.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('main_navbar');
+          container.innerHTML = html;
+
+          const scripts = container.querySelectorAll("script");
+          scripts.forEach(oldScript => {
+            const newScript = document.createElement("script");
+            if (oldScript.src) {
+              newScript.src = oldScript.src;
+            } else {
+              newScript.textContent = oldScript.textContent;
+            }
+            document.body.appendChild(newScript); // Append to body so it executes
+          });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+  <!-- hero -->
+  <script>
+    function loadHeroComponent() {
+      fetch('/component/Hero.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('Hero');
+          container.innerHTML = html;
+
+          // Init Slick Carousel
+          setTimeout(() => {
+            if ($('.hero-carousel').length) {
+              $('.hero-carousel').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                infinite: true,
+                dots: true,
+                arrows: true,
+                speed: 500,
+                adaptiveHeight: true,
+                prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></i></button>',
+                nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></i></button>',
+              });
+            }
+          }, 100);
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadHeroComponent);
+  </script>
+
+
+  <!-- other section -->
+
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/SimplePages.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('About');
+          container.innerHTML = html;
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+  <!-- service section -->
+  <script>
+    function loadServiceComponent() {
+      fetch('/component/service.html')
+        .then(res => res.text())
+        .then(html => {
+          const container = document.getElementById('service-container');
+          container.innerHTML = html;
+          setTimeout(() => {
+            if (typeof $ !== 'undefined' && $.fn.owlCarousel) {
+              $("#servicesOwl").owlCarousel({
+                loop: true,
+                margin: 40,
+                nav: true,
+                dots: false,
+                center: true,
+                stagePadding: 120,
+                autoplay: true,
+                autoplayTimeout: 3500,
+                autoplayHoverPause: true,
+                navText: [
+                  '<i class="fa fa-chevron-left"></i>',
+                  '<i class="fa fa-chevron-right"></i>'
+                ],
+                responsiveClass: true,
+                responsive: {
+                  0: { items: 1, stagePadding: 0 },
+                  600: { items: 1, stagePadding: 40 },
+                  900: { items: 2, stagePadding: 60 },
+                  1200: { items: 3, stagePadding: 120 }
+                }
+              });
+
+              // Optional: Add card hover effect again
+              document.querySelectorAll('.service-card-modern').forEach(card => {
+                card.addEventListener('mousemove', function (e) {
+                  const rect = card.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const xc = rect.width / 2;
+                  const yc = rect.height / 2;
+                  const dx = (x - xc) / xc;
+                  const dy = (y - yc) / yc;
+                  card.style.transform = `rotateY(${dx * 8}deg) rotateX(${-dy * 8}deg) scale(1.04)`;
+                });
+                card.addEventListener('mouseleave', function () {
+                  card.style.transform = '';
+                });
+              });
+
+            } else {
+              console.error("OwlCarousel is not available.");
+            }
+          }, 100);
+        });
+    }
+
+    // Call it when ready
+    document.addEventListener("DOMContentLoaded", loadServiceComponent);
+  </script>
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+  <script src="./main.js"></script>
+
+  <!-- ✅ jQuery (only once!) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <!-- ✅ Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <!-- ✅ Slick Carousel CSS (if also using it) -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
+
+  <!-- ✅ Owl Carousel JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- ✅ Slick Carousel JS -->
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+  <!-- <script src="./serviceScript.js"></script> -->
+</body>
+
+</html>
