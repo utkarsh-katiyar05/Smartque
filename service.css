@@ -1,5 +1,15 @@
 /* General Body Styles */
 body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(white) !important;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+body {
     font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
     margin: 0;
     background: linear-gradient(120deg, #f4f4f9 70%, #eaf6ff 100%);
